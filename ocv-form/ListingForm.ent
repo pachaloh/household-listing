@@ -1,0 +1,30 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=ListingForm
+Name=LISTINGFORM
+AppType=DataEntry
+OperatorID=No
+PartialSave=Yes
+CAPI=Yes
+CaseTree=Desktop
+CreateListing=No
+CreateLog=No
+ShowFieldLabels=No
+ShowErrorMessageNumbers=No
+[External Dictionaries]
+File=..\Dicts\ea_database.dcf
+[AppCode]
+File=.\ListingForm.ent.apc
+Include=..\Shared Logic\GPS.apc
+[Message]
+File=.\ListingForm.ent.mgf
+[Help]
+File=.\ListingForm.ent.qsf
+[Forms]
+File=.\ListingForm.fmf
+[Dictionary Types]
+Dict-Type=.\ListingForm.dcf,Input,.\ListingForm.fmf
+Dict-Type=..\Dicts\ea_database.dcf,External
+[Sync]
+Server=https://csprodata.ilo.org/api
+Direction=Put

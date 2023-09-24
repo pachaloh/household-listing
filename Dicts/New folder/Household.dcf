@@ -1,0 +1,626 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Household
+Name=HOUSEHOLD_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=7C6B46B64443026BD965C308D545E16FAB31B2F4EAA6C232A139CF12C95BEE65
+
+[Level]
+Label=Household Level
+Name=HOUSEHOLD_LEVEL
+
+[IdItems]
+
+[Item]
+Label=District Name
+Name=HA1
+Start=2
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Northern Region
+Name=HA1_VS1
+Value=1;Chitipa
+Value=2;Karonga
+Value=3;Nkhatabay
+Value=4;Rumphi
+Value=5;Mzimba
+Value=6;Likoma
+Value=7;Mzuzu city
+
+[ValueSet]
+Label=Central Region
+Name=HA1_VS2
+Value=1;Kasungu
+Value=2;Nkhotakota
+Value=3;Ntchisi
+Value=4;Dowa
+Value=5;Salima
+Value=6;Lilongwe
+Value=7;Mchinji
+Value=8;Dedza
+Value=9;Ntcheu
+Value=10;Lilongwe city
+
+[ValueSet]
+Label=Southern Region
+Name=HA1_VS3
+Value=1;Mangochi
+Value=2;Machinga
+Value=3;Zomba
+Value=4;Chiradzulu
+Value=5;Blantyre
+Value=6;Mwanza
+Value=7;Thyolo
+Value=8;Mulanje
+Value=9;Phalombe
+Value=10;Chikwawa
+Value=11;Nsanje
+Value=12;Balaka
+Value=13;Neno
+Value=14;Zomba city
+Value=15;Blantyre city
+
+[Item]
+Label=TA/Ward Name
+Name=HA2
+Start=5
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Residence
+Name=HA3
+Start=7
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Residence
+Name=HA3_VS1
+Value=1;Urban
+Value=2;Rural
+
+[Item]
+Label=Enumeration Area
+Name=HA4
+Start=8
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Household Number
+Name=HA5
+Start=11
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Region
+Name=HA6
+Start=13
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Region
+Name=HA6_VS1
+Value=1;Northern Region
+Value=2;Central Region
+Value=3;Southern Region
+
+[Record]
+Label=Population Record
+Name=POPULATION_RECORD
+RecordTypeValue='1'
+MaxRecords=30
+RecordLen=98
+
+[Item]
+Label=Line Number
+Name=BH00
+Start=14
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Name Of Member
+Name=BH0
+Start=16
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Sex of the member
+Name=BH1
+Start=46
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Sex of the member
+Name=BH1_VS1
+Value=1;Male
+Value=2;Female
+
+[Item]
+Label=Relationship to Head of Household
+Name=BH2
+Start=47
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Relationship to Head of Household
+Name=BH2_VS1
+Value=1;Household head
+Value=2;Spouse/partner
+Value=3;son/daughter
+Value=4;son/daughter in law
+Value=5;foster/step child
+Value=6;mother/father
+Value=7;sister/brother
+Value=8;grandchild
+Value=9;grandparent
+Value=10;other relative
+Value=11;unrelated
+
+[Item]
+Label=Current Marital Status
+Name=BH3
+Start=49
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Current Marital Status
+Name=BH3_VS1
+Value=1;Never married
+Value=2;Living together
+Value=3;Married
+Value=4;Divorced/ seperated
+Value=5;widowed
+
+[Item]
+Label=Date of Birth
+Name=BH4_DOB
+Start=50
+Len=6
+DataType=Alpha
+
+[Item]
+Label=Month
+Name=BH4_MONTH
+Start=50
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month
+Name=BH4_MONTH_VS1
+Value=1;January
+Value=2;February
+Value=3;March
+Value=4;April
+Value=5;May
+Value=6;June
+Value=7;July
+Value=8;August
+Value=9;September
+Value=10;October
+Value=11;November
+Value=12;December
+
+[Item]
+Label=Year
+Name=BH4_YEAR
+Start=52
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Age
+Name=AGE
+Start=56
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Literacy
+Name=BH5
+Start=58
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Literacy
+Name=BH5_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Ever school attendance
+Name=BH6
+Start=59
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Ever school attendance
+Name=BH6_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Current school attendance
+Name=BH7
+Start=60
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Current school attendance
+Name=BH7_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Current education level
+Name=BH8
+Start=61
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Current education level
+Name=BH8_VS1
+Value=1;None
+Value=2;Primary
+Value=3;Secondary
+Value=4;University
+Value=5;Other tertiary
+Value=6;Vocational
+Value=7;Dont know
+Value=8;Other (specify)
+
+[Item]
+Label=Highest qualification
+Name=BH9
+Start=62
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Highest qualification
+Name=BH9_VS1
+Value=1;None
+Value=2;PSLC
+Value=3;MSCE
+Value=4;Bachelors degree
+Value=5;Masters
+Value=6;PhD
+Value=7;Other tertiary
+Value=8;Dont know
+Value=9;Other (specify)
+
+[Item]
+Label=Vacational training
+Name=BH10
+Start=63
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Vacational training
+Name=BH10_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Type of vacational training
+Name=BH11
+Start=64
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Type of vacational training
+Name=BH11_VS1
+Value=1;Formal
+Value=2;Informal
+Value=3;Non-informal
+
+[Item]
+Label=Field of training
+Name=BH12
+Start=65
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Duration of training
+Name=BH13
+Start=95
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Duration of training
+Name=BH13_VS1
+Value=1;Not completed
+Value=2;Less than 3 months
+Value=3;3 months to less than 6 months
+Value=4;6months to less than 1 year
+Value=5;1 year to less than 3 years
+Value=6;3 years or more
+Value=7;currently attending
+
+[Item]
+Label=Reason for not completing training
+Name=BH14
+Start=96
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Reason for not completing training
+Name=BH14_VS1
+Value=1;Financial reasons
+Value=2;Health reasons
+Value=3;Got a job
+Value=4;Lost interest in the training
+Value=5;Got married
+Value=6;Got pregnant
+Value=7;Other (specify)
+
+[Item]
+Label=Formal vacational training during last 12 months
+Name=BH15
+Start=97
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Formal vacational training during last 12 months
+Name=BH15_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=More members
+Name=ADDROW
+Start=98
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=More members
+Name=ADDROW_VS1
+Value=1;Yes
+Value=2;No
+
+[Record]
+Label=Child Labour
+Name=CHILD_LABOUR
+RecordTypeValue='3'
+MaxRecords=10
+RecordLen=25
+
+[Item]
+Label=Employment status
+Name=K01
+Start=14
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Employment status
+Name=K01_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Type of economic actvity
+Name=K02
+Start=15
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Type of economic actvity
+Name=K02_VS1
+Value=1;Mining
+Value=2;Tobacco growing and processing
+Value=3;Tea picking and sorting
+Value=4;Domestic work
+Value=5;Herding livestock
+Value=6;Maize farming
+Value=7;Vending
+Value=8;Other (specify)
+
+[Item]
+Label=Main tasks/Duties
+Name=K03
+Start=16
+Len=1
+DataType=Numeric
+
+[Item]
+Label=Hours of work
+Name=K04
+Start=17
+Len=1
+DataType=Numeric
+
+[Item]
+Label=Days of work
+Name=K05
+Start=18
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Days of work
+Name=K05_VS1
+Value=1;Weekdays, before and/or after school only
+Value=2;Weekdays only, by skipping school
+Value=3;weekend only
+Value=4;Weekend plus weekdays before and/pr after school
+Value=5;Weekend plus weekdays, by skipping school
+Value=6;During daytime, including weekend
+Value=7;Anytime of the day or night as required, including weekend
+
+[Item]
+Label=Time of the day for work
+Name=K06
+Start=19
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Time of the day for work
+Name=K06_VS1
+Value=1;Morning
+Value=2;Afternoon
+Value=3;Evening/night
+Value=4;All day
+
+[Item]
+Label=Hours per day
+Name=K07
+Start=20
+Len=1
+DataType=Numeric
+
+[Item]
+Label=Age at first work
+Name=K08
+Start=21
+Len=1
+DataType=Numeric
+
+[Item]
+Label=Reason for work
+Name=K09
+Start=22
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Reason for work
+Name=K09_VS1
+Value=0;Supplementary family income
+Value=1;Parents/guardians suggest to work
+Value=2;Help in household enterprise/farm
+Value=3;Learning working skills
+Value=4;Schooling not useful for future
+Value=5;School too far/no safe transport facility
+Value=6;Cannot afford school materials/fees
+Value=7;Not interested in studying/ school
+Value=8;To temporarily replace someone unable to work
+Value=9;Other (specify)
+
+[Item]
+Label=Decision to work
+Name=K10
+Start=23
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Decision to work
+Name=K10_VS1
+Value=1;Alone
+Value=2;Father
+Value=3;Mother
+Value=4;Uncle/ Aunt
+Value=5;Guardian
+Value=6;Peer
+Value=9;Other (specify)
+
+[Item]
+Label=Salary/wage amount
+Name=K11
+Start=24
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Salary/wage amount
+Name=K11_VS1
+Value=1;Paid in Cash
+Value=2;Paid in kind only
+Value=3;Do not know
+Value=4;Refused
+
+[Item]
+Label=Hobbies
+Name=K12
+Start=25
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Hobbies
+Name=K12_VS1
+Value=1;Playing with friends
+Value=2;Watching TV
+Value=3;Listening to radio
+Value=4;Nothing
+Value=5;Other (specify)
+
+[Record]
+Label=Basic information
+Name=BASIC_INFORMATION
+RecordTypeValue='2'
+RecordLen=25
+
+[Item]
+Label=Date of Interview
+Name=DATE_OF_INTERVIEW
+Start=14
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Start time
+Name=START_TIME
+Start=17
+Len=2
+DataType=Numeric
+
+[Item]
+Label=End time
+Name=END_TIME
+Start=19
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Main language of interview
+Name=MAIN_LANGUAGE_OF_INTERVIEW
+Start=21
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Interview results
+Name=INTERVIEW_RESULTS
+Start=24
+Len=2
+DataType=Numeric

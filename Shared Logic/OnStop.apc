@@ -1,0 +1,20 @@
+﻿// having an OnStop function will disable the question that CSEntry
+// shows by default when opening a partially saved case; in the Household program
+// that that will be handled in the HH_INTRODUCTION field
+
+function OnStop()
+
+	numeric response = errmsg("Do you want to save the data before quitting?")
+		select("Yes",continue,"No",continue,"Cancel",continue);
+
+	if response = 3 then // cancel
+		reenter;
+
+	elseif response = 1 then // save and quit
+		savepartial();
+
+	endif;
+
+	stop(1); // close the program
+
+end;

@@ -1,0 +1,2593 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Individual
+Name=INDIVIDUAL_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=B87D022D8742CF47B549C5A23C8E8DE05DA5B0DCB269E9DB7C7FDC2C16E621C5
+
+[Level]
+Label=Individual Level
+Name=INDIVIDUAL_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Region
+Name=IA
+Start=2
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Region
+Name=IA_VS1
+Value=1;Northern Region
+Value=2;Central Region
+Value=3;Southern Region
+
+[Item]
+Label=District Name
+Name=IA1
+Start=3
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Northern Region
+Name=IA1_VS1
+Value=1;Chitipa
+Value=2;Karonga
+Value=3;Nkhata Bay
+Value=4;Rumphi
+Value=5;Mzimba
+Value=6;Likoma
+Value=7;Mzuzu City
+
+[ValueSet]
+Label=Central Region
+Name=IA1_VS3
+Value=1;Kasungu
+Value=2;Khota-kota
+Value=4;Ntchisi
+Value=5;Dowa
+Value=6;Salima
+Value=7;Lilongwe
+Value=8;Mchinji
+Value=9;Dedza
+Value=10;Ntcheu
+Value=11;Lilongwe City
+
+[ValueSet]
+Label=Southern Region
+Name=IA1_VS31
+Value=1;Mangochi
+Value=2;Machinga
+Value=3;Zomba
+Value=4;Chiradzulu
+Value=5;Blantyre
+Value=6;Mwanza
+Value=7;Thyolo
+Value=8;Mulanje
+Value=9;Phalombe
+Value=10;Chikwawa
+Value=11;Nsanje
+Value=12;Balaka
+Value=13;Neno
+Value=14;Zomba City
+Value=15;Blantyre City
+
+[Item]
+Label=TA/Ward Name
+Name=IA2
+Start=6
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Residence
+Name=IA3
+Start=8
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Residence
+Name=IA3_VS1
+Value=1;Urban
+Value=2;Rural
+
+[Item]
+Label=Enumeration Area
+Name=IA4
+Start=9
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Household Number
+Name=IA5
+Start=12
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Line Number
+Name=IA6
+Start=14
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=Respondent's Background
+Name=BACKGROUND_INFO
+RecordTypeValue='1'
+RecordLen=209
+
+[Item]
+Label=Name
+Name=IA8
+Start=16
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Age
+Name=BG1
+Start=46
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Age
+Name=BG1_VS1
+Value=0:120;Age
+Value=999;Don't know
+
+[Item]
+Label=Sex
+Name=BG2
+Start=49
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Sex
+Name=BG2_VS1
+Value=1;Male
+Value=2;Female
+
+[Item]
+Label=Place of Birth
+Name=BG3
+Start=50
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Place of Birth
+Name=BG3_VS1
+Value=1;This Place
+Value=2;Another District
+Value=3;Another Country
+
+[Item]
+Label=Another District (Specify)
+Name=BG3A
+Start=52
+Len=3
+DataType=Numeric
+
+[ValueSet]
+Label=Another District (Specify)
+Name=BG3A_VS1
+Value=101;Chitipa
+Value=102;Karonga
+Value=103;Nkhata Bay
+Value=104;Rumphi
+Value=105;Mzimba
+Value=106;Likoma
+Value=201;Kasungu
+Value=202;Khota-kota
+Value=204;Ntchisi
+Value=205;Dowa
+Value=206;Salima
+Value=207;Lilongwe
+Value=208;Mchinji
+Value=209;Dedza
+Value=210;Ntcheu
+Value=301;Mangochi
+Value=302;Machinga
+Value=303;Zomba
+Value=304;Chiradzulu
+Value=305;Blantyre
+Value=306;Mwanza
+Value=307;Thyolo
+Value=308;Mulanje
+Value=309;Phalombe
+Value=310;Chikwawa
+Value=311;Nsanje
+Value=312;Balaka
+Value=313;Neno
+Value=314;Zomba City
+Value=315;Blantyre City
+
+[Item]
+Label=Another Country(Specify)
+Name=BG3B
+Start=55
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Nationality
+Name=BG4
+Start=58
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Nationality
+Name=BG4_VS1
+Value=1;Malawian by birth
+Value=2;Malawian by naturalisation
+Value=3;Another country
+
+[Item]
+Label=Date of arrival: Month
+Name=BG5_MONTH
+Start=59
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Date of arrival: Month
+Name=BG5_MONTH_VS1
+Value=1;January
+Value=2;February
+Value=3;March
+Value=4;April
+Value=5;May
+Value=6;June
+Value=7;July
+Value=8;August
+Value=9;September
+Value=10;October
+Value=11;November
+Value=12;December
+
+[Item]
+Label=Date of arrival: Year
+Name=BG5_YEAR
+Start=61
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Previous stay: TA/Ward
+Name=BG6_WARD
+Start=65
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Previous stay:District
+Name=BG6_DISTRICT
+Start=95
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Previous stay:Country
+Name=BG6_COUNTRY
+Start=125
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Period at current place
+Name=BG7
+Start=155
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Ever attended school
+Name=BG8
+Start=158
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Ever attended school
+Name=BG8_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Highest level completed
+Name=BG9
+Start=159
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Highest level completed
+Name=BG9_VS1
+Value=1;None
+Value=2;Primary
+Value=3;Secondary
+Value=4;University
+Value=5;Other tertiary
+Value=6;Vocational
+
+[Item]
+Label=Field of study
+Name=BG10
+Start=160
+Len=50
+DataType=Alpha
+
+[Record]
+Label=Identification of Currently Employed Persons
+Name=IDENTIFICATION_OF_CURRENTLY_EMPLOYED_PERSONS
+RecordTypeValue='2'
+RecordLen=63
+
+[Item]
+Label=Work for salary/Wage
+Name=A1
+Start=16
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Work for salary/Wage
+Name=A1_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Pat week work paid/unpaid
+Name=A2
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Pat week work paid/unpaid
+Name=A2_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Past week Business with partners
+Name=A2_A
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Past week Business with partners
+Name=A2_A_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=past week work for salary/wage/commisssion/kind
+Name=A2_B
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=past week work for salary/wage/commisssion/kind
+Name=A2_B_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=past week domestic work for wage/salary/kind
+Name=A2_C
+Start=20
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=past week domestic work for wage/salary/kind
+Name=A2_C_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Past week work without paid
+Name=A2_D
+Start=21
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Past week work without paid
+Name=A2_D_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Past week household work
+Name=A2_E
+Start=22
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Past week household work
+Name=A2_E_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Past week any construction/major repair work
+Name=A2_F
+Start=23
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Past week any construction/major repair work
+Name=A2_F_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Past week hunting/ other food for sale
+Name=A2_G
+Start=24
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Past week hunting/ other food for sale
+Name=A2_G_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Past week place of work
+Name=A3
+Start=25
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Past week place of work
+Name=A3_VS1
+Value=1;Own land
+Value=2;Elsewhere
+
+[Item]
+Label=Use of products obtained from this land
+Name=A4
+Start=26
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Use of products obtained from this land
+Name=A4_VS1
+Value=1;Only for sale/barter
+Value=2;Mainly for sale/barter but partly for own use or familyuse
+Value=3;Mainly for own or family use but partly for sale/barter
+Value=4;Only for own or family
+
+[Item]
+Label=Number of hours worked past week
+Name=A5
+Start=27
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of hours worked past week
+Name=A5_VS1
+Value=1;Less than 48 hours
+Value=2;48 hours or more
+
+[Item]
+Label=Temporaliry absent for the past week work
+Name=A6
+Start=28
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Temporaliry absent for the past week work
+Name=A6_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Reason for absent
+Name=A7
+Start=29
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Reason for absent
+Name=A7_VS1
+Value=1;Vocations
+Value=2;Illiness, injury, temporary disability
+Value=3;Maternity leave
+Value=4;Temporary slack work for technical or economic reasons
+Value=5;Bad weather
+Value=6;Strike or labour dispute
+Value=7;Off season (self-employment)
+Value=8;Off season(wage employment)
+Value=9;Education or training
+Value=10;Family/community responsibilities
+Value=11;Other
+
+[Item]
+Label=Other Specify
+Name=A7B
+Start=31
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Period of returning to work
+Name=A8
+Start=61
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Period of returning to work
+Name=A8_VS1
+Value=1;Within 3 months or less
+Value=2;After 3 months
+Value=3;Not sue to return
+
+[Item]
+Label=Agreement to go back to work with same employer
+Name=A9
+Start=62
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Agreement to go back to work with same employer
+Name=A9_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Continue being paid during off season
+Name=A10
+Start=63
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Continue being paid during off season
+Name=A10_VS1
+Value=1;Yes
+Value=2;No
+
+[Record]
+Label=Characteristics of Main Job
+Name=CHARACTERISTICS_OF_MAIN_JOB
+RecordTypeValue='3'
+RecordLen=425
+
+[Item]
+Label=Kind of work for last week
+Name=B1
+Start=16
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Main task/duties
+Name=B2
+Start=46
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Kind of industry/business/service
+Name=B3
+Start=76
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Main goods/services produced
+Name=B4
+Start=106
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Your part in this job/activity
+Name=B5
+Start=136
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Your part in this job/activity
+Name=B5_VS1
+Value=1;Employee (working for someone else for pay in cash or in kind
+Value=2;Employer(employing one or more employees)
+Value=3;Own-account worker(not employing any employee)
+Value=4;Helping without pay in the business or farm of another household/family member
+Value=6;Member of a producers`cooperative
+Value=9;Other
+
+[Item]
+Label=Other(Specify)
+Name=B5B
+Start=137
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Working for who
+Name=B6
+Start=167
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Working for who
+Name=B6_VS1
+Value=1;Government Institution
+Value=2;Parastatal enterprise
+Value=3;NGO/non-profit organisation
+Value=4;Private company/institution
+Value=5;Private business
+Value=6;Private farm
+Value=7;Private household
+Value=8;Public Works Program
+Value=9;Embassy, international organisation
+Value=99;Other
+
+[Item]
+Label=Other(Specify)
+Name=B6B
+Start=169
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Employment basis
+Name=B6A
+Start=199
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Employment basis
+Name=B6A_VS1
+Value=1;A written contract
+Value=2;An oral agreement
+
+[Item]
+Label=Contact agreement
+Name=B7
+Start=200
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Contact agreement
+Name=B7_VS1
+Value=1;Limited time durationn
+Value=2;Unlimited time duration
+
+[Item]
+Label=Reason for limited duration of contract/agreement
+Name=B8
+Start=201
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Reason for limited duration of contract/agreement
+Name=B8_VS1
+Value=1;On-the-job training, internship
+Value=2;Probation period
+Value=3;Seasonal work
+Value=4;Ganyu/Occassional/daily work
+Value=5;Work as a replacement/substitute
+Value=6;Public employment programme
+Value=7;Specific service or task
+Value=8;Chain contract
+Value=9;Other
+
+[Item]
+Label=Other(Specify)
+Name=B8A
+Start=202
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Duration of contract/agreement
+Name=B9
+Start=232
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Duration of contract/agreement
+Name=B9_VS1
+Value=1;Daily contract/agreements
+Value=2;less than 1 month
+Value=3;1 month to less than 3 months
+Value=4;3 months to less than 6 months
+Value=5;6 months to less than 12 months
+Value=6;12 months or more
+
+[Item]
+Label=Contributions to social security/pension scheme
+Name=B10
+Start=233
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Contributions to social security/pension scheme
+Name=B10_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t  know
+
+[Item]
+Label=Paid Annual leave
+Name=B11
+Start=234
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Paid Annual leave
+Name=B11_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Payment for leave days not taken
+Name=B11A
+Start=235
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Payment for leave days not taken
+Name=B11A_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t know
+
+[Item]
+Label=Sick leave
+Name=B12
+Start=236
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Sick leave
+Name=B12_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t know
+
+[Item]
+Label=Medical Benefits
+Name=B13
+Start=237
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Medical Benefits
+Name=B13_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t know
+
+[Item]
+Label=Tax
+Name=B14
+Start=238
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Tax
+Name=B14_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t know
+
+[Item]
+Label=Member of trade union
+Name=B15
+Start=239
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Member of trade union
+Name=B15_VS1
+Value=1;Yes, Trade Union
+Value=2;Yes, Employees Association
+Value=3;No
+
+[Item]
+Label=Reason for not being a member
+Name=B15A
+Start=240
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Reason for not being a member
+Name=B15A_VS1
+Value=1;Have a negative view of Trade Unions
+Value=2;Not aware of any unions to join my work place/area
+Value=3;Don`t know trade union
+Value=4;It is discouraged by my employer
+Value=5;Not sure what a union can do to help me
+Value=6;Never been approached to join
+Value=7;Never considered joining
+Value=8;Do not have time
+Value=9;Not interested in public affairs
+Value=10;Too expensive
+Value=99;Other
+
+[Item]
+Label=Other (specify)
+Name=B15AA
+Start=242
+Len=40
+DataType=Alpha
+
+[Item]
+Label=Collective bargaining agreement
+Name=B15B
+Start=282
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Collective bargaining agreement
+Name=B15B_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t know
+
+[Item]
+Label=Type of business/farn ownership
+Name=B17
+Start=283
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Type of business/farn ownership
+Name=B17_VS1
+Value=1;Sole ownership
+Value=2;Family business
+Value=3;Partnership with members of other households
+Value=4;Incorporated enterproise(ltd., pcl., inc.)
+Value=9;Other
+
+[Item]
+Label=Other(Specify)
+Name=B17A
+Start=284
+Len=40
+DataType=Alpha
+
+[Item]
+Label=Registered
+Name=B18
+Start=324
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Registered
+Name=B18_VS1
+Value=1;Yes
+Value=2;In the process of becoming registered
+Value=3;No
+Value=4;Don`t know
+
+[Item]
+Label=Record keeping
+Name=B19
+Start=325
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Record keeping
+Name=B19_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t knoow
+
+[Item]
+Label=Number of persons that work at your work place
+Name=B20
+Start=326
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Number of persons that work at your work place
+Name=B20_VS1
+Value=1;1-4
+Value=2;5-9
+Value=3;10-19
+Value=4;20-49
+Value=5;50-99
+Value=6;100 or more
+Value=8;Don`t knoow
+
+[Item]
+Label=Specific number of workers
+Name=B21
+Start=327
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Usual place of work
+Name=B22
+Start=331
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Usual place of work
+Name=B22_VS1
+Value=1;In your home
+Value=2;Structure attached to your home
+Value=3;At the client`s or employer`s home
+Value=4;Enterprise , school, factory, office, shop, workshop etc(separate from house)
+Value=5;On farm or agriculture plot
+Value=6;Construction site
+Value=7;Fixed stall in the market/street
+Value=8;Without fixed location/mobile
+Value=9;Other
+
+[Item]
+Label=Other (specify)
+Name=B22A
+Start=332
+Len=30
+DataType=Alpha
+
+[Item]
+Label=District
+Name=B23
+Start=362
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=District
+Name=B23_VS1
+Value=1;In this district
+Value=2;Another district
+Value=3;Another country
+
+[Item]
+Label=Name of district/country
+Name=B24
+Start=363
+Len=30
+DataType=Alpha
+
+[Item]
+Label=How long have you been on this job
+Name=B25
+Start=393
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=How long have you been on this job
+Name=B25_VS1
+Value=1;Less than 1 year
+Value=2;1 year to less than 3 years
+Value=3;3 years to less than 5 years
+Value=4;5 years to less than 20 years
+Value=5;10 years to less than 20 years
+Value=6;20 to 30 years
+Value=7;31 or more years
+
+[Item]
+Label=How did you find this job
+Name=B26
+Start=394
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=How did you find this job
+Name=B26_VS1
+Value=1;Through employment office-Pubic
+Value=2;Through employment office-Private
+Value=3;Through ads/press/internet
+Value=4;Through family, friends, acquintances
+Value=5;Direct inquiry with employer
+Value=6;Recruited on the street
+Value=7;After previous experience (internship, apprenticeship, voluntieer work)
+Value=8;Through educational institution
+Value=9;Launched own business
+Value=10;Joined family establishment
+Value=11;Looked for land, building, equipment, machinery to start own business or activity
+Value=99;Other
+
+[Item]
+Label=Other(Specify)
+Name=B26A
+Start=396
+Len=30
+DataType=Alpha
+
+[Record]
+Label=Multiple Job Holders
+Name=MULTIPLE_JOB_HOLDERS
+RecordTypeValue='4'
+RecordLen=318
+
+[Item]
+Label=Secondary Jobs/activity
+Name=C1
+Start=16
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Secondary Jobs/activity
+Name=C1_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Business with partners
+Name=C1A
+Start=17
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Business with partners
+Name=C1A_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Any work for salary
+Name=C1B
+Start=18
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Any work for salary
+Name=C1B_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Any domestic work for pay
+Name=C1C
+Start=19
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Any domestic work for pay
+Name=C1C_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Help without pay
+Name=C1D
+Start=20
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Help without pay
+Name=C1D_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Any farm work
+Name=C1E
+Start=21
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Any farm work
+Name=C1E_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Construction or repair work
+Name=C1F
+Start=22
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Construction or repair work
+Name=C1F_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Selling food
+Name=C1G
+Start=23
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Selling food
+Name=C1G_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Where secondary job is done
+Name=C2
+Start=24
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Where secondary job is done
+Name=C2_VS1
+Value=1;Own land
+Value=2;Elsewhere
+
+[Item]
+Label=Occupational tittle in secondary job
+Name=C4
+Start=25
+Len=25
+DataType=Alpha
+
+[Item]
+Label=Main tasks or duties
+Name=C5
+Start=50
+Len=25
+DataType=Alpha
+
+[Item]
+Label=Kind service or activity at secondary work place
+Name=C6
+Start=75
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Main good or service produced
+Name=C7
+Start=105
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Secondary work status
+Name=C8
+Start=135
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Secondary work status
+Name=C8_VS1
+Value=1;Employee(Working for someone else for pay in cash in kind)
+Value=2;Employer(employing one or more employees)
+Value=3;Own-account worker(not employing any employee)
+Value=4;Helping without pay in the business or farm of another household/family member
+Value=5;Member of a producers` cooperative
+Value=9;Other(Specify)
+
+[Item]
+Label=Other Specify
+Name=C8A
+Start=136
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Employment basis
+Name=C9
+Start=166
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Employment basis
+Name=C9_VS1
+Value=1;A written contract
+Value=2;An oral agreement
+
+[Item]
+Label=Contract Duration
+Name=C10
+Start=167
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Contract Duration
+Name=C10_VS1
+Value=1;Limited time duration
+Value=2;Unlimited time duration
+
+[Item]
+Label=Reason for limited duration
+Name=C11
+Start=168
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Reason for limited duration
+Name=C11_VS1
+Value=1;On-the-job  training, internship
+Value=2;Probation period
+Value=3;Seasonal work
+Value=4;Occasional/daily  work
+Value=5;Work as a replacement/substitute
+Value=6;Public employment programme
+Value=7;Specific service or task
+Value=8;Chain contract
+Value=9;Other
+
+[Item]
+Label=Other(Specify)
+Name=C11A
+Start=169
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Contract time duration
+Name=C12
+Start=199
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Contract time duration
+Name=C12_VS1
+Value=1;Daily contracts/agreements
+Value=2;Less than 1 month
+Value=3;1 month to less than 3 months
+Value=4;3 months to less than 6 months
+Value=5;6 months to less than 12 months
+Value=6;12 months or more
+
+[Item]
+Label=Contribution to social security/pension
+Name=C13
+Start=200
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Contribution to social security/pension
+Name=C13_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t know
+
+[Item]
+Label=Paid Annual leave
+Name=C14
+Start=201
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Paid Annual leave
+Name=C14_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t know
+
+[Item]
+Label=Payment for leave days not taken
+Name=C14A
+Start=202
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Payment for leave days not taken
+Name=C14A_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t know
+
+[Item]
+Label=Paid sick-live in case of illness
+Name=C15
+Start=203
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Paid sick-live in case of illness
+Name=C15_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t know
+
+[Item]
+Label=Medical benefits
+Name=C16
+Start=204
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Medical benefits
+Name=C16_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t know
+
+[Item]
+Label=Income tax from salary
+Name=C17
+Start=205
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Income tax from salary
+Name=C17_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t know
+
+[Item]
+Label=Sector of secondary job
+Name=C18
+Start=206
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Sector of secondary job
+Name=C18_VS1
+Value=1;Government institution
+Value=2;Parastatal enterprise
+Value=3;NGO/nnon-profit organisation/mission
+Value=4;Private company/institution
+Value=5;Private business
+Value=6;Private farm
+Value=7;Private household
+Value=8;Public Works Programme
+Value=9;Embassy, international organisation
+Value=99;Other(specify)
+
+[Item]
+Label=Other(Specify)
+Name=C18A
+Start=208
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Type of ownership of business/farm
+Name=C19
+Start=258
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Type of ownership of business/farm
+Name=C19_VS1
+Value=1;Sole ownership
+Value=2;Family business
+Value=3;Partnership with members of other households
+Value=4;Incorporated enterprise(ltd., plc., inc)
+Value=9;Other
+
+[Item]
+Label=Specify other type
+Name=C19A
+Start=259
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Business/farm resgistered
+Name=C20
+Start=309
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Business/farm resgistered
+Name=C20_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t know
+
+[Item]
+Label=Record of accounts
+Name=C21
+Start=310
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Record of accounts
+Name=C21_VS1
+Value=1;Yes
+Value=2;No
+Value=3;Don`t know
+
+[Item]
+Label=Number of persons at this work place
+Name=C22
+Start=311
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Number of persons at this work place
+Name=C22_VS1
+Value=1;1-4
+Value=2;5-9
+Value=3;10-19
+Value=4;20-49
+Value=5;50-99
+Value=6;100 or more
+Value=8;Don`t know
+
+[Item]
+Label=Exact number of workers
+Name=C23
+Start=312
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Where secondary work is performed
+Name=C24
+Start=315
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Where secondary work is performed
+Name=C24_VS1
+Value=1;In your home
+Value=2;Structure attached to your home
+Value=3;At the client`s or employer`s home
+Value=4;Enterprise, plant, factory, office, shop, workshop etc. (separate from the house)
+Value=5;On farm or agriculture plot
+Value=6;Construction  site
+Value=7;Fixed stall in the market/street
+Value=8;Without fixed location/mobile
+Value=8;Other
+
+[Item]
+Label=Other(Specify)
+Name=C24A
+Start=315
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[Item]
+Label=Period of working for the employer
+Name=C25
+Start=316
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Period of working for the employer
+Name=C25_VS1
+Value=1;Less than 1 year
+Value=2;1 year to less than 5 years
+Value=3;5 years to less than 10 years
+Value=4;10 years or more
+
+[Item]
+Label=Work besides the main and secondary activity
+Name=C26
+Start=317
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Work besides the main and secondary activity
+Name=C26_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Purpose of products from this work
+Name=C27
+Start=318
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Purpose of products from this work
+Name=C27_VS1
+Value=1;Only for sale or barber
+Value=2;Mainly for sale or barber but  partly for own family use
+Value=3;Mainly for own family use but partly sale or barter
+Value=4;Only for own family use
+
+[Record]
+Label=Occupation Injuries
+Name=D
+RecordTypeValue='5'
+RecordLen=22
+
+[Item]
+Label=Ever involved in an accident while working
+Name=D01
+Start=16
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Ever involved in an accident while working
+Name=D01_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Compensation
+Name=D02
+Start=17
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Compensation
+Name=D02_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Such accidents in last 12 months
+Name=D03
+Start=18
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Such accidents in last 12 months
+Name=D03_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=In which job the accident happened
+Name=D04
+Start=19
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=In which job the accident happened
+Name=D04_VS1
+Value=1;Current main joob
+Value=2;Current second job
+Value=3;Other
+
+[Item]
+Label=Number of days to be away from work
+Name=D05
+Start=20
+Len=3
+DataType=Numeric
+
+[Record]
+Label=Hours of Work
+Name=HOURS_OF_WORK
+RecordTypeValue='6'
+RecordLen=48
+
+[Item]
+Label=Hours of work perk week
+Name=E01
+Start=16
+Len=3
+DataType=Numeric
+
+[Item]
+Label=In any other job(s)/activity(ies)
+Name=E01B
+Start=19
+Len=3
+DataType=Numeric
+
+[Item]
+Label=In your main job/activity
+Name=E01A
+Start=22
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Total for all jobs/activities
+Name=E01C
+Start=25
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Hours of work per day of last week in...
+Name=E02
+Start=28
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Friday
+Name=E02E
+Start=31
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Thursday
+Name=E02D
+Start=33
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Wednesday
+Name=E02C
+Start=35
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Sunday
+Name=E02G
+Start=37
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Tuesday
+Name=E02B
+Start=39
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Monday
+Name=E02A
+Start=42
+Len=2
+DataType=Numeric
+
+[Item]
+Label=TOTAL
+Name=E02H
+Start=44
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Saturday
+Name=SATURDAY
+Start=47
+Len=2
+DataType=Numeric
+
+[Record]
+Label=Employment Situations
+Name=F
+RecordTypeValue='7'
+RecordLen=24
+
+[Item]
+Label=More paid work hours
+Name=F01
+Start=16
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=More paid work hours
+Name=F01_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Number of additional hours
+Name=F02
+Start=17
+Len=3
+DataType=Numeric
+
+[Item]
+Label=How to increase working hours
+Name=F03
+Start=20
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=How to increase working hours
+Name=F03_VS1
+Value=1;Incease number of hours in current job(s)/activities
+Value=2;Take an additional job/activity
+Value=3;Replace current jobs(s)/activity(ies) with another job/activity with more hours
+
+[Item]
+Label=Desire to change employment situation
+Name=F04
+Start=21
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Desire to change employment situation
+Name=F04_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Reason for the change
+Name=F05
+Start=22
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Reason for the change
+Name=F05_VS1
+Value=1;Present job(s) is(are) temporary
+Value=2;Fear of loosing the present job(s)
+Value=3;To work more hours paid at your current rate
+Value=4;To have a higher pay per hour/earn more
+Value=5;To work less hours with a reduction in pay
+Value=6;To use better your qualifications/skills
+Value=7;To have more convenient working time, shorter commuting time
+Value=8;To improve working conditions
+Value=9;Other reason
+
+[Item]
+Label=Other reason(Specify)
+Name=F05A
+Start=22
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[Item]
+Label=Sought another job in the last week
+Name=F06
+Start=23
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Sought another job in the last week
+Name=F06_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Sought extra work in the last four weeks
+Name=F07
+Start=24
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Sought extra work in the last four weeks
+Name=F07_VS1
+Value=1;Yes
+Value=2;No
+
+[Record]
+Label=Income from Employment
+Name=G
+RecordTypeValue='8'
+RecordLen=203
+
+[Item]
+Label=Total earnings in the last payment
+Name=G01
+Start=16
+Len=15
+DataType=Numeric
+
+[ValueSet]
+Label=Total earnings in the last payment
+Name=G01_VS1
+Value=1;Paid in Cash
+Value=2;Paid in kind only
+Value=3;Do Not Know
+Value=4;Refused
+Value=5;New job
+Value=6;Not paid
+
+[Item]
+Label=Amount in MK
+Name=G01A
+Start=31
+Len=15
+DataType=Numeric
+
+[Item]
+Label=Before or after any deductions
+Name=G02
+Start=46
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Before or after any deductions
+Name=G02_VS1
+Value=1;Before Deduction
+Value=2;After Deduction
+Value=3;No deduction  Made
+Value=4;Do Not Know
+
+[Item]
+Label=Amount deducted for taxes
+Name=G03
+Start=47
+Len=15
+DataType=Numeric
+
+[ValueSet]
+Label=Amount deducted for taxes
+Name=G03_VS1
+Value=1;Paid in cash
+Value=2;Dont`t know
+Value=3;Refused
+
+[Item]
+Label=Amount in MK
+Name=G03A
+Start=62
+Len=15
+DataType=Numeric
+
+[Item]
+Label=Amount earned in the last pay
+Name=G04
+Start=77
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Amount earned in the last pay
+Name=G04_VS1
+Value=1;Less than [MK8, 242]
+Value=2;[MK8,243] to less than [MK25,00]
+Value=3;[MK25,00] to less than [MK 45,00]
+Value=4;[MK45,000]  or more
+
+[Item]
+Label=The period covered by the payment
+Name=G05
+Start=78
+Len=3
+DataType=Numeric
+
+[ValueSet]
+Label=The period covered by the payment
+Name=G05_VS1
+Value=1;One Day
+Value=2;One week
+Value=3;Two weeks
+Value=4;One Month
+Value=9;Other
+
+[Item]
+Label=Other (Specify)
+Name=G05A
+Start=81
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Hours worked in the main job
+Name=G06
+Start=101
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Reasons for self-employment
+Name=G07
+Start=104
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Reasons for self-employment
+Name=G07_VS1
+Value=1;Could not find a wage or salary job
+Value=2;Greater independence
+Value=3;More flexible hours of work
+Value=4;Higher income level
+Value=5;Required by the family
+Value=6;Lost wage/salary job
+Value=7;Lacks qualifications/skills for wage/salary job
+Value=8;Inherited
+Value=9;Other reason
+
+[Item]
+Label=Other reason (Specify)
+Name=G07A
+Start=106
+Len=35
+DataType=Alpha
+
+[Item]
+Label=Main source of funding
+Name=G08
+Start=141
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Main source of funding
+Name=G08_VS1
+Value=1;No money required
+Value=2;Own savings
+Value=3;Money from family or friends
+Value=4;Loan from microfinance institutions(including cooperative, e.g FINCA)
+Value=5;Loan from bank
+Value=6;Money from an informal financial operator(Katapila, Chipeleganyo, money lender, pawn shop, savings collector)
+Value=7;Loan/assistance from government institution
+Value=8;Loan/assistance from NGO, donor project, etc
+Value=9;Remittances from abroad
+
+[Item]
+Label=Ways to cover expenses for capita
+Name=G09
+Start=142
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Ways to cover expenses for capita
+Name=G09_VS1
+Value=1;No money required
+Value=2;Money from family or friends
+Value=3;Loan from a bank
+Value=4;Loan from Microfinance institutions (including cooperative)
+Value=5;Money from informal financial operator(money lenders, pawn shops, 'chipeleganyo' (ROSCAs), Savings collectors)
+Value=6;Loan/Assistance from government institution
+Value=7;Loan/Assistance from NGO, donor  project, etc
+Value=8;Credit from customer/midddlemen,agent/supplier
+
+[Item]
+Label=Total sales last month
+Name=G10
+Start=143
+Len=15
+DataType=Numeric
+
+[Item]
+Label=Expenditure on business last month
+Name=G11
+Start=158
+Len=15
+DataType=Numeric
+
+[Item]
+Label=Net profit last month
+Name=G12
+Start=173
+Len=15
+DataType=Numeric
+
+[Item]
+Label=Any product from main activity for household use
+Name=G13
+Start=188
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Any product from main activity for household use
+Name=G13_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=How much would the products cost
+Name=G14
+Start=189
+Len=15
+DataType=Numeric
+
+[Record]
+Label=Unemployed/Persons not in Labour Force
+Name=UNEMPLOYED_PERSONS_NOT_IN_LABOUR_FORCE
+RecordTypeValue='9'
+RecordLen=227
+
+[Item]
+Label=Looked for a job in the last 4 weeks
+Name=H01A
+Start=16
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Looked for a job in the last 4 weeks
+Name=H01A_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Attempts to start a business in the last 4 weeks
+Name=H01B
+Start=17
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Attempts to start a business in the last 4 weeks
+Name=H01B_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=What has been done to look for work or start business
+Name=H02
+Start=18
+Len=11
+DataType=Alpha
+
+[ValueSet]
+Label=What has been done to look for work or start business
+Name=H02_VS1
+Value='A          ';Registered at an employment center
+Value='B          ';Placed/answered job advertisement
+Value='C          ';Inquired directly at factories, farms, amrkets, shops or other workplaces
+Value='D          ';Took a test interview
+Value='E          ';Asked friends, relatives, acquantances
+Value='F          ';Waited on the street to be recruited for casual work
+Value='G          ';Sought financial assistance to look for work or start a business
+Value='H          ';Looked for land, building, equipment, machinery to start own business or farming
+Value='I          ';Applied for permit or licence to start a business
+Value='Z          ';Other
+Value='X          ';No method
+
+[Item]
+Label=Other(Specify)
+Name=OTHER_SPECIFY
+Start=29
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Was this because you already found a job
+Name=H03A
+Start=59
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Was this because you already found a job
+Name=H03A_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Was it that all steps have been undertaken to start business at later date
+Name=H03B
+Start=60
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Was it that all steps have been undertaken to start business at later date
+Name=H03B_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Would you work given an opportunity in the last week
+Name=H04
+Start=61
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Would you work given an opportunity in the last week
+Name=H04_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Reason for not seeking work or start business in the last 4 weeks
+Name=H05
+Start=62
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Reason for not seeking work or start business in the last 4 weeks
+Name=H05_VS1
+Value=1;Waiting for the resultd of a vacancy, competetion or an interview
+Value=2;Awaiting the season for work
+Value=3;Attended school or training courses
+Value=4;Family responsibilities or housework
+Value=5;Pregnancy
+Value=6;Illness, injury or disability
+Value=7;Does not know how or where to look for work
+Value=8;Unable to find work for his/her skils
+Value=9;Had looked for jobs(s) before but had not found any
+Value=10;Too young or too old find a job
+Value=11;No jobs available in the area/district
+Value=12;No money to start business
+Value=99;Other reason
+
+[Item]
+Label=Other reason (Specify)
+Name=H05B
+Start=64
+Len=40
+DataType=Alpha
+
+[Item]
+Label=Any attempts to look for work or start business in last 12 months
+Name=H06
+Start=104
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Any attempts to look for work or start business in last 12 months
+Name=H06_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=How long without work or business
+Name=H07
+Start=105
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=How long without work or business
+Name=H07_VS1
+Value=1;Less than 3 months
+Value=2;3 months to less than 6 months
+Value=3;6 months to less than 1 year
+Value=4;1 year to less than 3 years
+Value=5;3 years to less than 5 years
+Value=6;5 years or more
+Value=7;Don't know
+
+[Item]
+Label=Would you have started work if a job was offered
+Name=H08A
+Start=106
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Would you have started work if a job was offered
+Name=H08A_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Would you have started work if a business opportunity was offered
+Name=H08B
+Start=107
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Would you have started work if a business opportunity was offered
+Name=H08B_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Main reasons for not working last week
+Name=H09
+Start=108
+Len=15
+DataType=Numeric
+
+[ValueSet]
+Label=Main reasons for not working last week
+Name=H09_VS1
+Value=1;In school or training
+Value=2;Family responsibilities or house work
+Value=3;Pregnancy
+Value=4;Illness, injury or disability
+Value=5;Retired or too old for work
+Value=6;Too young to work
+Value=7;No desire to work
+Value=8;Off-season
+Value=9;Other
+
+[Item]
+Label=Specify other reason
+Name=H09B
+Start=123
+Len=45
+DataType=Alpha
+
+[Item]
+Label=Main reason for not being available for work last week
+Name=H10
+Start=168
+Len=15
+DataType=Numeric
+
+[ValueSet]
+Label=Main reason for not being available for work last week
+Name=H10_VS1
+Value=1;In school or training
+Value=2;Family responsibilities or house work
+Value=3;Pregnancy
+Value=4;Illness, injury or disability
+Value=5;Retired or too old for work
+Value=6;Too young to work
+Value=7;No desire to work
+Value=8;Off-season
+Value=9;Other
+
+[Item]
+Label=Specify other reason
+Name=H10B
+Start=183
+Len=45
+DataType=Alpha
+
+[Record]
+Label=Previous Work Experience
+Name=PREVIOUS_WORK_EXPERIENCE
+RecordTypeValue='A'
+RecordLen=432
+
+[Item]
+Label=Any other work apart form the main and secondary activities
+Name=I01
+Start=16
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Any other work apart form the main and secondary activities
+Name=I01_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Reason for stopping work in the last job/activity
+Name=I02
+Start=17
+Len=15
+DataType=Numeric
+
+[ValueSet]
+Label=Reason for stopping work in the last job/activity
+Name=I02_VS1
+Value=1;Temporary job ended
+Value=2;End of season
+Value=3;Dismisal
+Value=4;Staff reduction
+Value=5;Business/farm/instituition close down
+Value=6;Changed residence/displaced
+Value=7;Started school, studies or training
+Value=8;Family/community responsibilities
+Value=9;Pregnancy
+Value=10;Illness/disability
+Value=11;Resignantion for other reasons
+Value=12;Retirement
+Value=99;Other
+
+[Item]
+Label=Specify reason for stopping work in last job/activity
+Name=I02B
+Start=32
+Len=45
+DataType=Alpha
+
+[Item]
+Label=How long has it been since last job
+Name=I03
+Start=77
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=How long has it been since last job
+Name=I03_VS1
+Value=1;Less than 3 months ago
+Value=2;3 months to less than 6 months ago
+Value=3;6 months to less than 1 year ago
+
+[Item]
+Label=What kind of activity was carried out where you last worked
+Name=I04
+Start=78
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Main service or good produced at that work olace
+Name=I05
+Start=128
+Len=55
+DataType=Alpha
+
+[Item]
+Label=Kind of work done in the last job
+Name=I06
+Start=183
+Len=55
+DataType=Alpha
+
+[Item]
+Label=Main tasks or duties in this week
+Name=I07
+Start=238
+Len=55
+DataType=Alpha
+
+[Item]
+Label=Status in your last job
+Name=I08
+Start=293
+Len=15
+DataType=Numeric
+
+[ValueSet]
+Label=Status in your last job
+Name=I08_VS1
+Value=1;Employee(working for someone else for pay in cash or in kind)
+Value=2;Employer(employing one or more employees)
+Value=3;Own-account worker(not employing any employee)
+Value=4;Helping without pay in the business or farm of another household/family member
+Value=5;Member of a producers' cooperative
+Value=6;Other
+
+[Item]
+Label=Specify other status in your last job
+Name=I08B
+Start=308
+Len=55
+DataType=Alpha
+
+[Item]
+Label=What sector did you work
+Name=I09
+Start=363
+Len=15
+DataType=Numeric
+
+[ValueSet]
+Label=What sector did you work
+Name=I09_VS1
+Value=1;Government Instituition
+Value=2;Parastatal enterprise
+Value=3;NGO/ non-profit organisation/ mission
+Value=4;Private company/ instituition
+Value=5;Private business
+Value=6;Private farm
+Value=7;Private household
+Value=8;Public works programme
+Value=9;Embassy, international organization
+Value=99;Other(specify)
+
+[Item]
+Label=Specify other sector you did your work
+Name=I09B
+Start=378
+Len=55
+DataType=Alpha
+
+[Record]
+Label=Usual Activity
+Name=USUAL_ACTIVITY
+RecordTypeValue='B'
+RecordLen=58
+
+[Item]
+Label=Was work done all the time or there was free time in the last 12 months
+Name=J01
+Start=16
+Len=1
+DataType=Numeric
+Occurrences=12
+OccurrenceLabel=1,January
+OccurrenceLabel=2,February
+OccurrenceLabel=3,March
+OccurrenceLabel=4,April
+OccurrenceLabel=5,May
+OccurrenceLabel=6,June
+OccurrenceLabel=7,July
+OccurrenceLabel=8,August
+OccurrenceLabel=9,September
+OccurrenceLabel=10,October
+OccurrenceLabel=11,November
+OccurrenceLabel=12,December
+
+[ValueSet]
+Label=Was work done all the time or there was free time in the last 12 months
+Name=J01_VS1
+Value=1;Worked the whole month
+Value=2;Worked part-month, looked for work part-month
+Value=3;Worked part-month, inactive part-month
+Value=4;Looked for work whole month
+Value=5;Inactive the whole month
+Value=6;Inactive part month, looked for work part month
+
+[Item]
+Label=What was the main activity
+Name=J02
+Start=28
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=What was the main activity
+Name=J02_VS1
+Value=1;Same as current main job/ activity
+Value=2;Same as current secondary job/ activity
+Value=3;A different job/ activity
+
+[Item]
+Label=Sort of work done
+Name=J03
+Start=29
+Len=30
+DataType=Alpha
+
+[Record]
+Label=Basic Information
+Name=BASIC_INFORMATION
+RecordTypeValue='C'
+RecordLen=36
+
+[Item]
+Label=Date
+Name=DATE_INTV
+Start=16
+Len=10
+DataType=Numeric
+
+[Item]
+Label=Start time
+Name=START_TIME
+Start=26
+Len=4
+DataType=Numeric
+
+[Item]
+Label=End Time
+Name=END_TIME
+Start=30
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Main language of interview
+Name=MAIN_LAN
+Start=34
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Main language of interview
+Name=MAIN_LAN_VS1
+Value=1;English
+Value=2;Chichewa
+Value=3;Chitumbuka
+
+[Item]
+Label=Interview Result
+Name=INTERV_RES
+Start=35
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Interview Result
+Name=INTERV_RES_VS1
+Value=1;Completed
+Value=2;Partly completed
+Value=3;Not at home
+Value=4;Refused
+Value=5;Incapacitated
+Value=8;other reasons
+
+[Item]
+Label=How information was obtained
+Name=PROXY_RESP
+Start=36
+Len=1
+DataType=Numeric

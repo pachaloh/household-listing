@@ -1,0 +1,67 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Traditional Authorities Dictionary
+Name=TRADITIONAL_AUTHORITIES_DICT
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=A1AB1C58C99D0AFF30CA127E701E863EC364995BC1AD63EB86D695ADE54BBBBAB303FCD802DEC0F65EF74132D69DF7C5
+
+[Level]
+Label=Traditional Authorities Level
+Name=TRADITIONAL_AUTHORITIES_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Region Code
+Name=REGION_CODE
+Start=1
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=District Code
+Name=DISTRICT_CODE
+Start=2
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Ta Code
+Name=TA_CODE
+Start=4
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=Traditional Authorities Record
+Name=TRADITIONAL_AUTHORITIES_REC
+RecordTypeValue=''
+RecordLen=56
+
+[Item]
+Label=Region Ta
+Name=REGION_TA
+Start=6
+Len=7
+DataType=Alpha
+
+[Item]
+Label=District Name
+Name=DISTRICT_NAME
+Start=13
+Len=14
+DataType=Alpha
+
+[Item]
+Label=Ta Name
+Name=TA_NAME
+Start=27
+Len=30
+DataType=Alpha

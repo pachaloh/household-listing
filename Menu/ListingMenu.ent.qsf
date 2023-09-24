@@ -1,0 +1,109 @@
+﻿---
+fileType: Question Text
+version: CSPro 7.7
+languages:
+  - name: EN
+    label: English
+styles:
+  - name: Normal
+    className: normal
+    css: |
+      font-family: Arial;font-size: 16px;
+  - name: Instruction
+    className: instruction
+    css: |
+      font-family: Arial;font-size: 14px;color: #0000FF;
+  - name: Heading 1
+    className: heading1
+    css: |
+      font-family: Arial;font-size: 36px;
+  - name: Heading 2
+    className: heading2
+    css: |
+      font-family: Arial;font-size: 24px;
+  - name: Heading 3
+    className: heading3
+    css: |
+      font-family: Arial;font-size: 18px;
+questions:
+  - name: LISTINGMENU_DICT.TEAM_NO
+    conditions:
+      - questionText:
+          EN: |
+            <i><font color="#0000ff">Enter team number</font></i><p></p>
+  - name: LISTINGMENU_DICT.LOGIN
+    conditions:
+      - questionText:
+          EN: |
+            <i><font color="#0000ff">Select your account name</font></i><p></p>
+  - name: LISTINGMENU_DICT.PIN_CODE_CONFIRMATION
+    conditions:
+      - questionText:
+          EN: |
+            <p>You are logged in as&nbsp;<font color="#800040"><b>~~MANAGE_STAFF_NAME~~</b></font>.&nbsp;&nbsp;<br></p><p><br></p><p>Please enter your pin code.<br></p><p></p>
+  - name: LISTINGMENU_DICT.SUPERVISOR_ACCESS_PASSWORD
+    conditions:
+      - questionText:
+          EN: |
+            Please, enter supervisor password you received from control center supervisor.&nbsp;<p></p>
+  - name: LISTINGMENU_DICT.SUPERVISOR_NAME
+    conditions:
+      - questionText:
+          EN: |
+            Please, enter your full name.&nbsp;<p></p>
+  - name: LISTINGMENU_DICT.SUPERVISOR_PIN_CODE
+    conditions:
+      - questionText:
+          EN: |
+            <p>Please, create your pin code.&nbsp; &nbsp;</p><p>A pin code is a four digit number that enables you to log in the <span style="font-weight: bold;">2022 Labour Force Survey application</span>. It is recommended to choose a number which you can easly remember and the code should be kept secret.&nbsp;</p><p>&nbsp;</p><p></p>
+  - name: LISTINGMENU_DICT.ASSIGNMENT_SELECTION
+    conditions:
+      - questionText:
+          EN: |
+            <p>Select the area you want to work in now.&nbsp;<br></p><p></p>
+  - name: LISTINGMENU_DICT.XREGION
+    conditions:
+      - questionText:
+          EN: |
+            Select region of your assignment.&nbsp;<p></p>
+  - name: LISTINGMENU_DICT.XDISTRICT
+    conditions:
+      - questionText:
+          EN: |
+            Select district of your assignment in&nbsp;<font color="#800040"><b>~~XREGION~~</b></font>&nbsp;region.&nbsp;<p></p>
+  - name: LISTINGMENU_DICT.XTRADITIONAL_AUTHORITY
+    conditions:
+      - questionText:
+          EN: |
+            Select Traditional Authority of your assignment in&nbsp;<font color="#800040"><b>~~XTRADITIONAL_AUTHORITY~~</b></font>&nbsp;.&nbsp;<p></p>
+  - name: LISTINGMENU_DICT.SUPERVISOR_MENU
+    conditions:
+      - questionText:
+          EN: |
+            <p><br></p><p>Select applicable option.&nbsp;</p><p></p>
+  - name: LISTINGMENU_DICT.MANAGE_STAFF
+    conditions:
+      - questionText:
+          EN: |
+            Select staff to manage or add new interviewer.&nbsp;<p></p>
+  - name: LISTINGMENU_DICT.MANAGE_STAFF_MEMBER
+    conditions:
+      - questionText:
+          EN: |
+            <p>You are managing information about&nbsp;<font color="#800040"><b>~~MANAGE_STAFF_NAME~~</b></font>.&nbsp;</p><p>&nbsp;</p><p>Select applicable option.&nbsp;</p><p></p>
+  - name: LISTINGMENU_DICT.MANAGE_STAFF_NAME
+    conditions:
+      - questionText:
+          EN: |
+            Enter/Edit the name of&nbsp;interviewer.&nbsp;<p></p>
+  - name: LISTINGMENU_DICT.INTERVIEWER_CODE
+    conditions:
+      - questionText:
+          EN: |
+            Select EA to assign<p></p>
+  - name: LISTINGMENU_DICT.INTERVIEWER_EA
+    conditions:
+      - questionText:
+          EN: |
+            Select EA to assign to&nbsp;<font color="#800040"><b>~~getlabel(INTERVIEWER_CODE,INTERVIEWER_CODE)~~</b></font>.&nbsp;<p></p>
+...

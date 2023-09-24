@@ -1,0 +1,73 @@
+// ------------------
+// ------------------ Functions to simplify creating dynamic value sets
+// ------------------
+
+numeric vsCtr;
+array vsCodes(500);
+array string vsStringCodes(500);
+array string vsLabels(500);
+
+// this function does not need to be called directly
+function EndVS()
+	vsCodes(vsCtr) = notappl;
+	vsStringCodes(vsCtr) = "";
+end;
+
+function StartVS()
+	vsCtr = 1;
+	EndVS();
+end;
+
+// this function does not need to be called directly
+function AddLabelToVS(string vsLabel)
+	vsLabels(vsCtr) = strip(vsLabel);
+	inc(vsCtr);
+	EndVS();
+end;
+
+function AddNumericVS(vsCode,string vsLabel)
+	vsCodes(vsCtr) = vsCode;
+	AddLabelToVS(vsLabel);
+end;
+
+function AddStringVS(string vsCode,string vsLabel)
+	vsStringCodes(vsCtr) = vsCode;
+	AddLabelToVS(vsLabel);
+end;
+
+function SortVS(startIndex)
+
+	// sort using a bubble sort, derived from https://en.wikipedia.org/wiki/Bubble_sort
+	// this will sort both the numeric and string value sets (even though you would only
+	// be doing this on one at any given time)
+	numeric keepSorting = 1;
+
+	do while keepSorting
+
+		keepSorting = 0;
+
+		do numeric ctr = startIndex + 1 while ctr < vsCtr
+
+			if vsLabels(ctr - 1) > vsLabels(ctr) then
+
+				string swapLabel = vsLabels(ctr - 1);
+				vsLabels(ctr - 1) = vsLabels(ctr);
+				vsLabels(ctr) = swapLabel;
+
+				numeric swapNumericCode = vsCodes(ctr - 1);
+				vsCodes(ctr - 1) = vsCodes(ctr);
+				vsCodes(ctr) = swapNumericCode;
+
+				string swapStringCode = vsStringCodes(ctr - 1);
+				vsStringCodes(ctr - 1) = vsStringCodes(ctr);
+				vsStringCodes(ctr) = swapStringCode;
+
+				keepSorting = 1;
+
+			endif;
+
+		enddo;
+
+	enddo;
+
+end;

@@ -1,0 +1,39 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=LISTINGMENU
+Name=LISTINGMENU
+AppType=DataEntry
+OperatorID=No
+CAPI=Yes
+CaseTree=Desktop
+CreateListing=No
+CreateLog=No
+ShowErrorMessageNumbers=No
+ComboBoxShowOnlyDiscreteValues=Yes
+ParadataCollection=AllEvents
+ParadataDeviceStateMinutes=5
+[External Dictionaries]
+File=..\Dicts\Staff.dcf
+File=..\Dicts\Districts.dcf
+File=..\ocv-form\ListingForm.dcf
+File=..\Dicts\ea_database.dcf
+File=..\Dicts\ta_database.dcf
+File=..\Dicts\ea_ssignments.dcf
+File=..\Dicts\selected_eas.dcf
+[AppCode]
+File=.\ListingMenu.ent.apc
+[Message]
+File=.\ListingMenu.ent.mgf
+[Help]
+File=.\ListingMenu.ent.qsf
+[Forms]
+File=.\ListingMenu.fmf
+[Dictionary Types]
+Dict-Type=..\Dicts\ListingMenu.dcf,Input,.\ListingMenu.fmf
+Dict-Type=..\Dicts\Staff.dcf,External
+Dict-Type=..\Dicts\Districts.dcf,External
+Dict-Type=..\ocv-form\ListingForm.dcf,External
+Dict-Type=..\Dicts\ea_database.dcf,External
+Dict-Type=..\Dicts\ta_database.dcf,External
+Dict-Type=..\Dicts\ea_ssignments.dcf,External
+Dict-Type=..\Dicts\selected_eas.dcf,External

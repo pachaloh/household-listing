@@ -1,0 +1,134 @@
+﻿
+PROC GLOBAL
+
+
+
+PROC HOUSEHOLDLFS_FF
+
+PROC EA_CODE
+
+preproc
+	
+	if sysparm("EA_CODE") <> ""  then
+		$ = sysparm("EA_CODE");
+		
+		//setproperty($,"Protected", "Yes");
+	endif;
+PROC GHINTID
+
+
+preproc
+	
+	if sysparm("GHINTID") <> ""  then
+		$ = sysparm("GHINTID");
+		
+		//setproperty($,"Protected", "Yes");
+	endif;
+PROC GHHHNO
+
+
+preproc
+	
+	if sysparm("GHHHNO") <> ""  then
+		$ = tonumber(sysparm("GHHHNO"));
+		
+		//setproperty($,"Protected", "Yes");
+	endif;
+PROC REGION
+
+	
+PROC SN_STRUCT
+
+preproc
+	
+	ask if MULT_HHS = 1;
+PROC HH_HEAD
+
+preproc
+	
+	ask if RES_STRUCT = 1;
+PROC POPULAR_NAME
+
+preproc
+	
+	ask if RES_STRUCT = 1;
+PROC UNDER_FIVE
+
+preproc
+	
+	ask if RES_STRUCT = 1;
+PROC DU_STATUS
+
+PROC HH_GPS_READING
+
+
+onfocus
+
+	PollGPS();
+
+	if IsCompleteGPSData() then
+		// Update value set
+		if getos() in 10,20 then
+			setvalueset(HH_GPS_READING, HH_GPS_READING_VS2);
+		else
+			setvalueset(HH_GPS_READING, HH_GPS_READING_VS4);
+		endif;
+
+		// Update CAPI Text
+		gps_data_status_capi_text = "collected";
+		gps_accuracy_status_capi_label = "GPS accuracy: ";
+		if IsDesiredAccuracy(HH_GPS_ACCURACY) then
+			gps_accuracy_status_capi_text = "good";
+
+		else
+			gps_accuracy_status_capi_text = "bad";
+		endif;
+
+		// Preselect option to keep data
+		$ = 2;
+
+	else
+		// Update value set
+		if getos() in 10,20 then
+			setvalueset(HH_GPS_READING, HH_GPS_READING_VS1);
+		else
+			setvalueset(HH_GPS_READING, HH_GPS_READING_VS3);
+		endif;
+
+		// Update CAPI Text
+		gps_data_status_capi_text = "not collected";
+		gps_accuracy_status_capi_label = "";
+		gps_accuracy_status_capi_text = "";
+		
+		
+	endif;
+
+postproc
+
+	// Handle user input
+	if $ = 1 then
+		// Collect GPS data
+		numeric result = TryPolledGPSData();
+		if not result then
+			// Polled GPS reading not used
+			TakeGPSReading();
+		endif;
+
+	elseif $ = 2 then
+		// Skip collecting GPS data, but keep GPS data
+		gps_reading_capi_text = "Take GPS reading?";
+
+	elseif $ = 3 then
+		// Skip collecting GPS data, and delete GPS data
+		if IsCompleteGPSData() then
+			warning("GPS data will be deleted.")
+				select("Confirm", continue, "Cancel", HH_GPS_READING);
+		endif;
+
+		DeleteGPSData();
+		gps_reading_capi_text = "Take GPS reading?";
+
+	else
+		warning("Unhandled value set option.");
+		reenter;
+	endif;

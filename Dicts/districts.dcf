@@ -1,0 +1,52 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Districts Dictionary
+Name=DISTRICTS_DICT
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=1F41CE3361136C74D392B778912F0888764FB45BEF1E4520B1143398523782FF
+
+[Level]
+Label=Districts Level
+Name=DISTRICTS_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Regcode
+Name=REGCODE
+Start=1
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Distrcode
+Name=DISTRCODE
+Start=2
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=Districts Record
+Name=DISTRICTS_REC
+RecordTypeValue=''
+RecordLen=24
+
+[Item]
+Label=Regionname
+Name=REGIONNAME
+Start=4
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Distrname
+Name=DISTRNAME
+Start=12
+Len=13
+DataType=Alpha

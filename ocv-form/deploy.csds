@@ -1,0 +1,26 @@
+{
+  "fileType": "Application Deployment Specification",
+  "version": "7.2",
+  "name": "ILOPB_Beta",
+  "description": "ILO Model LFS (beta)",
+  "files": [
+    {
+      "path": ".\\PopstanLFS.pff"
+    },
+    {
+      "path": ".\\PopstanLFS.ent"
+    }
+  ],
+  "dictionaries": [
+    {
+      "path": ".\\PopstanLFS.dcf",
+      "uploadForSync": true
+    }
+  ],
+  "deployment": {
+    "type": "LocalFolder",
+    "cswebUrl": "http",
+    "ftpUrl": "ftp:\/\/",
+    "localFolderPath": "..\\..\\..\\..\\..\\..\\ModelLFS_LocalDeploy"
+  }
+}

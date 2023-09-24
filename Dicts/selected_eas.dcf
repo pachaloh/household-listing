@@ -1,0 +1,75 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Assignments Selection Dictionary
+Name=SELECTED_EAS_DICT
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=391F630CBC0855686A7B2ACA37047F1DEA23BA4F77B3C178EF36E2A8BFE393DC482360497328471712452BA052CEC8F6
+
+[Level]
+Label=Assignments Selection Level
+Name=ASSIGNMENTS_SELECTION_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Region Code Assignment
+Name=REGION_CODE_ASSIGNMENT
+Start=1
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=District Code Assignment
+Name=DISTRICT_CODE_ASSIGNMENT
+Start=2
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Ta Code Assignment
+Name=TA_CODE_ASSIGNMENT
+Start=4
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=EA
+Name=ASSIGNMENTS_EA
+Start=6
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=Assignments Selection Record
+Name=ASSIGNMENTS_SELECTION_REC
+RecordTypeValue=''
+RecordLen=34
+
+[Item]
+Label=Region Ta Assignment
+Name=REGION_TA_ASSIGNMENT
+Start=9
+Len=5
+DataType=Alpha
+
+[Item]
+Label=District Name Assignment
+Name=DISTRICT_NAME_ASSIGNMENT
+Start=14
+Len=7
+DataType=Alpha
+
+[Item]
+Label=Ta Name Assignment
+Name=TA_NAME_ASSIGNMENT
+Start=21
+Len=14
+DataType=Alpha

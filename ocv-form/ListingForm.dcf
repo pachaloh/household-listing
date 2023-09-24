@@ -1,0 +1,382 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Lisingform
+Name=LISTINGFORM_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=338254FE3A5D77AEF95DEA6921C63EC88944360111D4954AE3772CF5C1382BB9
+
+[Languages]
+ENG=English
+
+[Level]
+Label=OCV Listing Form
+Name=LISTINGFORM_QUEST
+
+[IdItems]
+
+[Item]
+Label=EA Code
+Name=EA_CODE
+Start=2
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Interviewer ID
+Name=GHINTID
+Start=10
+Len=36
+DataType=Alpha
+
+[Item]
+Label=Serial household number
+Name=GHHHNO
+Start=46
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=Household and Geographic Identifiers
+Name=GH_REC
+RecordTypeValue='G'
+RecordLen=108
+
+[Item]
+Label=Type of area
+Name=GHAREA
+Start=49
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Type of area
+Name=GHAREA_EN
+Value=1;Urban
+Value=2;Peri-urban
+Value=3;Rural
+
+[Item]
+Label=Interview date
+Name=GHVFDT
+Start=50
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Interviewer Name
+Name=GHINTNAME
+Note=Added only for the beta testing purpose.
+Start=58
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Adult member availability
+Name=DEM_STR
+Start=108
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Adult member availability
+Name=DEM_STR_EN
+Value=1;YES
+Value=2;NO
+
+[Record]
+Label=Household Details
+Name=DETAILS_OF_HH
+RecordTypeValue='D'
+RecordLen=264
+
+[Item]
+Label=Multiple households in structure
+Name=MULT_HHS
+Start=49
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Multiple households in structure
+Name=MULT_HHS_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Serial number of structure
+Name=SN_STRUCT
+Start=50
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Description of structure
+Name=DESC_STRUCT
+Start=52
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Residual structure
+Name=RES_STRUCT
+Start=102
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Residual structure
+Name=RES_STRUCT_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Name of household head
+Name=HH_HEAD
+Start=103
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Popular name of hh head
+Name=POPULAR_NAME
+Start=153
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Children under 5 in hh
+Name=UNDER_FIVE
+Start=203
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Children under 5 in hh
+Name=UNDER_FIVE_VS1
+Value=1;Yes
+Value=2;No
+
+[Item]
+Label=Status of dwelling
+Name=DU_STATUS
+Start=204
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Status of dwelling
+Name=DU_STATUS_VS1
+Value=1;Occupied
+Value=2;Vacant
+Value=3;Temporary absent
+Value=6;Other
+
+[Item]
+Label=Observations
+Name=HH_OBSERVATIONS
+Start=205
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Household label
+Name=HH_LABEL
+Start=255
+Len=10
+DataType=Alpha
+
+[Record]
+Label=Metadata Record
+Name=METADATA_RECORD
+RecordTypeValue='X'
+RecordLen=167
+
+[Item]
+Label=Region
+Name=REGION
+Note=All the geo ids are hided and prefilled to facilitate the beta testing. In the furture release, these will be handled
+Note=by the menu program.
+Start=49
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=District
+Name=DISTRICT
+Start=50
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Supervisor Code
+Name=HH_SUPERVISOR_CODE
+Start=52
+Len=36
+DataType=Alpha
+
+[Item]
+Label=Start Interview Time
+Name=HH_START_INTERVIEW_TIME
+Start=88
+Len=10
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=End Interview Time
+Name=HH_END_INTERVIEW_TIME
+Start=98
+Len=10
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Program Publish Date
+Name=HH_PROGRAM_PUBLISH_DATE
+Start=108
+Len=14
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Interview Introduction
+Name=HH_INTRODUCTION
+Start=122
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Interview Introduction
+Name=HH_INTRODUCTION_VS_BEGIN
+Value=1;Begin interview
+
+[ValueSet]
+Label=Interview Introduction
+Name=HH_INTRODUCTION_VS_PARTIAL
+Value=2;Continue interview where previously left off
+Value=1;Continue interview from first question
+
+[ValueSet]
+Label=Interview Introduction
+Name=HH_INTRODUCTION_VS_MODIFY
+Value=1;Modify questionnaire
+
+[Item]
+Label=Interview Conclusion
+Name=HH_CONCLUSION
+Start=123
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Interview Conclusion (Households)
+Name=HH_REGULAR_CONCLUSION_VS
+Value=1;Conclude interview
+Value=2;Review population section
+Value=3;Review dwelling characteristics section
+Value=4;Review emigration section
+
+[Item]
+Label=GPS Reading
+Name=HH_GPS_READING
+Start=124
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=GPS Reading
+Name=HH_GPS_READING_VS1
+Value=1;Yes
+Value=2;No
+
+[ValueSet]
+Label=GPS Reading
+Name=HH_GPS_READING_VS2
+Value=1;Yes
+Value=2;No, but keep previously collected GPS data.
+Value=3;No, but delete previously collected GPS data.
+
+[ValueSet]
+Label=GPS Reading
+Name=HH_GPS_READING_VS3
+Value=3;No
+
+[ValueSet]
+Label=GPS Reading
+Name=HH_GPS_READING_VS4
+Value=2;No, but keep previously collected GPS data.
+Value=3;No, but delete previously collected GPS data.
+
+[Item]
+Label=GPS Latitude
+Name=HH_LATITUDE
+Start=125
+Len=10
+DataType=Numeric
+Decimal=6
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=GPS Longitude
+Name=HH_LONGITUDE
+Start=135
+Len=11
+DataType=Numeric
+Decimal=6
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=GPS Altitude
+Name=HH_ALTITUDE
+Start=146
+Len=7
+DataType=Numeric
+Decimal=1
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=GPS Accuracy
+Name=HH_GPS_ACCURACY
+Start=153
+Len=6
+DataType=Numeric
+Decimal=1
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=GPS Satellites
+Name=HH_GPS_SAT
+Start=159
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=GPS Readtime
+Name=HH_GPS_READTIME
+Start=162
+Len=6
+DataType=Numeric
+ZeroFill=Yes

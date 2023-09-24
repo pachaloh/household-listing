@@ -1,0 +1,75 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=EA Database Dictionary
+Name=EA_DATABASE_DICT
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=46A72A3C246578C287089461BD59714C56E3D1A5C63607A167BA027AC57E3C66
+
+[Level]
+Label=Ea Level
+Name=EA_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Region Code Ea
+Name=REGION_CODE_EA
+Start=1
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=District Code Ea
+Name=DISTRICT_CODE_EA
+Start=2
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Ta Code Ea
+Name=TA_CODE_EA
+Start=4
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Ea Number
+Name=EA_NUMBER
+Start=6
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=Ea Record
+Name=EA_REC
+RecordTypeValue=''
+RecordLen=59
+
+[Item]
+Label=Region Ea
+Name=REGION_EA
+Start=9
+Len=7
+DataType=Alpha
+
+[Item]
+Label=District Name Ea
+Name=DISTRICT_NAME_EA
+Start=16
+Len=14
+DataType=Alpha
+
+[Item]
+Label=Ta Name Ea
+Name=TA_NAME_EA
+Start=30
+Len=30
+DataType=Alpha

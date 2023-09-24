@@ -1,0 +1,89 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=EA Assignments Dictionary
+Name=EA_ASSIGNMENTS_DICT
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=1E91FA185DB6E257CC7B3A3ADF2A8A233022CF7285F45AD54B12C6E6C9970288
+
+[Level]
+Label=Ea Assignments Level
+Name=EA_ASSIGNMENTS_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Region Code Ea Assignments
+Name=REGION_CODE_EA_ASSIGNMENTS
+Start=1
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=District Code Ea Assignments
+Name=DISTRICT_CODE_EA_ASSIGNMENTS
+Start=2
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Ta Code Ea Assignments
+Name=TA_CODE_EA_ASSIGNMENTS
+Start=4
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Ea Number Assignments
+Name=EA_NUMBER_ASSIGNMENTS
+Start=6
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Ea Staff Id
+Name=EA_STAFF_ID
+Start=9
+Len=36
+DataType=Alpha
+
+[Record]
+Label=Ea Assignments Record
+Name=EA_ASSIGNMENTS_REC
+RecordTypeValue=''
+RecordLen=131
+
+[Item]
+Label=Region Ea Assignments
+Name=REGION_EA_ASSIGNMENTS
+Start=45
+Len=7
+DataType=Alpha
+
+[Item]
+Label=District Name Ea Assignments
+Name=DISTRICT_NAME_EA_ASSIGNMENTS
+Start=52
+Len=14
+DataType=Alpha
+
+[Item]
+Label=Ta Name Ea Assignments
+Name=TA_NAME_EA_ASSIGNMENTS
+Start=66
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Assignment Staff Name
+Name=ASSIGNMENT_STAFF_NAME
+Start=96
+Len=36
+DataType=Alpha

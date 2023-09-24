@@ -1,0 +1,1039 @@
+﻿PROC GLOBAL
+
+
+string LoginSettingKey = "Login";
+string AssignmentSettingKey = "Assignment";
+
+string SegmentAlphabet = "BCDEFGHIJKLMN";
+numeric staff_creation_number;
+
+string CapiPublishDate;
+
+//file tempFile;
+
+string CapiStaffName;
+
+string CapiManageStaffName;				// various names of interviewers used throughout the system
+
+{
+
+function EA_completionreport()
+	string reportFilename = maketext("%sreport.txt", pathname(Application));
+	setfile(tempFile, reportFilename, create);	
+	
+	filewrite(tempFile, "Progress Report");
+	filewrite(tempFile, "-----------------");
+	filewrite(tempFile, "");
+	
+	filewrite(tempFile, "TA code: %s",ASSIGNMENT_SELECTION);
+	
+	
+	
+	list string ta_eas;
+	
+	//Keep EA numbers for a TA
+	forcase EA_DATABASE_DICT where REGION_CODE_EA = tonumber(ASSIGNMENT_SELECTION[1:1]) and DISTRICT_CODE_EA = tonumber(ASSIGNMENT_SELECTION[2:2]) and TA_CODE_EA = tonumber(ASSIGNMENT_SELECTION[4:2]) do
+		ta_eas.add(edit("999",EA_NUMBER));
+	endfor;
+	
+	//ta_eas.show();			
+		
+	do numeric ctr = 1 while ctr <= ta_eas.length()
+		
+		numeric hh_cases   = 0;	//To capture number of listed households
+		numeric hh_members = 0;	//To capture total number of members in the listed households
+		numeric hh_child   = 0;	//To capture number of children 5 to 17 in the listed households
+		string closed_response;	//To capture if cluster is closed
+	
+		filewrite(tempFile, "");
+		filewrite(tempFile, "");
+		filewrite(tempFile, "EA Number: %s",ta_eas(ctr));
+		filewrite(tempFile, "-----------------------------------");
+		filewrite(tempFile, "Interviwer      	No.HHs   Members Children Status");
+		
+		//Loop through team members whose supervisor is same
+		forcase STAFF_DICT where LOGIN = SUPERVISOR_STAFF_CODE do
+				
+				//Reset values for interviewer
+				hh_cases   = 0;  
+				hh_members = 0;
+				hh_child   = 0;
+				closed_response = "Open";
+				
+			//Case ID for household listed
+			string caseIDlisting = maketext("%v%v%v",strip(ASSIGNMENT_SELECTION),ta_eas(ctr),STAFF_ID);
+
+			//Load case
+			if loadcase(LABOURF_FORCE_LISTING_DICT,caseIDlisting) then
+				hh_cases   = max(STRUCTURE_NUMBER where INTERVIEWER_ID_CODE = STAFF_ID);
+				hh_members = sum(HH_MEMBERS_TOTAL where INTERVIEWER_ID_CODE = STAFF_ID);
+				hh_child   = sum(HH_MEMBERS_AGE_5_17 where INTERVIEWER_ID_CODE = STAFF_ID);
+				
+				if hh_cases > 0 then
+				
+					if CLOSE_EA(hh_cases) = 1 then
+						closed_response = "Closed";
+					else
+						closed_response = "Open";
+					endif;
+				else
+					closed_response = "Open";
+				endif;
+				
+			endif;
+
+			//filewrite(tempFile, "No.HHs  No.Members No.Child EA Closed");
+			filewrite(tempFile, "%-0.15s: %7d %9d %7d %6s",STAFF_NAME,hh_cases,hh_members,hh_child,closed_response);
+
+		endfor;
+		
+	enddo;
+	
+
+	close(tempFile);
+	if getos() = 20 then
+// Android - use "view:"
+	execsystem(maketext("view:%s", reportFilename));
+	elseif getos() = 10 then
+// Windows - use "explorer.exe <filename>"
+	execsystem(maketext("explorer.exe %s", reportFilename));
+	endif;
+end;
+
+}
+
+function HH_completionreport()
+
+end;
+
+
+
+
+function syncWithSupervisor() //Funtion to transfer from interviewer to supervisor
+
+	if syncconnect(bluetooth) then
+		
+		// Sync main data file.
+		if syncdata(BOTH, DISTRICTS_DICT) = 0 then 		//Household Cases
+			errmsg("Failed to transfer district data");
+		endif;
+		
+		if syncdata(BOTH, TRADITIONAL_AUTHORITIES_DICT) = 0 then 	//Individual child Cases
+			errmsg("Failed to transfer TA data");
+		endif;
+		
+		
+		if syncdata(BOTH, STAFF_DICT) = 0 then						//Teams Cases
+			errmsg("Failed to transfer staff data");
+		endif;
+		
+		if syncdata(BOTH, EA_ASSIGNMENTS_DICT) = 0 then				//Clusters Cases
+			errmsg("Failed to transfer assignemnts data");
+		endif;
+{		
+		if syncdata(BOTH, LABOURF_FORCE_LISTING_DICT) = 0 then		//Work (Household) Assignment Cases
+			errmsg("Failed to transfer Assignments data");
+		endif;
+}		
+		
+		syncdisconnect();
+	endif;
+end;
+
+
+
+function syncWithCentralOffice()		//Function for data transfer betwen supervisor and Central Office
+// Connect to the webserver
+	if syncconnect(Dropbox) then
+	
+		// Sync cases file with server
+		//syncdata(PUT, LABOURF_FORCE_LISTING_DICT);			//Household listed cases
+		syncdata(PUT, STAFF_DICT);							//Household listed cases
+		syncdata(GET, DISTRICTS_DICT);						//District Cases
+		syncdata(GET, TRADITIONAL_AUTHORITIES_DICT);		//TA Cases
+		syncdata(GET, EA_DATABASE_DICT);								//EA Cases
+		syncdata(PUT, SELECTED_EAS_DICT);			//Area of work cases
+		syncdata(PUT, EA_ASSIGNMENTS_DICT);					//EA assignments
+
+	syncdisconnect();
+endif;
+end;
+
+
+function syncWithInterviewer()
+	// Run the Bluetooth server to receive data from interviewer.
+	syncserver(Bluetooth);
+end;
+
+
+
+//To capture name of TA for each assignment
+function string eaTaAssignment()
+
+	forcase TRADITIONAL_AUTHORITIES_DICT where REGION_CODE = tonumber(ASSIGNMENT_SELECTION[1:1]) and DISTRICT_CODE = tonumber(ASSIGNMENT_SELECTION[2:2]) do
+		if TA_CODE = tonumber(ASSIGNMENT_SELECTION[4:3]) then
+			//errmsg("TA: %s",TA_NAME);
+			eaTaAssignment = TA_NAME;
+		endif;
+	endfor;
+
+end;
+
+
+function ValidatePINCode(code)
+
+	if code < 1000 then
+		errmsg("The PIN code must be four digits and cannot start with 0");
+		reenter;
+	endif;
+
+	if( errmsg("Confirm that %04d is the correct code",code)
+		select("Correct",continue,"Incorrect",continue) ) = 2 then
+		reenter;
+	endif;
+
+end;
+
+function string LookupStaffName(string code)
+
+	// if this staff member's information is already loaded, don't need
+	// to loadcase again
+	if STAFF_ID = code or loadcase(STAFF_DICT,code) then
+		LookupStaffName = strip(STAFF_NAME);
+
+	else
+		LookupStaffName = "<Invalid Staff>";
+
+	endif;
+
+end;
+
+function VerifyStaffNameIsUnique(string staffName,string ignoreStaffCode)
+
+	// check that no person, other than someone with code ignoreStaffCode, has
+	// the name in staffName
+	numeric nameIsUsed = countcases(STAFF_DICT where STAFF_ID <> ignoreStaffCode and STAFF_NAME = staffName);
+
+	if ignoreStaffCode <> "" then // load the staff entry that was in memory
+		loadcase(STAFF_DICT,ignoreStaffCode);
+	endif;
+
+	if nameIsUsed then
+		errmsg("The name %s is used by another staff member",strip(staffName));
+		reenter;
+	endif;
+
+end;
+
+function string LookupEAName(ea)
+	LookupEAName = maketext("EA%03d",ea);
+end;
+
+
+function launch_listing_form() 
+
+    // change the following filename to your desired output 
+    string pff_filename = path.concat(Application, "../ocv-form/ListingForm.pff"); 
+
+    file dynamic_pff; 
+    setfile(dynamic_pff, pff_filename, create); 
+
+    filewrite(dynamic_pff, "[Run Information]"); 
+    filewrite(dynamic_pff, "Version=CSPro 7.7"); 
+    filewrite(dynamic_pff, "AppType=Entry"); 
+
+    filewrite(dynamic_pff, "[DataEntryInit]"); 
+	filewrite(dynamic_pff, "Key=%s", INTERVIEW_MENU);
+	filewrite(dynamic_pff, "StartMode=Add");
+	filewrite(dynamic_pff,"Lock=CaseListing");
+	filewrite(dynamic_pff,"ShowInApplicationListing=Never");
+
+    filewrite(dynamic_pff, "[Files]"); 
+    filewrite(dynamic_pff, "Application=%v", "./ListingForm.ent"); 
+    filewrite(dynamic_pff, "InputData=%v", "../Data/ocv_listing_data.csdb"); 
+
+    filewrite(dynamic_pff, "[ExternalFiles]"); 
+    filewrite(dynamic_pff, "CLUSTERS_DICT=%v", "../Lookups/clusters.csdb"); 
+	
+    filewrite(dynamic_pff, "[Parameters]");
+	filewrite(dynamic_pff, "EA_CODE=%s", INTERVIEW_MENU[1:8]);			//EA code
+	filewrite(dynamic_pff, "GHHHNO=%s", INTERVIEW_MENU[45:3]); 			//Household number
+	filewrite(dynamic_pff, "GHINTID=%s", LOGIN); 						//Interviewer ID
+	filewrite(dynamic_pff, "GHINTNAME=%s", getlabel(LOGIN,LOGIN)); 		//Interviewer name
+//	filewrite(dynamic_pff, "HH_SUPERVISOR_CODE=%s", supervisor_name()); //Supervisor code
+    filewrite(dynamic_pff, "OnExit=%v", "../Menu/ListingMenu.pff"); 
+
+    close(dynamic_pff); 
+
+    execpff(filename(dynamic_pff), stop); 
+
+end; 
+
+
+
+
+
+
+{
+function syncwithsupervisor()
+if syncserver(Bluetooth,"..") = 0 then
+		errmsg("Failed to start Bluetooth server.");
+	endif;
+end;
+}
+
+
+function SyncDataWithInterviewer()
+
+	// Not meant to be a standalone sync. It does not call synconnect/syncdisconnect.
+	// There are multiple supervisors per TA, and supervisors should only have a single TA.
+	// If a supervisor is working in multiple TAs they will need to log into the other TA
+	// to work and sync.
+	numeric success = 1;
+
+	forcase STAFF_DICT where STAFF_ID = LOGIN or SUPERVISOR_STAFF_CODE = LOGIN do
+		
+		// Synchronize staff code for supervisor and their interviewers. Supervisor's staff code is sent, so supervisor
+		// is able to log onto their account using interviewer's device.
+		// Sync BOTH is used, because the supervisor and interview write to the staff data.
+		if success and not syncdata(BOTH, STAFF_DICT) then
+			errmsg("Failed to transfer interviewer's staff data. Transfer aborted.");
+			success = 0;
+			break;
+		endif;
+					
+	endfor;
+
+	// Create universe for supervisory area.
+	string universeStr = maketext("%v%v%v", REGION_CODE_ASSIGNMENT, DISTRICT_CODE_ASSIGNMENT, TA_CODE_ASSIGNMENT);
+
+	// Synchronize assignments in supervisory area.
+	// Sync BOTH is used, because the supervisor and interview write to the assignments data.
+	if success and syncdata(BOTH, EA_ASSIGNMENTS_DICT, universeStr) = 0 then
+		errmsg("Failed to transfer assignment data. Transfer aborted.");
+		success = 0;
+	endif;
+	
+	// Synchronize structures in supervisory area.
+	// Sync BOTH is used to distribute structures to all inteviewers which will increase redundancy.
+{	if success and syncdata(BOTH, STRUCTURES_DICT, universeStr) = 0 then
+		errmsg("Failed to transfer structures data. Transfer aborted.");
+		success = 0;
+	endif;
+
+	// Synchronize group quarters in supervisory area.
+	// Sync BOTH is used to distribute group quarters to all inteviewers which will increase redundancy.
+	if success and syncdata(BOTH, MPHC_GROUP_QUARTERS_DICT, universeStr) = 0 then
+		errmsg("Failed to transfer group quarters data. Transfer aborted.");
+		success = 0;
+	endif;
+}
+	// Synchronize households in supervisory area.
+	// Sync BOTH is used to distribute households to all inteviewers which will increase redundancy.
+{
+	if success and syncdata(BOTH, LABOURF_FORCE_LISTING_DICT, universeStr) = 0 then
+		errmsg("Failed to transfer household data. Transfer aborted.");
+		success = 0;
+	endif;
+}		
+	SyncDataWithInterviewer = success;
+
+end;
+
+function SyncWithInterviewer_adj()
+
+	numeric success = 1;
+
+	if syncconnect(Bluetooth) = 1 then
+
+		success = SyncDataWithInterviewer();
+
+		if success and syncfile(PUT, ".\ListingMenu.pff", ".\Menu\ListingMenu.pff") = 0 then
+			errmsg("Failed to transfer Menu.pff. Transfer aborted.");
+			success = 0;
+		endif;
+
+		if success and syncfile(PUT, ".\ListingMenu.pen", ".\Menu\Menu.pen") = 0 then
+			errmsg("Failed to transfer Menu.pen. Transfer aborted.");
+			success = 0;
+		endif;
+
+		if success and syncfile(PUT, "..\Application\Listing.pen", ".\Application\Listing.pen") = 0 then
+			errmsg("Failed to transfer Household.pen. Transfer aborted.");
+			success = 0;
+		endif;
+		
+	
+		{if success and syncfile(PUT, "..\GroupQuarters\GroupQuarters.pen", ".\GroupQuarters\GroupQuarters.pen") = 0 then
+			errmsg("Failed to transfer GroupQuarters.pen. Transfer aborted.");
+			success = 0;
+		endif;
+				
+		if success and syncfile(PUT, "..\Review\Review.pen", ".\Review\Review.pen") = 0 then
+			errmsg("Failed to transfer Review.pen. Transfer aborted.");
+			success = 0;
+		endif;
+		
+		if success and syncfile(PUT, "..\Structures\Structures.pen", ".\Structures\Structures.pen") = 0 then
+			errmsg("Failed to transfer Structures.pen. Transfer aborted.");
+			success = 0;
+		endif;
+		
+		if success and syncfile(PUT, "..\Utility\Utility.pff", ".\Utility\Utility.pff") = 0 then
+			errmsg("Failed to transfer Utility.pff. Transfer aborted.");
+			success = 0;
+		endif;
+		
+		if success and syncfile(PUT, "..\Utility\Utility.pen", ".\Utility\Utility.pen") = 0 then
+			errmsg("Failed to transfer Utility.pen. Transfer aborted.");
+			success = 0;
+		endif;}
+
+		// GEOCODE_FILE ---------------------
+{		close(MPHC_GEOCODES_DICT);
+
+		if success and syncfile(PUT, "..\Data\Geocodes.dat", ".\Data\Geocodes.dat") = 0 then
+			errmsg("Failed to transfer Geocodes.dat. Transfer aborted.");
+			success = 0;
+		endif;
+
+		open(MPHC_GEOCODES_DICT);
+
+		if success and syncfile(PUT, "..\Data\Villages.dat", ".\Data\Villages.dat") = 0 then
+			errmsg("Failed to transfer Villages.dat. Transfer aborted.");
+			success = 0;
+		endif;
+		// GEOCODE_FILE ---------------------
+
+		if syncdisconnect() = 0 then
+			errmsg("Failed to disconnect from Bluetooth server.");
+			success = 0;
+		endif;
+}
+	else
+		errmsg("Failed to connect to Bluetooth server.");
+		success = 0;
+
+	endif;
+
+	SyncWithInterviewer_adj = success;
+
+end;
+
+
+PROC LISTINGMENU_FF
+
+PROC TEAM_NO
+
+preproc
+	
+	if loadsetting("team_no") <> "" {and visualvalue(MCLUSTER) <> notappl} then
+		TEAM_NO = tonumber(loadsetting("team_no"));
+		noinput;
+	endif;
+
+
+	
+postproc
+	
+	savesetting("team_no", maketext("%v", TEAM_NO));
+PROC LOGIN
+
+preproc
+
+	if loadsetting("login") <> "" then
+		LOGIN = loadsetting("login");
+		noinput;
+	endif;
+
+
+onfocus
+
+	valueset string AddStringVS;
+
+	forcase STAFF_DICT where ROLE = 1 do
+		AddStringVS.add(maketext("%v-Supervisor",strip(STAFF_NAME)), STAFF_ID);
+	endfor;
+
+	forcase STAFF_DICT where ROLE <> 1 do
+		AddStringVS.add(STAFF_NAME, STAFF_ID);
+	endfor;
+
+	AddStringVS.add("Sync data with head office", "1");
+	AddStringVS.add("Sync data with supervisor", "2");
+	AddStringVS.add("Begin work as a supervisor", "3");
+
+	setvalueset(LOGIN,AddStringVS);
+
+postproc
+
+
+	//No more than one supervisor should belong to the same team
+	//If an entered team number already exists in the system
+	if locate(STAFF_DICT,startswith,edit("99",TEAM_NO)) and $ = "3" then
+		errmsg("No two supervisors can belong to the same team (%d)",TEAM_NO);
+		reenter;
+	endif;
+	
+
+
+
+savesetting("login", maketext("%v", LOGIN));
+
+//	loginFieldMovingForward = 0;
+
+	if LOGIN = "1" then
+//		SyncWithHQ(appSync);
+		reenter;
+
+	elseif LOGIN = "2" then
+		syncwithsupervisor();
+		reenter;
+
+	elseif LOGIN = "3" then
+		skip to SUPERVISOR_CREATION_FORM;
+
+	endif;
+
+
+
+
+PROC PIN_CODE_CONFIRMATION
+
+
+preproc
+
+	if loadsetting("pin_code") <> "" then
+		PIN_CODE_CONFIRMATION = tonumber(loadsetting("pin_code"));
+		noinput;
+	endif;
+
+{
+
+	setproperty(PIN_CODE_CONFIRMATION,"Protected","No");
+
+postproc
+
+	// creating a new PIN code
+	if PASSWORD = notappl then
+		ValidatePINCode(PIN_CODE_CONFIRMATION);
+
+		PASSWORD = PIN_CODE_CONFIRMATION;
+		DEVICE_ID = getdeviceid();
+		writecase(STAFF_DICT);
+
+	// validating an existing PIN code
+	elseif PIN_CODE_CONFIRMATION <> PASSWORD then
+		errmsg("Invalid PIN code");
+		reenter;
+
+	endif;
+	
+	
+	savesetting("pin_code", PIN_CODE_CONFIRMATION);
+	savesetting(LoginSettingKey,STAFF_ID);
+
+	setproperty(PIN_CODE_CONFIRMATION,"Protected","Yes");
+}
+	//skip ASSIGNMENT_CREATION_FORM;
+
+// clear the login
+{
+	LOGIN = "";
+	PIN_CODE_CONFIRMATION = notappl;
+}
+
+	numeric publishYYYYMMDD = int(publishdate() / 1000000);
+	numeric publishDD = publishYYYYMMDD % 100; // % = remainder (extract the last two digits)
+	numeric publishMM = int(publishYYYYMMDD / 100) % 100;
+	numeric publishYYYY = int(publishYYYYMMDD / 10000);
+	//CapiPublishDate = maketext("%d %s %d",publishDD,months(publishMM),publishYYYY);
+
+
+
+postproc
+
+
+	
+	//If password field is blank, prompt for a password
+	if loadcase(STAFF_DICT,TEAM_NO,LOGIN) and PASSWORD = notappl or PASSWORD = default then
+		PASSWORD = tonumber(prompt("Set your password",password));
+		
+		if not PASSWORD in 1000:9999 then
+			errmsg("Password must be 4-digit and not start with zero(0)");
+			reenter;
+		endif;
+		
+		if writecase(STAFF_DICT) then
+			errmsg("Password set! Keep it safe ");
+		endif;
+		
+	elseif loadcase(STAFF_DICT,TEAM_NO,LOGIN) and PIN_CODE_CONFIRMATION <> PASSWORD then
+		errmsg("Invalid password");
+		reenter;
+	endif;
+	
+	savesetting("pin_code", maketext("%v", PIN_CODE_CONFIRMATION));
+
+
+	
+	skip ASSIGNMENT_CREATION_FORM;
+PROC SUPERVISOR_ACCESS_PASSWORD
+
+preproc
+
+	// clear the values in case multiple supervisors setup accounts
+	SUPERVISOR_ACCESS_PASSWORD = notappl;
+	SUPERVISOR_NAME = "";
+	SUPERVISOR_PIN_CODE = notappl;
+
+postproc
+
+	if SUPERVISOR_ACCESS_PASSWORD <> 1357 then
+		errmsg("Invalid PIN. You cannot proceed as a supervisor.");
+		reenter;
+	endif;
+
+PROC SUPERVISOR_NAME
+
+
+	if SUPERVISOR_NAME = "" then
+		errmsg("You cannot enter a blank name.");
+		reenter;
+	endif;
+
+	VerifyStaffNameIsUnique(SUPERVISOR_NAME,"");
+	
+
+PROC SUPERVISOR_PIN_CODE
+
+
+	if countcases(STAFF_DICT where TEAM_ID = TEAM_NO and ROLE = 1) >= 1 then
+		errmsg("No two supervisors can exist in one team");
+		reenter LOGIN;
+	endif;
+
+
+ValidatePINCode(SUPERVISOR_PIN_CODE);
+
+	clear(STAFF_DICT);
+	
+	TEAM_ID  = TEAM_NO;
+	STAFF_ID = uuid();
+	STAFF_NAME = SUPERVISOR_NAME;
+	PASSWORD = SUPERVISOR_PIN_CODE;
+	ROLE = 1;
+	SUPERVISOR_STAFF_CODE = STAFF_ID;
+	SEX = notappl;
+
+	//SUPERVISOR_STAFF_CODE = "";
+	TIME_CREATED_ACCOUNT = timestamp();
+	setcaselabel(STAFF_DICT,strip(STAFF_NAME));
+	
+	STAFF_SEG = "Z";
+	DEVICE_ID = getdeviceid();
+	writecase(STAFF_DICT);
+
+	// set the login to the supervisor
+	LOGIN = SUPERVISOR_STAFF_CODE;
+	savesetting(LoginSettingKey,LOGIN);
+
+	CapiStaffName = LookupStaffName(LOGIN);
+	
+
+
+PROC ASSIGNMENT_SELECTION
+
+onfocus
+
+	valueset string AssignmentSel;
+
+	loadcase (STAFF_DICT, TEAM_NO, LOGIN);
+
+	if ROLE = 1  then
+		forcase SELECTED_EAS_DICT do
+			string AssignSelcode = maketext("%v%v%v", edit("9",REGION_CODE_ASSIGNMENT), edit("99",DISTRICT_CODE_ASSIGNMENT), edit("99",TA_CODE_ASSIGNMENT));
+			string AssignSelName = maketext("Supervise: %v/%v/%v", REGION_TA_ASSIGNMENT, DISTRICT_NAME_ASSIGNMENT, TA_NAME_ASSIGNMENT);
+
+			AssignmentSel.add(AssignSelName, AssignSelcode);
+
+		endfor;
+
+
+		AssignmentSel.add("Select area to supervise", "1");
+		//AssignmentSel.add("Update programs from head office", "2");
+		//AssignmentSel.add("Switch users", "2");
+
+	elseif ROLE = 2 then
+		//errmsg("My id: %s",LOGIN);
+
+		//staff_id = maketext();
+
+		forcase EA_ASSIGNMENTS_DICT where EA_STAFF_ID = LOGIN do
+			//errmsg("My id: %s,%s",STAFF_ID,LOGIN);
+			string AssignSelcode = maketext("%v%v%v%v", edit("9",REGION_CODE_EA_ASSIGNMENTS), edit("99",DISTRICT_CODE_EA_ASSIGNMENTS), edit("99",TA_CODE_EA_ASSIGNMENTS), edit("999",EA_NUMBER_ASSIGNMENTS));
+			string AssignSelName = maketext("Interview: %v / %v / %v/ %v", strip(REGION_EA_ASSIGNMENTS), strip(DISTRICT_NAME_EA_ASSIGNMENTS), strip(TA_NAME_EA_ASSIGNMENTS),maketext("EA%v",edit("999",EA_NUMBER_ASSIGNMENTS)));
+
+			AssignmentSel.add(AssignSelName, AssignSelcode);
+
+		endfor;
+
+{
+		AssignmentSel.add("Update programs from Supervisor", "4");
+		AssignmentSel.add("Switch users", "3");
+}
+	endif;
+	
+	if AssignmentSel.length() = 0 then
+		errmsg("Supervisor must assign you an EA first to work");
+		reenter LOGIN;
+	endif;
+
+	setvalueset($,AssignmentSel);
+
+
+postproc
+
+	if $ = "1" or $ = "2" or $ = "3" then
+	
+	elseif ROLE = 2 then
+		skip to INTERVIEW_MENU;
+	else
+		skip to SUPERVISOR_MENU;
+	endif;
+
+PROC XDISTRICT
+
+onfocus
+
+	valueset numeric District_vs;
+
+	forcase DISTRICTS_DICT where REGCODE = XREGION  do
+
+		//errmsg("district code %d District name %s", DISTRCODE, DISTRNAME);
+		District_vs.add(DISTRNAME,DISTRCODE);
+	endfor;
+
+	setvalueset($,District_vs);
+
+
+PROC XTRADITIONAL_AUTHORITY
+onfocus
+
+	valueset numeric T_A_STA_OR_TOWN_vs;
+
+	forcase TRADITIONAL_AUTHORITIES_DICT where REGION_CODE =  XREGION and DISTRICT_CODE = XDISTRICT do
+		T_A_STA_OR_TOWN_vs.add(TA_NAME, TA_CODE);
+	endfor;
+
+	setvalueset($,T_A_STA_OR_TOWN_vs);
+	
+	
+postproc
+	
+	REGION_CODE_ASSIGNMENT   = XREGION;
+	DISTRICT_CODE_ASSIGNMENT = XDISTRICT;
+	TA_CODE_ASSIGNMENT		 = XTRADITIONAL_AUTHORITY;
+	
+	REGION_TA_ASSIGNMENT 	 = getlabel(XREGION,XREGION);
+	DISTRICT_NAME_ASSIGNMENT = getlabel(XDISTRICT,XDISTRICT);
+	TA_NAME_ASSIGNMENT 		 = getlabel(XTRADITIONAL_AUTHORITY,XTRADITIONAL_AUTHORITY);
+	
+	writecase(SELECTED_EAS_DICT);
+	// show the newly saved assignment along with any other assignments the user might have
+	reenter ASSIGNMENT_SELECTION;
+PROC SUPERVISOR_MENU
+
+
+	if SUPERVISOR_MENU = 1 then
+		skip to MANAGE_STAFF;
+
+	elseif SUPERVISOR_MENU = 2 then
+		skip to EA_ASSIGNMENT_FORM;
+
+	elseif SUPERVISOR_MENU = 3 then
+		SyncWithInterviewer();
+		//SyncDataWithInterviewer();
+		reenter;
+		
+	elseif SUPERVISOR_MENU = 4 then
+		syncWithCentralOffice();
+		reenter;
+	
+	{elseif SUPERVISOR_MENU = 4 then
+		SyncWithHQ(fullSync);
+		reenter;
+
+	elseif SUPERVISOR_MENU = 5 then
+		skip to REVIEW_MENU;}
+
+	elseif SUPERVISOR_MENU = 6 then
+//		EA_completionreport();
+		reenter;
+
+	{elseif SUPERVISOR_MENU = 7 then
+		ShowHouseholdStatusByInterviewerReport();
+		reenter;
+
+	elseif SUPERVISOR_MENU = 8 then
+		SwitchAssignments();
+	}
+	elseif SUPERVISOR_MENU = 9 then
+		reenter LOGIN;
+		//SwitchUsers();
+
+	endif;
+
+
+PROC INTERVIEW_MENU
+
+onfocus
+
+
+	
+
+	valueset string hh_id;
+	numeric number_of_cases = countcases(LISTINGFORM_DICT) + 1;	
+	
+	hh_id.add("Add household",maketext("%v%v%v",ASSIGNMENT_SELECTION,LOGIN,edit("999",number_of_cases)));
+	
+	forcase LISTINGFORM_DICT do
+		hh_id.add(DESC_STRUCT,maketext("%v%v%v",ASSIGNMENT_SELECTION,GHINTID,GHHHNO));
+	endfor;
+	
+	setvalueset($,hh_id);
+
+
+postproc
+
+		if loadcase(STAFF_DICT, TEAM_NO, LOGIN) then
+		CapiStaffName =  STAFF_NAME;
+		endif;
+
+		launch_listing_form();
+
+PROC MANAGE_STAFF
+
+onfocus
+
+	valueset string MANAGE_STAFF_vs;
+
+	forcase STAFF_DICT where ROLE = 2 do
+		MANAGE_STAFF_vs.add(STAFF_NAME, STAFF_ID);
+	endfor;
+
+	MANAGE_STAFF_vs.add("Add interviewer","1");
+
+	setvalueset($,MANAGE_STAFF_vs);
+
+postproc
+
+	if MANAGE_STAFF = "1" then
+		skip to MANAGE_STAFF_NAME;
+		reenter;
+	endif;
+
+
+PROC MANAGE_STAFF_MEMBER
+
+	//Assign the selected staff (code) for deletition
+	if MANAGE_STAFF_MEMBER = 4 then
+		numeric delete_case = accept("Do you really want to delete %d", "Yes", "No");
+		if delete_case = 1 and delcase(STAFF_DICT) then
+			errmsg("Successfully deleted");
+		else
+			reenter;
+		endif;
+		
+		STAFF_ID = MANAGE_STAFF; 
+		delcase(STAFF_DICT);
+		{if delcase(STAFF_DICT) =1 then
+		errmsg ("Do you really want to delete %d");}
+		reenter MANAGE_STAFF;
+		
+	elseif MANAGE_STAFF_MEMBER = 5 then
+		reenter SUPERVISOR_MENU;
+		
+	endif;
+
+PROC MANAGE_STAFF_NAME
+
+onfocus
+
+	if MANAGE_STAFF = "1" then
+		MANAGE_STAFF_NAME = "";
+	endif;
+
+postproc
+
+	if MANAGE_STAFF_NAME = "" then
+		errmsg("You cannot enter a blank name.");
+		reenter;
+
+	elseif MANAGE_STAFF = "1" then
+
+		VerifyStaffNameIsUnique(MANAGE_STAFF_NAME,"");
+
+		
+		staff_creation_number = countcases(STAFF_DICT where LOGIN = SUPERVISOR_STAFF_CODE);
+
+		
+		// add a new interviewer
+		clear(STAFF_DICT);
+		
+		TEAM_ID  = TEAM_NO;
+		STAFF_ID = uuid();
+		STAFF_NAME = MANAGE_STAFF_NAME;
+		SUPERVISOR_STAFF_CODE = LOGIN;
+		TIME_CREATED_ACCOUNT = timestamp();
+		setcaselabel(STAFF_DICT,strip(STAFF_NAME));
+		ROLE = 2;
+		
+		STAFF_SEG = SegmentAlphabet[staff_creation_number:1];
+
+		writecase(STAFF_DICT);
+
+		errmsg("%s successfully added as an interviewer",LookupStaffName(STAFF_ID));
+
+		reenter MANAGE_STAFF;
+
+	else
+		// modify the name
+		string oldName = LookupStaffName(STAFF_ID);
+
+		if MANAGE_STAFF_NAME = oldName then
+			errmsg("The name is the same as before and has not been changed");
+
+		else
+			VerifyStaffNameIsUnique(MANAGE_STAFF_NAME,MANAGE_STAFF);
+
+			STAFF_NAME = MANAGE_STAFF_NAME;
+			setcaselabel(STAFF_DICT,strip(STAFF_NAME));
+			writecase(STAFF_DICT);
+
+			errmsg("%s successfully renamed to %s",oldName,LookupStaffName(STAFF_ID));
+
+		endif;
+
+		reenter MANAGE_STAFF_MEMBER;
+
+	endif;
+
+PROC INTERVIEWER_CODE
+
+onfocus 
+	
+	//Valueset to hold staff's name 
+	valueset string interviewer_vs;
+	
+	forcase STAFF_DICT where ROLE <> 1 do
+		interviewer_vs.add(STAFF_NAME,STAFF_ID);
+	endfor;
+	
+	//If no interviewer is added to the team
+	if interviewer_vs.length() = 0 then
+		errmsg("You have not yet assigned a member to your team");
+		reenter SUPERVISOR_MENU;
+	endif;
+	
+	setvalueset($,interviewer_vs);
+
+postproc
+
+	loadcase(STAFF_DICT,TEAM_NO, INTERVIEWER_CODE);
+
+	CapiManageStaffName = LookupStaffName(INTERVIEWER_CODE);
+
+	// check if the interviewer already has an assignment
+	numeric numberAssignmentsForInterviewer = countcases(STAFF_DICT
+		where STAFF_ID = INTERVIEWER_CODE and ROLE = 1);
+
+	if numberAssignmentsForInterviewer > 0 then
+		errmsg("%s already has %d assignment. Are you sure you want to add another?",
+			LookupStaffName(INTERVIEWER_CODE),numberAssignmentsForInterviewer)
+			select("Yes",continue,"No",INTERVIEWER_CODE);
+	endif;
+
+
+PROC INTERVIEWER_EA
+
+onfocus
+
+	valueset numeric interviwer_ea_vs;
+	string assignment_staff_details;
+	
+	//Loop through EAs for a sepecific TA
+	forcase EA_DATABASE_DICT where REGION_CODE_EA = tonumber(ASSIGNMENT_SELECTION[1:1]) and DISTRICT_CODE_EA = tonumber(ASSIGNMENT_SELECTION[2:2]) and TA_CODE_EA = tonumber(ASSIGNMENT_SELECTION[4:3])  do
+		
+		assignment_staff_details = "";
+		
+		//For each EA, check if it assigned and keep the staff assigned the EA
+		forcase EA_ASSIGNMENTS_DICT where REGION_CODE_EA_ASSIGNMENTS = tonumber(ASSIGNMENT_SELECTION[1:1]) and DISTRICT_CODE_EA_ASSIGNMENTS = tonumber(ASSIGNMENT_SELECTION[2:2]) and TA_CODE_EA_ASSIGNMENTS = tonumber(ASSIGNMENT_SELECTION[4:3])  do
+			
+			if EA_NUMBER = EA_NUMBER_ASSIGNMENTS then
+				assignment_staff_details = assignment_staff_details + ", " + strip(ASSIGNMENT_STAFF_NAME); //
+			endif;
+			
+		endfor;
+		
+		assignment_staff_details = maketext("",assignment_staff_details);
+		//errmsg("%s",assignment_staff_details);
+		
+		interviwer_ea_vs.add(maketext("EA%v%v",edit("999",EA_NUMBER),maketext("(%v)",assignment_staff_details)),EA_NUMBER);		
+		
+		
+		endfor;
+
+	setvalueset($,interviwer_ea_vs);
+
+postproc
+
+	numeric numberExistingAssignments;
+	
+		REGION_CODE_EA_ASSIGNMENTS 	 = tonumber(ASSIGNMENT_SELECTION[1:1]);
+		REGION_EA_ASSIGNMENTS 		 = getlabel(XREGION, tonumber(ASSIGNMENT_SELECTION[1:1]));
+		DISTRICT_CODE_EA_ASSIGNMENTS = tonumber(ASSIGNMENT_SELECTION[2:2]);
+		TA_CODE_EA_ASSIGNMENTS 		 = tonumber(ASSIGNMENT_SELECTION[4:3]);
+		EA_NUMBER_ASSIGNMENTS 		 = INTERVIEWER_EA;
+		EA_STAFF_ID 				 = INTERVIEWER_CODE;
+
+	if loadcase (STAFF_DICT, TEAM_NO, EA_STAFF_ID) then
+		ASSIGNMENT_STAFF_NAME = STAFF_NAME;
+	endif;
+
+
+	forcase DISTRICTS_DICT where REGCODE = tonumber(ASSIGNMENT_SELECTION[1:1]) do
+		if DISTRCODE = tonumber(ASSIGNMENT_SELECTION[2:2]) then
+			DISTRICT_NAME_EA_ASSIGNMENTS = DISTRNAME;
+		endif;
+	endfor;
+
+	{
+		forcase TRADITIONAL_AUTHORITIES_DICT where REGCODE = tonumber(ASSIGNMENT_SELECTION[1:1]) and DISTRICT_CODE = tonumber(ASSIGNMENT_SELECTION[2:2]) do
+			if TA_CODE = tonumber(ASSIGNMENT_SELECTION[4:3]) then
+				errmsg("TA: %s",TA_NAME);
+				TA_NAME_EA_ASSIGNMENTS = TA_NAME;
+			endif;
+		endfor;
+	}
+		TA_NAME_EA_ASSIGNMENTS = eaTaAssignment();
+
+
+		writecase(EA_ASSIGNMENTS_DICT);
+
+	if INTERVIEWER_EA <> notappl then
+
+		errmsg("Are you sure you want to assign %s to %s?",LookupEAName(INTERVIEWER_EA),LookupStaffName(INTERVIEWER_CODE))
+		select("Yes",continue,"No",INTERVIEWER_EA);
+
+
+		if EA_STAFF_ID = INTERVIEWER_CODE then
+
+			errmsg("%s has been assigned to %s",LookupEAName(INTERVIEWER_EA),LookupStaffName(INTERVIEWER_CODE));
+			reenter SUPERVISOR_MENU;
+		endif;
+	endif;
+
+
+
+

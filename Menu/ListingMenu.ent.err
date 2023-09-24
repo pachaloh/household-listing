@@ -1,0 +1,8 @@
+﻿Application     C:\Users\User\Documents\GitHub\household-listing\Menu\ListingMenu.ent
+Type            Entry
+Date            Sep 23, 2023
+Time            22:48:36
+
+CSPro Error Summary
+
+WARNING(INTERVIEWER_EA, 979): Number of '%' arguments passed (1) does not match the number expected in the message text (0).

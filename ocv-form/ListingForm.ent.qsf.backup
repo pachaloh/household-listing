@@ -1,0 +1,1751 @@
+[CAPI QUESTIONS]
+Version=CSPro 7.2
+
+[LANGUAGES]
+ENG=English
+
+[QUESTION]
+Field=BLOCK_DEM_BTH
+Occurrences=1:1
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is \lang2057 your\lang1033  date of birth?\par
+ENG=\par
+ENG=}
+
+[QUESTION]
+Field=BLOCK_DEM_BTH
+Occurrences=2:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is \lang2057 %DEM_NAME(PPNO)%\lang1033 's date of birth?\par
+ENG=}
+
+
+
+[QUESTION]
+Field=BLOCK_MJJ_OCC
+Condition=MJJ_MULT=1
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Calibri;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\i\f0\fs24 READ\cf0\f1\fs20\par
+ENG=\cf2\i0\f0\fs24\par
+ENG=Now, I am going to ask you some questions about %get_your_names()% income-generating activity...\par
+ENG=\cf0\par
+ENG=In %get_this_names()% job, what kind of work %get_do_does()% %get_you_he_she()% do?\cf1\i\par
+ENG=}
+
+[QUESTION]
+Field=BLOCK_MJJ_OCC
+Condition=MJJ_MULT=2
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Calibri;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\i\f0\fs24 READ\cf0\f1\fs20\par
+ENG=\cf2\i0\f0\fs24\par
+ENG=I am now going to ask you some questions about the income-generating activity in which \cf0 %get_you_name()%\cf2  usually work the most hours.\par
+ENG=\par
+ENG=\cf0 In %get_this_names()% job, what kind of work %get_do_does()% %get_you_he_she()% do?\cf1\i\par
+ENG=}
+
+[QUESTION]
+Field=BLOCK_SJJ_OCC
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\i\f0\fs24 READ\par
+ENG=\cf2\i0\f1\par
+ENG=I am now going to ask you some questions about %get_your_names()% second job or business activity. \par
+ENG=\par
+ENG=In this second job, what kind of work %get_do_does()% %get_you_name()% do?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.ABS_DUR
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang2057\fs24 I\cf0\f1 ncluding the time that %get_you_name()% %get_have_has()% been absent, will %get_you_he_she()% return to that same job or business in 3 months or less?\cf1\lang1033\f0\fs19\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.ABS_JOB
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 Even though %get_you_name()% did not work, last week did %get_you_he_she()% have a paid job or a business?\par
+ENG=\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.ABS_PAY
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 %get_c_do_does()% %get_you_name()% continue to receive an income from %get_your_his_her()% job or business during this absence?\cf1\lang1033\f1\fs19\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.ABS_SEA
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 During the low or off-season, %get_do_does()% %get_you_name()% continue to do some work for that job or business?\cf1\lang1033\f1\fs19\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.ABS_WHY
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 Why did %get_you_name()% not work last week?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.ABS_WHY_13_OTHER
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\i\f0\fs24 ENTER OTHER REASON FOR ABSENCE\par
+ENG=}
+
+
+
+
+
+
+
+
+
+
+[QUESTION]
+Field=POPSTANLFS_DICT.ATW_FAM
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 Last week, did %get_you_name()% help\cf1  in a family business or farm?\par
+ENG=\pard\sa160\sl252\slmult1\lang1033\f1\fs19\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.ATW_PAY
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa160\sl252\slmult1\lang2057\f0\fs24 Last week, from %nav_week_start_day% up to %nav_week_end_day_yesterday%, did %get_you_name()% work for someone else for pay, for one or more hours?\cf1\lang1033\f1\fs19\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.ATW_PFT
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa160\sl252\slmult1\f0\fs24 Last week, did %get_you_name()% run or do any kind of business, farming or other activity to generate income?\par
+ENG=\cf1\i\par
+ENG=READ ONLY IF NEEDED:\par
+ENG=\pard\par
+ENG=E.G. : %nav_income_activity_eg%\par
+ENG=}
+
+
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_AG1
+Occurrences=1:1
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 To confirm, are you %age_proxy% years old?\par
+ENG=\i\f1\par
+ENG=\cf2\f0 RE-ENTER AGE IF NOT CORRECT\cf1\f1\par
+ENG=\cf2\f0 ENTER  00 IF LESS THAN 1 YEAR\cf1\i0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_AG1
+Condition=DEM_BTH_YEAR=9997
+Occurrences=1:1
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 How old are you?\par
+ENG=\i\par
+ENG=\cf2\f1 ENTER  00 IF LESS THAN 1 YEAR\cf1\i0\f0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_AG1
+Occurrences=2:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 To confirm, is %DEM_NAME(PPNO)% %age_proxy% years old?\par
+ENG=\i\f1\par
+ENG=\cf2\f0 RE-ENTER AGE IF NOT CORRECT\cf1\f1\par
+ENG=\cf2\f0 ENTER  00 IF LESS THAN 1 YEAR\cf1\i0\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_AG1
+Condition=DEM_BTH_YEAR=9997
+Occurrences=2:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 How old is %DEM_NAME(PPNO)%?\par
+ENG=\i\par
+ENG=\cf2\f1 ENTER  00 IF LESS THAN 1 YEAR\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_APP
+Occurrences=1:1
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 In the last 4 weeks, from %last_4weeks_start_date% up to %last_week_end_date%, did you participate in any unpaid apprenticeship, \f1 internship or similar training in a work place?\f0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_APP
+Occurrences=2:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 In the last 4 weeks, from %last_4weeks_start_date% up to %last_week_end_date%, did %DEM_NAME(PPNO)% participate in any unpaid apprenticeship, \f1 internship or similar training in a work place?\f0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_BTH_DAY
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 DAY (DD). \cf2\i\f1 ENTER 97 FOR DON'T KNOW.\cf1\f0\fs19\par
+ENG=\i0\fs24\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_BTH_MONTH
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 MONTH\fs19\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_BTH_YEAR
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 YEAR (YYYY). \cf2\i\f1 ENTER 9997 FOR DON'T KNOW.\cf1\f0\fs19\par
+ENG=\i0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_EDC
+Occurrences=1:1
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 Are you attending school in the current school cycle?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_EDC
+Occurrences=2:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang2057\fs24 Is %DEM_NAME(PPNO)% attending school in the current school cycle?\lang1033\fs19\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_EDF
+Occurrences=1:1
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 What was your area of study?\par
+ENG=\par
+ENG=\cf2\lang1033\i ENTER 997 FOR DON'T KNOW\cf1\lang2057\i0\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_EDF
+Occurrences=2:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang2057\f0\fs24 What was \f1 %DEM_NAME(PPNO)%\rquote s \f0 area of study?\par
+ENG=\par
+ENG=\cf2\lang1033\i ENTER 997 FOR DON'T KNOW\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_EDL
+Occurrences=1:1
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 What is the highest level of education that you have completed?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_EDL
+Occurrences=2:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 What is the highest level of education that %DEM_NAME(PPNO)% has completed?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_MORE
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 Are there additional household members?\fs19\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_MRT
+Occurrences=1:1
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 What is your marital status?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_MRT
+Occurrences=2:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang2057\fs24 What is %DEM_NAME(PPNO)%\rquote s marital status?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=1:1
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang2057\f0\fs24 %nav_DEM_CONF%...\par
+ENG=\par
+ENG=Can you tell me the names of the members of this household, starting with you?\par
+ENG=\lang1033\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=2:2
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. \fs19\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=3:3
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=4:4
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=5:5
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=\pard 5.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=6:6
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=\pard 6.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=7:7
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=6. %DEM_NAME(6)%\par
+ENG=\pard 7. \par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=8:8
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=6. %DEM_NAME(6)%\par
+ENG=7. %DEM_NAME(7)%\par
+ENG=\pard 8.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=9:9
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=6. %DEM_NAME(6)%\par
+ENG=7. %DEM_NAME(7)%\par
+ENG=8. %DEM_NAME(8)%\par
+ENG=9.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=10:10
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=6. %DEM_NAME(6)%\par
+ENG=7. %DEM_NAME(7)%\par
+ENG=8. %DEM_NAME(8)%\par
+ENG=9. %DEM_NAME(9)%\par
+ENG=\pard 10.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=11:11
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=6. %DEM_NAME(6)%\par
+ENG=7. %DEM_NAME(7)%\par
+ENG=8. %DEM_NAME(8)%\par
+ENG=9. %DEM_NAME(9)%\par
+ENG=10. %DEM_NAME(10)%\par
+ENG=\pard 11.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=12:12
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=6. %DEM_NAME(6)%\par
+ENG=7. %DEM_NAME(7)%\par
+ENG=8. %DEM_NAME(8)%\par
+ENG=9. %DEM_NAME(9)%\par
+ENG=10. %DEM_NAME(10)%\par
+ENG=11. %DEM_NAME(11)%\par
+ENG=\pard 12.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=13:13
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=6. %DEM_NAME(6)%\par
+ENG=7. %DEM_NAME(7)%\par
+ENG=8. %DEM_NAME(8)%\par
+ENG=9. %DEM_NAME(9)%\par
+ENG=10. %DEM_NAME(10)%\par
+ENG=11. %DEM_NAME(11)%\par
+ENG=12. %DEM_NAME(12)%\par
+ENG=13.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=14:14
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=6. %DEM_NAME(6)%\par
+ENG=7. %DEM_NAME(7)%\par
+ENG=8. %DEM_NAME(8)%\par
+ENG=9. %DEM_NAME(9)%\par
+ENG=10. %DEM_NAME(10)%\par
+ENG=11. %DEM_NAME(11)%\par
+ENG=12. %DEM_NAME(12)%\par
+ENG=13. %DEM_NAME(13)%\par
+ENG=\pard 14.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=15:15
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=6. %DEM_NAME(6)%\par
+ENG=7. %DEM_NAME(7)%\par
+ENG=8. %DEM_NAME(8)%\par
+ENG=9. %DEM_NAME(9)%\par
+ENG=10. %DEM_NAME(10)%\par
+ENG=11. %DEM_NAME(11)%\par
+ENG=12. %DEM_NAME(12)%\par
+ENG=13. %DEM_NAME(13)%\par
+ENG=14. %DEM_NAME(14)%\par
+ENG=\pard 15.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=16:16
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=6. %DEM_NAME(6)%\par
+ENG=7. %DEM_NAME(7)%\par
+ENG=8. %DEM_NAME(8)%\par
+ENG=9. %DEM_NAME(9)%\par
+ENG=10. %DEM_NAME(10)%\par
+ENG=11. %DEM_NAME(11)%\par
+ENG=12. %DEM_NAME(12)%\par
+ENG=13. %DEM_NAME(13)%\par
+ENG=14. %DEM_NAME(14)%\par
+ENG=15. %DEM_NAME(15)%\par
+ENG=\pard 16.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=17:17
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=6. %DEM_NAME(6)%\par
+ENG=7. %DEM_NAME(7)%\par
+ENG=8. %DEM_NAME(8)%\par
+ENG=9. %DEM_NAME(9)%\par
+ENG=10. %DEM_NAME(10)%\par
+ENG=11. %DEM_NAME(11)%\par
+ENG=12. %DEM_NAME(12)%\par
+ENG=13. %DEM_NAME(13)%\par
+ENG=14. %DEM_NAME(14)%\par
+ENG=15. %DEM_NAME(15)%\par
+ENG=16. %DEM_NAME(16)%\par
+ENG=\pard 17.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=18:18
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=6. %DEM_NAME(6)%\par
+ENG=7. %DEM_NAME(7)%\par
+ENG=8. %DEM_NAME(8)%\par
+ENG=9. %DEM_NAME(9)%\par
+ENG=10. %DEM_NAME(10)%\par
+ENG=11. %DEM_NAME(11)%\par
+ENG=12. %DEM_NAME(12)%\par
+ENG=13. %DEM_NAME(13)%\par
+ENG=14. %DEM_NAME(14)%\par
+ENG=15. %DEM_NAME(15)%\par
+ENG=16. %DEM_NAME(16)%\par
+ENG=17. %DEM_NAME(17)%\par
+ENG=\pard 18.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=19:19
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=6. %DEM_NAME(6)%\par
+ENG=7. %DEM_NAME(7)%\par
+ENG=8. %DEM_NAME(8)%\par
+ENG=9. %DEM_NAME(9)%\par
+ENG=10. %DEM_NAME(10)%\par
+ENG=11. %DEM_NAME(11)%\par
+ENG=12. %DEM_NAME(12)%\par
+ENG=13. %DEM_NAME(13)%\par
+ENG=14. %DEM_NAME(14)%\par
+ENG=15. %DEM_NAME(15)%\par
+ENG=16. %DEM_NAME(16)%\par
+ENG=17. %DEM_NAME(17)%\par
+ENG=18. %DEM_NAME(18)%\par
+ENG=\pard 19.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=20:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is the name of the next member of the household?\par
+ENG=\par
+ENG=1. %DEM_NAME(1)%\par
+ENG=2. %DEM_NAME(2)%\par
+ENG=3. %DEM_NAME(3)%\par
+ENG=4. %DEM_NAME(4)%\par
+ENG=5. %DEM_NAME(5)%\par
+ENG=6. %DEM_NAME(6)%\par
+ENG=7. %DEM_NAME(7)%\par
+ENG=8. %DEM_NAME(8)%\par
+ENG=9. %DEM_NAME(9)%\par
+ENG=10. %DEM_NAME(10)%\par
+ENG=11. %DEM_NAME(11)%\par
+ENG=12. %DEM_NAME(12)%\par
+ENG=13. %DEM_NAME(13)%\par
+ENG=14. %DEM_NAME(14)%\par
+ENG=15. %DEM_NAME(15)%\par
+ENG=16. %DEM_NAME(16)%\par
+ENG=17. %DEM_NAME(17)%\par
+ENG=18. %DEM_NAME(18)%\par
+ENG=19. %DEM_NAME(19)%\par
+ENG=\pard 20.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_OTH
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 Are there any other persons living in this household?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_REL
+Occurrences=1:1
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 The first person must be the head or reference person.\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_REL
+Occurrences=2:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\fs24 What is \lang2057 %DEM_NAME(PPNO)%\lang1033 's \lang2057 relationship to %DEM_NAME(1)%?\lang1033\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_SEX
+Occurrences=1:1
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 I am going to start with some questions about \f1 you\f0 .\par
+ENG=\cf2\i\par
+ENG=INTERVIEWER RECORD SEX OF %DEM_NAME(PPNO)%. CONFIRM ONLY IF NEEDED\cf1\i0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_SEX
+Occurrences=2:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang2057\f0\fs24 I am now going to ask some questions about \f1 %DEM_NAME(PPNO)%\f0 .\cf2\i\par
+ENG=\cf1\i0\f1\par
+ENG=Is %DEM_NAME(PPNO)% male or female?\lang1033\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_STR
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 Hello. My name is %MCV_INTERVIEWER_NAME%. I work for %nav_agency%. May I speak with an adult person living in this household that is able to provide information about the household and its members?\par
+ENG=\par
+ENG=\cf2\i INTERVIEWER CHECK: IS AN ADULT MEMBER AVAILABLE?\cf1\i0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_TRN
+Occurrences=1:1
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 Or, in the last 4 weeks, did you attend any courses, seminars or other training to develop specific skills, for example languages, computer skills etc.?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_TRN
+Condition=DEM_EDC=1
+Occurrences=1:1
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 Other than school, in the last 4 weeks, did \f1 you\f0  attend any courses, seminars or other training to develop specific skills, for example languages, computer skills, etc.?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_TRN
+Occurrences=2:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 Or, in the last 4 weeks, did %DEM_NAME(PPNO)% attend any courses, seminars or other training to develop specific skills, for example languages, computer skills etc.?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.DEM_TRN
+Condition=DEM_EDC=1
+Occurrences=2:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 Other than school, in the last 4 weeks, did \f1 %DEM_NAME(PPNO)%\f0  attend any courses, seminars or other training to develop specific skills, for example languages, computer skills, etc.?\par
+ENG=}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[QUESTION]
+Field=POPSTANLFS_DICT.HLL_SCR_10_OTHER
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\i\f0\fs24 ENTER OTHER SOURCE OF HOUSEHOLD SUPPORT\cf2\lang2057\i0\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.HLL_SMN
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa160\cf1\lang2057\fs24 In the last 12 months, which of those was the MAIN source of support of this household?\par
+ENG=\par
+ENG=\cf2\i\f1 READ ONLY IF NEEDED; MARK ONLY ONE\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.HLL_SRC
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa160\sl252\slmult1\cf1\f0\fs24 Now I want to ask you a few questions about the household\'85\par
+ENG=\par
+ENG=In the last 12 months, fro\f1 m %last_12_months% up to last month, which of the following sources of support did the household have?\par
+ENG=\par
+ENG=\pard\cf2\i\f0 READ AND MARK ALL THAT APPLY\cf1\f1\par
+ENG=}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJC_CONOP
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang2057\fs24 Is\cf0\f1  %get_your_names()% \cf1\f0 contract or agreement\f1  \'85\f0 ?\par
+ENG=\cf2\i\f1\par
+ENG=READ\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJC_CONTRA
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 %get_c_do_does()% %get_you_name()% have a written contract or oral agreement for the work %get_you_he_she()% %get_do_does()%?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJC_TEMPDUR
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang2057\fs24 How long in total is %get_your_names()% current agreement?\par
+ENG=}
+
+
+
+
+
+
+
+
+
+
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJJ_CFW_CHK
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Calibri;}{\f2\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa160\sl252\slmult1\cf1\lang2057\fs24 Who usually makes the decisions about the running of the family business\'85?\cf0\f1\fs20\par
+ENG=\pard\cf2\i\f2\fs24\par
+ENG=READ\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJJ_EMP_REL
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 %get_c_do_does()% %get_you_he_she()% work\'85?\par
+ENG=\cf1\i\par
+ENG=READ\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJJ_HIRES
+Condition=MJJ_CFW_CHK=1
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 Does the family business hire any paid employees on a regular basis?\cf0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJJ_HIRES
+Condition=MJJ_CFW_CHK=2
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 Does the family business hire any paid employees on a regular basis?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJJ_HIRES
+Condition=MJJ_EMP_REL=2
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 %get_c_do_does()% %get_you_name()% hire any\cf1\f1  paid \cf0\f0 employ\cf1 ees on a regular basis?\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJJ_MULT
+Condition=DEM_REL(LBPPNO) = 7
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 Other than the work %get_you_name()% %get_do_does()% in this household, last week did %get_you_name()% have any other job or income-generating activity?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJJ_MULT
+Condition=GLO_MLT=0
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 Last week did %get_you_name()% have more than one\cf1  job or income-generating activity\cf0 ?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJJ_MULT
+Condition=GLO_MLT=1
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 You mentioned that last week %get_you_name()% had more than one job or income-generating activity: One in farming/fishing and one in a different type of work. Is this correct?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJJ_MULT
+Condition=GLO_MLT=2
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 Other than the farming/fishing work, you mentioned that %get_you_name()% %get_have_has()% another income-generating activity, is that one additional income-generating activity or more?\cf0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJJ_MULT
+Condition=GLO_MLT=3
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 In addition to the farming/fishing work you mentioned, last week did %get_you_name()% have any other job or income-generating activity?\cf0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJJ_OCC_MTD
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\i\f0\fs24 ENTER MAIN TASKS AND DUTIES\cf0\i0\par
+ENG=\cf1\i (E.G. %nav_tasks_duties_eg%) \par
+ENG=\par
+ENG=\lang1033 ENTER 997 FOR DON'T KNOW\cf0\lang2057\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJJ_OCC_TLE
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\i\f0\fs24 ENTER OCCUPATIONAL TITLE, IF ANY \par
+ENG=(E.G. %nav_work_type_eg%)\par
+ENG=\par
+ENG=\lang1033 ENTER 997 FOR DON'T KNOW.\lang2057\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJJ_REM_TYP
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang2057\fs24 Which of the following types of pay %get_do_does()% %get_you_name()% receive for this work?\par
+ENG=\cf2\i\f1\par
+ENG=READ AND MARK ALL THAT APPLY\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJJ_REM_TYP_6_OTHER
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang1033\i\f0\fs24 ENTER OTHER TYPE OF PAY\cf2\lang2057\i0\par
+ENG=}
+
+
+
+
+
+
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJU_INS
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 In this job, %get_are_is()% %get_you_he_she()%\cf1  working in\'85.\cf0\par
+ENG=\cf2\i\par
+ENG=READ\cf1\i0\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJU_MAC
+Condition=MJJ_EMP_REL<>2
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 What is the main activity of the place where %get_you_name()% %get_work_s()%?\par
+ENG=\cf1\i\par
+ENG=ENTER MAIN ACTIVITY, GOODS OR SERVICES\par
+ENG=(E.G. %nav_main_activity_eg%)\par
+ENG=\par
+ENG=\lang1033 ENTER 997 FOR DON'T KNOW\cf2\lang2057\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJU_MAC
+Condition=MJJ_EMP_REL=2
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 What is the main activity of %get_your_names()% business?\par
+ENG=\cf1\i\par
+ENG=ENTER MAIN ACTIVITY, GOODS OR SERVICES\par
+ENG=(E.G. %nav_main_activity_eg%)\par
+ENG=\par
+ENG=\lang1033 ENTER 997 FOR DON'T KNOW\cf0\lang2057\i0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJU_NAM
+Condition=MJJ_EMP_REL <> 2
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 What is the name of the place or business where %get_you_name()% work?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJU_NAM
+Condition=MJJ_EMP_REL = 2
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 What is the name of %get_your_names()% business?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJU_PLC
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 In what kind of place %get_do_does()% %get_you_name()% typically work?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJU_REF
+Condition=MJJ_EMP_REL<>2
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 Does the place or business where %get_you_name()% %get_work_s()% have a name?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJU_REF
+Condition=MJJ_EMP_REL=2
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 Does %get_your_names()% business have a name?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJU_SIZ
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 How many persons including %get_you_name()% work at %get_your_names()% place of work?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJU_SIZ
+Condition=MJJ_EMP_REL=2
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 How many persons including \cf0 %get_you_name()%\cf1  work or help in \cf0 %get_your_his_her()%\cf1  business? Please include any employees, family members, business partners, etc.\cf0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJU_SIZ
+Condition=MJJ_EMP_REL=3
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 How many persons including \cf0 %get_you_name()%\cf1  work or help in the family business?\cf0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.MJU_SIZ
+Condition=MJU_INS=4
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 How many persons including \cf0 %get_you_name()%\cf1  are employed by the household?\cf0\par
+ENG=}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[QUESTION]
+Field=POPSTANLFS_DICT.RSP_AVAIL
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa160\sl252\slmult1\cf1\lang2057\f0\fs24 The next questions are about \f1 %DEM_NAME(LBPPNO)%\f0\'85\par
+ENG=\f1\par
+ENG=Is %DEM_NAME(LBPPNO)% available?\i\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.RSP_DIR
+Occurrences=1:1
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa160\sl252\slmult1\qj\cf1\lang2057\f0\fs24 The next questions are about you\'85\cf2\i\par
+ENG=\par
+ENG=INTERVIEWER TO ANSWER:\cf1\f1\par
+ENG=\pard\sa160\sl252\slmult1\cf2\f0 IS %DEM_NAME(LBPPNO)% %get_him_herself()% RESPONDING TO THE QUESTIONS?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.RSP_DIR
+Occurrences=2:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa160\sl252\slmult1\qj\cf1\i\f0\fs24 INTERVIEWER TO ANSWER:\cf2\f1\par
+ENG=\pard\sa160\sl252\slmult1\cf1\f0 IS %DEM_NAME(LBPPNO)% %get_him_herself()% RESPONDING TO THE QUESTIONS?\cf2\i0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.RSP_PPNO
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa160\sl252\slmult1\qj\cf1\lang2057\i\f0\fs24 INTERVIEWER, SELECT THE NAME  OF THE PERSON RESPONDING TO THE QUESTIONS\cf2\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.RSP_REL
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang2057\fs24 Can you let me know what is your relationship to %DEM_NAME(LBPPNO)%?\i\par
+ENG=}
+
+
+
+
+
+
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SJJ_EMP_REL
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 In this second job, %get_do_does()% %get_you_name()% work\'85?\par
+ENG=\cf1\i\par
+ENG=READ\cf2\i0\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SJJ_HIRES
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang2057\f0\fs24 %get_c_do_does()% \cf0 %get_you_name()% hire any\cf1\f1  paid \cf0\f0 emplo\cf1 yees on a regular basis?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SJJ_IND_MAC
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 What is the main activity of the business or place where %get_you_name()% %get_work_s()%?\par
+ENG=\par
+ENG=\cf1\i ENTER MAIN ACTIVITY, GOODS OR SERVICES\par
+ENG=(E.G. %nav_main_activity_eg%)\par
+ENG=\par
+ENG=\lang1033 ENTER 997 FOR DON'T KNOW\lang2057\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SJJ_OCC_MTD
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\i\f0\fs24 ENTER MAIN TASKS AND DUTIES\par
+ENG=\par
+ENG=(E.G. %nav_tasks_duties_eg%)\par
+ENG=\par
+ENG=\lang1033 ENTER 997 FOR DON'T KNOW\lang2057\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SJJ_OCC_TLE
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\i\f0\fs24 ENTER OCCUPATIONAL TITLE, IF ANY\par
+ENG=\par
+ENG=(E.G. %nav_work_type_eg%\lang1033 )\par
+ENG=\par
+ENG=ENTER 997 FOR DON'T KNOW\lang2057\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_ACT
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}{\f2\fswiss\fprq2\fcharset0 Calibri;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 In addition to reading job advertisements, did %get_you_name()% do anything else in the last four weeks to \cf1\f1 %get_find_paid_job_start_business()%\cf0\f0 ?\f2\fs20\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_AVL
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 Or, could %get_you_name()% start working within the next two weeks?\lang4108\fs18\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_AVN
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa160\sl252\slmult1\lang2057\f0\fs24 If a job or business opportunity had been available, could %get_you_name()% have started working last week?\cf1\f1\par
+ENG=\pard\cf0\lang4108\f0\fs18\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_BUS
+Condition=GLO_OPF=0
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 Or did %get_you_name()% try to start a business?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_BUS
+Condition=GLO_OPF=1
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 Or did %get_you_name()% try to start another activity to generate income, a business for example?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_DES
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Calibri;}}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 At present, %get_do_does()% %get_you_name()% want to work?\lang4108\f1\fs22\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_DUR
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 For how long %get_have_has()% %get_you_name()% been without work and trying to find a paid job or start a business?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_DWY
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Calibri;}}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 What is the main reason why %get_you_name()% did not try to find a paid job or start a business in the last four weeks?\f1\fs22\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_DWY_13_OTHER
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}{\f2\fswiss\fprq2\fcharset0 Calibri;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa160\sl252\slmult1\cf1\lang1033\i\f0\fs24 ENTER OTHER REASON FOR NOT LOOKING FOR A JOB/BUSINESS\lang2057\par
+ENG=\pard\cf2\lang1033\i0\f1\par
+ENG=\cf0\lang2057\f2\fs22\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_FAN
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 If it depended on %get_you_name()%, could %get_you_name()% have started working last week in this new job or business?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_FTR
+Condition=ABS_WHY=01
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 You told me earlier that %get_you_name()% %get_expect_s()% to start working in a new job or business. How soon %get_do_does()% %get_you_name()% expect to start working in this new job or business?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_FTR
+Condition=SRH_DWY=04
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 How soon %get_do_does()% %get_you_name()% expect to start working in this new job or business?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_JOB
+Condition=GLO_OPF=0
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 During the last four weeks, from %last_4weeks_start_date% up to %last_week_end_date%,\cf1\f1  did\cf0\f0  %get_you_name()% do anything to find a paid job?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_JOB
+Condition=GLO_OPF=1
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 During the last four weeks, from %last_4weeks_start_date% up to %last_week_end_date%, did %get_you_name()% look for additional or other paid work?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_MAC
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 Which of the following best describes what %get_you_name()% %get_are_is()% mainly doing at present?\par
+ENG=\cf1\i\par
+ENG=READ\lang4108\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_MAC_8_OTHER
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\i\f0\fs24 ENTER OTHER MAIN ACTIVITY AT PRESENT \lang4108\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_MTD
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\fs24 What did \cf0\f1 %get_you_name()%\cf1\f0  mainly do in the last four weeks to %get_find_paid_job_start_business()%?\lang4108\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_MTD_14_OTHER
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\i\f0\fs24 ENTER OTHER METHOD TO FIND JOB\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_NAR
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang4108\fs24 Why is that?\cf0\f1\fs18\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_OTH
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 What else did %get_you_name()% do?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_OTH_14_OTHER
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\i\f0\fs24 ENTER OTHER METHOD TO FIND JOB\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.SRH_YER
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 At any time in the last 12 months, that is since %last_12_months% up to last month did %get_you_name()% look for a paid job or try to start a business?\par
+ENG=}
+
+
+
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_ABS_CHK1
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\f0\fs24 Earlier you told me that \cf0 %get_you_name()%\cf1  \cf0 %get_were_was()%\cf1  absent from \cf0 %get_your_his_her()%\cf1  job, just to confirm, last week did \cf0 %get_you_name()%\cf1  work any hours at all in \cf0 %get_your_his_her()% \cf1 main job?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_ACHRSTOT1
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 How many hours did %get_you_name()% work in total last week?\par
+ENG=\cf1\i\par
+ENG=ENTER HOURS IN REF. WEEK; ENTER 997 FOR DON\rquote T KNOW\cf2\i0\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_ACHRSTOT_CHK
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 And in total, last week, is it correct that %get_you_name()% worked \cf1\f1 %WKT_ACHRSTOT% \cf0\f0 hours?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_AVL_MRH
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 Could %get_you_name()% start working more hours within the next two weeks?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_MJ_ABS
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 Last week, that is from %nav_week_start_day% up to %nav_week_end_day_yesterday%, did %get_you_name()% have any absences or take time off from %get_your_his_her()% main job for any reason, for example, holidays, illness, family reasons?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_MJ_ACTHRS
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 How many hours did %get_you_name()% work in total in %get_your_his_her()% main job last week?\par
+ENG=\cf1\i\f1\par
+ENG=\cf2\f0 ENTER HOURS IN REF. WEEK;\cf1\f1  \cf2\f0 ENTER 997 FOR DON\rquote T KNOW\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_MJ_ACTHRS
+Condition=WKT_MJ_ABS=1
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 How many hours did %get_you_name()% work in total in %get_your_his_her()% main job last week? Please consider the extra hours or absences you already told me about.\par
+ENG=\cf1\i\par
+ENG=ENTER HOURS IN REF. WEEK;\cf2\f1  \cf1\f0 ENTER 997 FOR DON\rquote T KNOW\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_MJ_ACTHRS
+Condition=WKT_MJ_OVT=1
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 How many hours did %get_you_name()% work in total in %get_your_his_her()% main job last week? Please consider the extra hours or absences you already told me about.\par
+ENG=\cf1\i\f1\par
+ENG=\cf2\f0 ENTER HOURS IN REF. WEEK;\cf1\f1  \cf2\f0 ENTER 997 FOR DON\rquote T KNOW\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_MJ_OVHRS
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\lang2057\fs24 For the entire week, how many extra hours was this?\par
+ENG=\cf2\i\f1\par
+ENG=ENTER EXTRA HOURS; ENTER  997 FOR DON\rquote T KNOW\cf1\i0\f0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_MJ_OVT
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 Last week, were there any days when \cf1 %get_you_name()% worked more than usual or extra hours i\cf0 n %get_your_his_her()% main job, paid or unpaid?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_MJ_SAMEHRS
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 In total, last week did %get_you_name()% work the same hours as usual in %get_your_his_her()% main job?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_MJ_USDAY
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 How many days per week %get_do_does()% %get_you_name()% usually work in %get_your_his_her()% main job?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_MJ_USHRDY
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 And how many hours per day do %get_you_name()% usually work in %get_your_his_her()% main job?\par
+ENG=\par
+ENG=\cf1\i ENTER HOURS PER DAY\cf2\i0\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_MJ_USHRS
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 How many hours %get_do_does()% %get_you_name()% usually work per week in %get_your_his_her()% main job?\par
+ENG=\cf1\i\par
+ENG=ENTER HOURS PER WEEK; ENTER 997 FOR DON\rquote T KNOW\tab\cf2\i0\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_MJ_USHRS
+Condition=MJJ_MULT=2
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\i\f0\fs24 READ\par
+ENG=\cf2\i0\par
+ENG=Now, I would like to ask some questions about the hours that %get_you_name()% %get_work_s()% starting with %get_your_his_her()% main job as %MJJ_OCC_TLE% \'85\par
+ENG=\par
+ENG=How many hours %get_do_does()% %get_you_name()% usually work per week in %get_your_his_her()% main job?\par
+ENG=\par
+ENG=\cf1\i ENTER HOURS PER WEEK; ENTER 997 FOR DON\rquote T KNOW\tab\cf2\i0\f1\par
+ENG=\f0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_NUM_MRH
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Calibri;}{\f2\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 How many additional hours per week could %get_you_name()% work?\par
+ENG=\f1\fs20\par
+ENG=\cf1\i\f0\fs24 ENTER HOURS PER WEEK; ENTER  997 FOR DON\rquote T KNOW\cf2\i0\f2\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_NUMJBS
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 You said previously that %get_you_name()% had more than one job or business activity last week. How many jobs did %get_you_he_she()% have in total, even if absent?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_OJ_ACTHRS
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 How many hours did %get_you_name()% work last week in %get_your_his_her()% other jobs?\par
+ENG=\cf1\i\par
+ENG=ENTER HOURS IN REF. WEEK ENTER 997 FOR DON\rquote T KNOW\cf0\i0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_OJ_SAMEHRS
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 Is that the number of hours %get_you_name()% worked last week in %get_your_his_her()% other job(s)?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_OJ_USHRS
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 How many hours %get_do_does()% %get_you_name()% usually work per week in %get_your_his_her()% other job(s)?\par
+ENG=\par
+ENG=\cf1\i ENTER HOURS PER WEEK; ENTER 997 FOR DON\rquote T KNOW\cf0\i0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_SJ_ACTHRS
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 How many hours did %get_you_name()% work last week in %get_your_his_her()% second job?\par
+ENG=\cf1\i\par
+ENG=ENTER HOURS IN REF. WEEK; ENTER 997 FOR DON\rquote T KNOW\cf0\i0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_SJ_SAMEHRS
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 Is that the number of hours %get_you_name()% worked last week in %get_your_his_her()% second job?\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_SJ_USHRS
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs24 How many hours %get_do_does()% %get_you_name()% usually work per week in %get_your_his_her()% second job?\par
+ENG=\par
+ENG=\cf1\i ENTER HOURS PER WEEK;\cf2\f1  \cf1\f0 ENTER 997 FOR DON\rquote T KNOW\cf0\i0\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_SRH_OJB
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 During the last four weeks, that is from %last_4weeks_start_date% up to %last_week_end_date%, did %get_you_name()% look for additional or other paid work?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_USHRSTOT1
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red192\green192\blue192;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 How many hours %get_do_does()% %get_you_name()% usually work per week in total?\par
+ENG=\cf1\i\par
+ENG=ENTER HOURS PER WEEK; ENTER 997 FOR DON\rquote T KNOW\cf2\i0\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_USHRSTOT_CHK
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red0\green112\blue192;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa160\sl252\slmult1\lang2057\f0\fs24 So in total, this means that %get_you_name()% usually %get_work_s()% \cf1\f1 %WKT_USHRSTOT%\cf2\b\f0  \cf0\b0 hours per week, is that correct?\cf1\f1\par
+ENG=}
+
+[QUESTION]
+Field=POPSTANLFS_DICT.WKT_WNT_MRH
+Occurrences=1:20
+ENG={\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;}
+ENG={\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang2057\f0\fs24 Would %get_you_name()% want to work more hours per week than usually worked, provided the extra hours are paid?\cf1\f1\par
+ENG=}
+
+
+
+[HELP]
+Field=POPSTANLFS_DICT.DEM_NAME
+Occurrences=3:3
+
+[HELP]
+Field=POPSTANLFS_DICT.DEM_EDC
+Occurrences=1:1
+
+
+[HELP]
+Field=POPSTANLFS_DICT.WKT_MJ_ACTHRS
+Condition=WKT_MJ_ABS=1
+Occurrences=1:20
+
+[HELP]
+Field=POPSTANLFS_DICT.RSP_AVAIL
+Occurrences=1:20
+
