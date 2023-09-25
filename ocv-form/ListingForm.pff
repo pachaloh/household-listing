@@ -2,7 +2,7 @@
 Version=CSPro 7.7
 AppType=Entry
 [DataEntryInit]
-Key=3030502051ca751b-60dc-479c-b865-8946cd6d333c002
+Key=3050401551ca751b-60dc-479c-b865-8946cd6d333c003
 StartMode=Add
 Lock=CaseListing
 ShowInApplicationListing=Never
@@ -12,8 +12,8 @@ InputData=../Data/ocv_listing_data.csdb
 [ExternalFiles]
 CLUSTERS_DICT=../Lookups/clusters.csdb
 [Parameters]
-EA_CODE=30305020
-GHHHNO=002
+EA_CODE=30504015
+GHHHNO=003
 GHINTID=51ca751b-60dc-479c-b865-8946cd6d333c
 GHINTNAME=CHISOMO SINGANO
 OnExit=../Menu/ListingMenu.pff

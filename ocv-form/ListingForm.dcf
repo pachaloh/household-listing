@@ -202,7 +202,7 @@ DataType=Alpha
 Label=Metadata Record
 Name=METADATA_RECORD
 RecordTypeValue='X'
-RecordLen=167
+RecordLen=169
 
 [Item]
 Label=Region
@@ -378,5 +378,13 @@ Label=GPS Readtime
 Name=HH_GPS_READTIME
 Start=162
 Len=6
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Team code
+Name=TEAM_CODE
+Start=168
+Len=2
 DataType=Numeric
 ZeroFill=Yes

@@ -82,6 +82,11 @@ questions:
       - questionText:
           ENG: |
             <p style="font-family: &quot;Times New Roman&quot;;"><span style="font-size: 24px; font-family: Arial;">~~gps_reading_capi_text~~&nbsp;</span></p><p style="font-family: &quot;Times New Roman&quot;;"><span style="font-family: Arial; font-size: 24px;">GPS data:&nbsp;</span><span style="font-weight: bold; color: rgb(128, 0, 64); font-family: Arial; font-size: 24px;">~~gps_data_status_capi_text~~&nbsp;</span></p><p style="font-family: &quot;Times New Roman&quot;;"><span style="font-size: 12px;"><span style="font-family: Arial; font-size: 24px;">~~gps_accuracy_status_capi_label~~&nbsp;</span><span style="font-weight: bold; color: rgb(128, 0, 64); font-family: Arial; font-size: 24px;">~~gps_accuracy_status_capi_text~~&nbsp;</span></span></p><p></p>
+  - name: LISTINGFORM_DICT.HH_LABEL
+    conditions:
+      - questionText:
+          ENG: |
+            Write <font color="#731842">~~household_label~~</font> on the door for&nbsp;<p></p>
   - name: BLOCK_DEM_BTH
     conditions:
       - logic: curocc() = 1

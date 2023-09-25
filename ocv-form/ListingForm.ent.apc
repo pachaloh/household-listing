@@ -1,8 +1,17 @@
 ﻿
 PROC GLOBAL
 
+function string staff_segment(string staff_id_code)
+	forcase STAFF_DICT where STAFF_ID = staff_id_code do
+		staff_segment = STAFF_SEG;
+	endfor;
+end;
 
+string household_label;
 
+PROC REGION
+
+	
 PROC HOUSEHOLDLFS_FF
 
 PROC EA_CODE
@@ -18,12 +27,19 @@ PROC GHINTID
 
 
 preproc
+
+	if sysparm("TEAM_CODE") <> ""  then
+		TEAM_CODE = tonumber(sysparm("TEAM_CODE"));
+		
+		//setproperty($,"Protected", "Yes");
+	endif;
 	
 	if sysparm("GHINTID") <> ""  then
 		$ = sysparm("GHINTID");
 		
 		//setproperty($,"Protected", "Yes");
 	endif;
+	
 PROC GHHHNO
 
 
@@ -34,9 +50,6 @@ preproc
 		
 		//setproperty($,"Protected", "Yes");
 	endif;
-PROC REGION
-
-	
 PROC SN_STRUCT
 
 preproc
@@ -132,3 +145,23 @@ postproc
 		warning("Unhandled value set option.");
 		reenter;
 	endif;
+PROC HH_LABEL
+
+
+preproc
+
+
+	
+	household_label = maketext("OVC/%v/%v",edit("999",GHHHNO),staff_segment(GHINTID));
+	
+	$ = household_label;
+	
+
+	
+	savepartial();
+PROC HH_CONCLUSION
+
+preproc
+
+	savepartial();
+	warning("Just make sure you have labelled the household as %s!",maketext("LFS/%v/%v",edit("999",GHHHNO),staff_segment(GHINTID)));
