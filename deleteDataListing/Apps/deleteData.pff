@@ -1,0 +1,13 @@
+﻿[Run Information]
+Version=CSPro 7.7
+AppType=Entry
+Description=Data Deletion Tool
+ShowInApplicationListing=Hidden
+
+[DataEntryInit]
+StartMode=Add
+
+[Files]
+Application=.\deleteData.ent
+InputData=|type=None
+Paradata=.\deleteData.cslog

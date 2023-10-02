@@ -1,0 +1,58 @@
+﻿[FormFile]
+Version=CSPro 7.7
+Name=DELETEDATA_FF
+Label=deleteData
+DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+FieldEntryFont=0018 0000 0000 0000 0600 0000 0000 0000 0000 0000 0000 0000 0000 Courier New
+Type=SystemControlled
+  
+[Dictionaries]
+File=..\Dicts\deleteData.dcf
+  
+[Form]
+Name=FORM000
+Label=deleteData Level
+Level=1
+Size=668,209
+  
+Item=DEL_DATA
+Item=DELETEDATA_ID
+  
+[EndForm]
+  
+[Level]
+Name=DELETEDATA_LEVEL
+Label=deleteData Level
+  
+[Group]
+Required=Yes
+Name=DELETEDATA_LEVEL_FORM
+Label=deleteData Level
+Form=1
+Max=1
+  
+[Field]
+Name=DELETEDATA_ID
+Position=628,114,643,134
+Item=DELETEDATA_ID,DELETEDATA_DICT
+DataCaptureType=TextBox
+Form=1
+  
+[Text]
+Position=446,117,602,133
+Text=deleteData Identification
+ 
+  
+[Field]
+Name=DEL_DATA
+Position=627,164,642,184
+Item=DEL_DATA,DELETEDATA_DICT
+DataCaptureType=RadioButton
+Form=1
+  
+[Text]
+Position=445,167,518,183
+Text=Delete data
+ 
+[EndGroup]
+  

@@ -1,0 +1,222 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=ListingMenu
+Name=LISTINGMENU_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=FB38AE7822B3EECB82A73AFD9C3C3285C0A13BCACBA320BAA23CBF9640B4FA56
+
+[Level]
+Label=ListingMenu Level
+Name=LISTINGMENU_LEVEL
+
+[IdItems]
+
+[Item]
+Label=ListingMenu Identification
+Name=LISTINGMENU_ID
+Start=2
+Len=1
+DataType=Numeric
+
+[Record]
+Label=ListingMenu Record
+Name=LISTINGMENU_REC
+RecordTypeValue='1'
+RecordLen=304
+
+[Item]
+Label=Team Number
+Name=TEAM_NO
+Start=3
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Login
+Name=LOGIN
+Start=5
+Len=36
+DataType=Alpha
+
+[Item]
+Label=PIN Code Confirmation
+Name=PIN_CODE_CONFIRMATION
+Start=41
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Supervisor Access Password
+Name=SUPERVISOR_ACCESS_PASSWORD
+Start=45
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Supervisor Name
+Name=SUPERVISOR_NAME
+Start=49
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Supervisor PIN Code
+Name=SUPERVISOR_PIN_CODE
+Start=99
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Assignment Selection
+Name=ASSIGNMENT_SELECTION
+Start=103
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Region
+Name=XREGION
+Start=111
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Region
+Name=XREGION_VS1
+Value=1;Northern  region
+Value=2;Central region
+Value=3;Southern region
+
+[Item]
+Label=District
+Name=XDISTRICT
+Start=112
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Traditional Authority
+Name=XTRADITIONAL_AUTHORITY
+Start=114
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Interview Menu
+Name=INTERVIEW_MENU
+Start=116
+Len=47
+DataType=Alpha
+
+[Item]
+Label=Supervisor Menu
+Name=SUPERVISOR_MENU
+Start=163
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Supervisor Menu
+Name=SUPERVISOR_MENU_VS1
+Value=1;Manage staff
+Value=2;Assign EA to interviewer
+Value=3;Transfer data with interviewer
+Value=4;Transfer data with head office
+Value=6;View household status by EA
+Value=9;Switch users
+
+[Item]
+Label=Assignments
+Name=ASSIGNMENTS
+Start=164
+Len=1
+DataType=Numeric
+
+[Item]
+Label=Manage Staff
+Name=MANAGE_STAFF
+Start=165
+Len=36
+DataType=Alpha
+
+[Item]
+Label=Manage Staff Member
+Name=MANAGE_STAFF_MEMBER
+Start=201
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Manage Staff Member
+Name=MANAGE_STAFF_MEMBER_VS1
+Value=1;Rename staff
+Value=2;See staff PIN code
+Value=3;Reset staff PIN code
+Value=4;Delete staff
+Value=5;Return to menu
+
+[Item]
+Label=Manage Staff Name
+Name=MANAGE_STAFF_NAME
+Start=202
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Interviewer EA
+Name=INTERVIEWER_EA
+Start=252
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Interviewer Code
+Name=INTERVIEWER_CODE
+Start=255
+Len=36
+DataType=Alpha
+
+[Item]
+Label=Current Region
+Name=CURRENT_REGION
+Start=291
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Current District
+Name=CURRENT_DISTRICT
+Start=292
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Current TA
+Name=CURRENT_TA
+Start=294
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=List and EA
+Name=LIST_EA
+Start=296
+Len=9
+DataType=Numeric
+ZeroFill=Yes

@@ -1,0 +1,10 @@
+// ------------------
+// ------------------ GPS
+// ------------------
+// The readlast command will be polled in fields before and after GPS_READING. If a GPS reading was taken that is
+// within gps_desired_accuracy and more than gps_max_elapsed_time has not passed then these values will be used when
+// the user is prompted to take a GPS reading. From the users perspective the GPS reading will appear to be
+// instantaneous. However, if no usable GPS values are collected during the polling phase then the read command will be
+// used to take a new reading. If a new reading within gps_desired_accuracy cannot be attained then the GPS values from
+// any successful read will be used.
+

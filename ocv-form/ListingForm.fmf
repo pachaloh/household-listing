@@ -27,12 +27,10 @@ Name=FORM001
 Label=Additional Info
 QuestionTextHeight=262
 Level=1
-Size=927,253
+Size=1134,165
   
 Item=HH_SUPERVISOR_CODE
 Item=HH_START_INTERVIEW_TIME
-Item=HH_END_INTERVIEW_TIME
-Item=HH_PROGRAM_PUBLISH_DATE
 Item=HH_INTRODUCTION
   
 [EndForm]
@@ -40,9 +38,9 @@ Item=HH_INTRODUCTION
 [Form]
 Name=FORM002
 Label=Household listing form
-QuestionTextHeight=262
+QuestionTextHeight=219
 Level=1
-Size=1233,630
+Size=1233,442
   
 Item=MULT_HHS
 Item=SN_STRUCT
@@ -54,12 +52,6 @@ Item=UNDER_FIVE
 Item=DU_STATUS
 Item=HH_OBSERVATIONS
 Item=HH_GPS_READING
-Item=HH_LATITUDE
-Item=HH_LONGITUDE
-Item=HH_ALTITUDE
-Item=HH_GPS_ACCURACY
-Item=HH_GPS_SAT
-Item=HH_GPS_READTIME
 Item=HH_CONCLUSION
 Item=HH_LABEL
   
@@ -125,10 +117,9 @@ Max=1
   
 [Field]
 Name=HH_SUPERVISOR_CODE
-Position=604,58,902,78
+Position=604,58,1109,78
 Item=HH_SUPERVISOR_CODE,LISTINGFORM_DICT
 FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
 DataCaptureType=TextBox
 Form=2
   
@@ -151,41 +142,15 @@ Text=HH_START_INTERVIEW_TIME
  
   
 [Field]
-Name=HH_END_INTERVIEW_TIME
-Position=604,118,745,138
-Item=HH_END_INTERVIEW_TIME,LISTINGFORM_DICT
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=2
-  
-[Text]
-Position=385,121,553,137
-Text=HH_END_INTERVIEW_TIME
- 
-  
-[Field]
-Name=HH_PROGRAM_PUBLISH_DATE
-Position=604,148,801,168
-Item=HH_PROGRAM_PUBLISH_DATE,LISTINGFORM_DICT
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=2
-  
-[Text]
-Position=385,151,582,167
-Text=HH_PROGRAM_PUBLISH_DATE
- 
-  
-[Field]
 Name=HH_INTRODUCTION
-Position=604,178,619,198
+Position=607,120,622,140
 Item=HH_INTRODUCTION,LISTINGFORM_DICT
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Form=2
   
 [Text]
-Position=385,181,508,197
+Position=388,123,511,139
 Text=HH_INTRODUCTION
  
 [EndGroup]
@@ -227,6 +192,7 @@ Text=SN_STRUCT
 Name=DESC_STRUCT
 Position=506,112,1207,132
 Item=DESC_STRUCT,LISTINGFORM_DICT
+UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=TextBox
 Form=3
@@ -253,6 +219,7 @@ Text=RES_STRUCT
 Name=HH_HEAD
 Position=506,172,1207,192
 Item=HH_HEAD,LISTINGFORM_DICT
+UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=TextBox
 Form=3
@@ -266,6 +233,7 @@ Text=HH_HEAD
 Name=POPULAR_NAME
 Position=506,202,1207,222
 Item=POPULAR_NAME,LISTINGFORM_DICT
+UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=TextBox
 Form=3
@@ -328,106 +296,28 @@ Text=HH_GPS_READING
  
   
 [Field]
-Name=HH_LATITUDE
-Position=507,367,648,387
-Item=HH_LATITUDE,LISTINGFORM_DICT
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=3
-  
-[Text]
-Position=356,367,444,383
-Text=HH_LATITUDE
- 
-  
-[Field]
-Name=HH_LONGITUDE
-Position=507,402,662,422
-Item=HH_LONGITUDE,LISTINGFORM_DICT
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=3
-  
-[Text]
-Position=356,402,456,418
-Text=HH_LONGITUDE
- 
-  
-[Field]
-Name=HH_ALTITUDE
-Position=507,434,606,454
-Item=HH_ALTITUDE,LISTINGFORM_DICT
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=3
-  
-[Text]
-Position=356,434,444,450
-Text=HH_ALTITUDE
- 
-  
-[Field]
-Name=HH_GPS_ACCURACY
-Position=507,462,592,482
-Item=HH_GPS_ACCURACY,LISTINGFORM_DICT
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=3
-  
-[Text]
-Position=356,462,487,478
-Text=HH_GPS_ACCURACY
- 
-  
-[Field]
-Name=HH_GPS_SAT
-Position=507,492,550,512
-Item=HH_GPS_SAT,LISTINGFORM_DICT
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=3
-  
-[Text]
-Position=356,492,442,508
-Text=HH_GPS_SAT
- 
-  
-[Field]
-Name=HH_GPS_READTIME
-Position=507,523,592,543
-Item=HH_GPS_READTIME,LISTINGFORM_DICT
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=3
-  
-[Text]
-Position=356,523,482,539
-Text=HH_GPS_READTIME
- 
-  
-[Field]
 Name=HH_LABEL
-Position=507,554,648,574
+Position=508,366,649,386
 Item=HH_LABEL,LISTINGFORM_DICT
 FieldLabelType=DictionaryName
 DataCaptureType=TextBox
 Form=3
   
 [Text]
-Position=356,556,423,572
+Position=357,368,424,384
 Text=HH_LABEL
  
   
 [Field]
 Name=HH_CONCLUSION
-Position=507,585,522,605
+Position=508,397,523,417
 Item=HH_CONCLUSION,LISTINGFORM_DICT
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Form=3
   
 [Text]
-Position=356,588,467,604
+Position=357,400,468,416
 Text=HH_CONCLUSION
  
 [EndGroup]

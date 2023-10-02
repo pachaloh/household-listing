@@ -1,0 +1,294 @@
+﻿// ------------------
+// ------------------ GPS
+// ------------------
+// The readlast command will be polled in fields before and after GPS_READING. If a GPS reading was taken that is
+// within gps_desired_accuracy and more than gps_max_elapsed_time has not passed then these values will be used when
+// the user is prompted to take a GPS reading. From the users perspective the GPS reading will appear to be
+// instantaneous. However, if no usable GPS values are collected during the polling phase then the read command will be
+// used to take a new reading. If a new reading within gps_desired_accuracy cannot be attained then the GPS values from
+// any successful read will be used.
+
+
+// Constants
+numeric gps_max_time = 120; // 2 minutes
+numeric gps_desired_accuracy = 20;
+numeric gps_max_elapsed_time = 300; // 5 minutes
+
+// Readlast variables
+numeric stale_polled_readtime;
+numeric polled_latitude = notappl;
+numeric polled_longitude = notappl;
+numeric polled_altitude = notappl;
+numeric polled_accuracy = notappl;
+numeric polled_satellites = notappl;
+numeric polled_readtime = notappl;
+
+// Read and readlast variables
+numeric gps_open;
+
+// CAPI text variables
+string gps_reading_capi_text = "Take GPS reading?";
+string gps_data_status_capi_text;
+string gps_accuracy_status_capi_label;
+string gps_accuracy_status_capi_text;
+
+
+function GPSOpen()
+
+	// Open the GPS unit, if it is not already open
+	if not gps_open then
+		gps_open = gps(open);
+	endif;
+
+end;
+
+
+function GPSClose()
+
+	// Close the GPS unit, if it is open
+	if gps_open then
+		gps_open = not gps(close);
+	endif;
+
+end;
+
+
+function IsValidPolledGPSData()
+
+	// The polled GPS data values have been assigned a reading
+	IsValidPolledGPSData = 0;
+	if polled_latitude <> notappl
+		and polled_longitude <> notappl
+		and polled_altitude <> notappl
+		and polled_accuracy <> notappl
+		and polled_satellites <> notappl
+		and polled_readtime <> notappl then
+		IsValidPolledGPSData = 1;
+	endif;
+
+end;
+
+
+function IsRecentPolledGPSData()
+
+	// The polled_readtime is no older than gps_max_elapsed_time
+
+	// The function gps(readtime) does not return a date, because of this the assumption is
+	// made that all gps readtimes occur the same day as the current time. This leads to some
+	// limitations.
+	//
+	// 1. At the start of a new day, valid read times will be rejected until a readtime is taken
+	// in the new day. For example, the GPS data taken at 11:59:59 will be rejected if the current
+	// time is 00:00:00.
+	//
+	// 2. Invalid times could be accepted, if they are more than a day old. For example, an
+	// readtime was taken at 00:00:00 on a previous day. If the current time was 00:00:01 the
+	// time would be accepted. Note the application would have to run for 24 hours.
+	IsRecentPolledGPSData = 0;
+	numeric currentTime = systime();
+
+	if polled_readtime < currentTime then
+		// Read time is older than current time
+		numeric timespan = currentTime - polled_readtime;
+		if timespan <= gps_max_elapsed_time then
+			IsRecentPolledGPSData = 1;
+		endif;
+	endif;
+
+end;
+
+
+function IsFreshPolledGPSData()
+
+	// The polled GPS data values haven't been assigned or rejected
+	IsFreshPolledGPSData = 0;
+	if stale_polled_readtime <> polled_readtime then
+		IsFreshPolledGPSData = 1;
+	endif;
+
+end;
+
+
+function setStalePolledGPSData()
+
+	// The current polled GPS values have been assigned or rejected
+	stale_polled_readtime = polled_readtime;
+
+end;
+
+
+function DeletePolledGPSData()
+
+	// Delete polled GPS data
+	polled_latitude = notappl;
+	polled_longitude = notappl;
+	polled_altitude = notappl;
+	polled_accuracy = notappl;
+	polled_satellites = notappl;
+	polled_readtime = notappl;
+
+end;
+
+
+// ------------------
+// ------------------ GPS
+// ------------------
+// Rest of GPS implementation is in GPS.apc
+
+function IsCompleteGPSData()
+
+	// All GPS data values exist
+	IsCompleteGPSData = 0;
+	if HH_LATITUDE <> notappl
+		and HH_LONGITUDE <> notappl
+		and HH_ALTITUDE <> notappl
+		and HH_GPS_ACCURACY <> notappl
+		and HH_GPS_SAT <> notappl
+		and HH_GPS_READTIME <> notappl then
+		IsCompleteGPSData = 1;
+	endif;
+
+end;
+
+//end;
+
+function IsDesiredAccuracy(accuracy)
+
+	// GPS accuracy is within defined range
+	IsDesiredAccuracy = 0;
+	if 0 <= accuracy and accuracy <= gps_desired_accuracy then
+		IsDesiredAccuracy = 1;
+	endif;
+
+end;
+
+
+function DeleteGPSData()
+
+	// Delete GPS data
+	HH_LATITUDE = notappl;
+	HH_LONGITUDE = notappl;
+	HH_ALTITUDE = notappl;
+	HH_GPS_ACCURACY = notappl;
+	HH_GPS_SAT = notappl;
+	HH_GPS_READTIME = notappl;
+
+end;
+
+
+function AssignGPSValues(latitude, longitude, altitude, accuracy, satellites, readtime)
+
+	// Assign result of GPS reading
+	AssignGPSValues = 0;
+	numeric input = 1;
+	if IsCompleteGPSData() then
+		if gps(accuracy) > HH_GPS_ACCURACY then
+			// Prompt user before replacing GPS data with less accurate GPS data
+			input = warning("Previous GPS data (accuracy = %f) will be replaced with less "
+				"accurate GPS data (accuracy = %f).", HH_GPS_ACCURACY, accuracy)
+				select("Confirm", continue, "Cancel", continue);
+
+		else
+			// Prompt user before replacing GPS data
+			input = warning("Previous GPS data will be replaced.")
+				select("Confirm", continue, "Cancel", continue);
+		endif
+	endif;
+
+	if input <> 2 then
+		HH_LATITUDE = latitude;
+		HH_LONGITUDE = longitude;
+		HH_ALTITUDE = altitude;
+		HH_GPS_ACCURACY = accuracy;
+		HH_GPS_SAT = satellites;
+		HH_GPS_READTIME = readtime;
+		AssignGPSValues = 1;
+	endif;
+
+end;
+
+
+function TakeGPSReading()
+
+	// Use the read command to obtain a GPS reading. Use the reading even if it is not within the
+	// desired accuracy range. Assign the GPS data to GPS variables in the dictionary.
+	if gps_open then
+		numeric result = gps(read, gps_max_time, gps_desired_accuracy);
+
+		if result = 1 then
+			// Read was successful
+			if AssignGPSValues(gps(latitude), gps(longitude), gps(altitude), gps(accuracy), gps(satellites), gps(readtime)) then
+				gps_reading_capi_text = "Take GPS reading?";
+
+			else
+				gps_reading_capi_text = "You chose not to update GPS data. Retake GPS reading?";
+				reenter;
+			endif;
+
+		elseif result = -1 then
+			gps_reading_capi_text = "GPS reading cancelled by user. Retake GPS reading?";
+			reenter;
+
+		elseif result = 0 then
+			gps_reading_capi_text = "GPS reading failed. Retake GPS reading?";
+			reenter;
+		endif;
+
+	else
+		gps_reading_capi_text = "Failed to start GPS. Retake GPS reading?";
+		reenter;
+	endif;
+
+end;
+
+
+function PollGPS()
+
+	// Use the readlast command to obtain a GPS reading. Use the reading only if it is with the
+	// desired accuracy range. Assign the GPS data to global "polled" variables.
+	numeric success = 0;
+	GPSOpen();
+	if gps_open then
+		success = 1;
+	endif;
+
+	if success and not gps(readlast) then
+		success = 0;
+	endif;
+
+	if success and IsDesiredAccuracy(gps(accuracy)) then
+		polled_latitude = gps(latitude);
+		polled_longitude = gps(longitude);
+		polled_altitude = gps(altitude);
+		polled_accuracy = gps(accuracy);
+		polled_satellites = gps(satellites);
+		polled_readtime = gps(readtime);
+	endif;
+
+end;
+
+
+function TryPolledGPSData()
+
+	// Try to use the GPS data in the global "polled" variables. If they are valid and
+	// the user accepts them then assign them, otherwise return failure.
+	TryPolledGPSData = 0;
+	if IsValidPolledGPSData() then
+		if IsFreshPolledGPSData() then
+			// GPS data has not been assigned or rejected by user
+			if IsRecentPolledGPSData() then
+				// GPS data is recent
+				setStalePolledGPSData();
+				if AssignGPSValues(polled_latitude, polled_longitude, polled_altitude, polled_accuracy, polled_satellites, polled_readtime) then
+					TryPolledGPSData = 1;
+					gps_reading_capi_text = "Take GPS reading?";
+
+				else
+					gps_reading_capi_text = "You chose not to update GPS data. Retake GPS reading?";
+					reenter;
+				endif;
+			endif;
+		endif;
+endif;
+
+end;

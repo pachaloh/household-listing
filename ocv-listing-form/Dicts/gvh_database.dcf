@@ -1,0 +1,82 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Gvh Dictionary
+Name=GVH_DATABASE_DICT
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=F7F245D5A2723D4B98F744C66B930AEA6ADA73C4E2F797E4504306EAE8CDEE6B
+
+[Level]
+Label=Gvh Level
+Name=GVH_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Region Code Gvh
+Name=REGION_CODE_GVH
+Start=1
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=District Code Gvh
+Name=DISTRICT_CODE_GVH
+Start=2
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Ta Code Gvh
+Name=TA_CODE_GVH
+Start=4
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Gvh Code
+Name=GVH_CODE
+Start=6
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=Gvh Record
+Name=GVH_REC
+RecordTypeValue=''
+RecordLen=90
+
+[Item]
+Label=Region Gvh
+Name=REGION_GVH
+Start=9
+Len=7
+DataType=Alpha
+
+[Item]
+Label=District Name Gvh
+Name=DISTRICT_NAME_GVH
+Start=16
+Len=14
+DataType=Alpha
+
+[Item]
+Label=Ta Name Gvh
+Name=TA_NAME_GVH
+Start=30
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Gvh Name
+Name=GVH_NAME
+Start=60
+Len=31
+DataType=Alpha

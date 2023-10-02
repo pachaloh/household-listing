@@ -1,0 +1,36 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=deleteData
+Name=DELETEDATA_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=BDAC5B5A6B5C083D14EFD3652D72A6AF825BC98F6A060998B232DC373BE01AE2
+
+[Level]
+Label=deleteData Level
+Name=DELETEDATA_LEVEL
+
+[IdItems]
+
+[Item]
+Label=deleteData Identification
+Name=DELETEDATA_ID
+Start=2
+Len=1
+DataType=Numeric
+
+[Record]
+Label=deleteData Record
+Name=DELETEDATA_REC
+RecordTypeValue='1'
+RecordLen=3
+
+[Item]
+Label=Delete data
+Name=DEL_DATA
+Start=3
+Len=1
+DataType=Numeric

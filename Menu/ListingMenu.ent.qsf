@@ -55,7 +55,7 @@ questions:
     conditions:
       - questionText:
           EN: |
-            <p>Please, create your pin code.&nbsp; &nbsp;</p><p>A pin code is a four digit number that enables you to log in the <span style="font-weight: bold;">2022 Labour Force Survey application</span>. It is recommended to choose a number which you can easly remember and the code should be kept secret.&nbsp;</p><p>&nbsp;</p><p></p>
+            <p>Please, create your pin code.&nbsp; &nbsp;</p><p>A pin code is a four digit number that enables you to log in the <span style="font-weight: bold;">2023 Malawi Post-Cholera-Vaccine</span>. It is recommended to choose a number which you can easly remember and the code should be kept secret.&nbsp;</p><p>&nbsp;</p><p></p>
   - name: LISTINGMENU_DICT.ASSIGNMENT_SELECTION
     conditions:
       - questionText:
@@ -80,7 +80,7 @@ questions:
     conditions:
       - questionText:
           EN: |
-            <p><br></p><p>Select applicable option.&nbsp;</p><p></p>
+            <p>Select applicable option.&nbsp;<br></p><p></p>
   - name: LISTINGMENU_DICT.MANAGE_STAFF
     conditions:
       - questionText:
@@ -100,7 +100,7 @@ questions:
     conditions:
       - questionText:
           EN: |
-            Select EA to assign<p></p>
+            Select staff to assign an EA<p></p>
   - name: LISTINGMENU_DICT.INTERVIEWER_EA
     conditions:
       - questionText:

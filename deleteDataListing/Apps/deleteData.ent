@@ -1,0 +1,25 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=DELETEDATA
+Name=DELETEDATA
+AppType=DataEntry
+OperatorID=No
+CAPI=Yes
+CaseTree=Never
+CreateListing=No
+CreateLog=No
+ShowFieldLabels=No
+ShowErrorMessageNumbers=No
+ComboBoxShowOnlyDiscreteValues=Yes
+ParadataCollection=AllEvents
+ParadataDeviceStateMinutes=5
+[AppCode]
+File=.\deleteData.ent.apc
+[Message]
+File=.\deleteData.ent.mgf
+[Help]
+File=.\deleteData.ent.qsf
+[Forms]
+File=.\deleteData.fmf
+[Dictionary Types]
+Dict-Type=..\Dicts\deleteData.dcf,Input,.\deleteData.fmf

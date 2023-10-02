@@ -61,7 +61,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            What popular name is&nbsp; <i>~~HH_HEAD~~</i> commonly known for?<p></p>
+            What popular name is&nbsp; <i><font color="#731842">~~toupper(HH_HEAD)~~</font></i> commonly known for?<p></p>
   - name: LISTINGFORM_DICT.UNDER_FIVE
     conditions:
       - questionText:
@@ -86,7 +86,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            Write <font color="#731842">~~household_label~~</font> on the door for&nbsp;<p></p>
+            Write <font color="#731842"><b>~~household_label~~</b></font> on the door for&nbsp;<p></p>
   - name: BLOCK_DEM_BTH
     conditions:
       - logic: curocc() = 1

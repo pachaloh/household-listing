@@ -7,7 +7,7 @@ RecordTypeLen=1
 Positions=Relative
 ZeroFill=Yes
 DecimalChar=Yes
-SecurityOptions=338254FE3A5D77AEF95DEA6921C63EC88944360111D4954AE3772CF5C1382BB9
+SecurityOptions=338254FE3A5D77AEF95DEA6921C63EC8BE83912A5294B31C884CF0AE49C0EF16
 
 [Languages]
 ENG=English
@@ -58,8 +58,8 @@ ZeroFill=Yes
 Label=Type of area
 Name=GHAREA_EN
 Value=1;Urban
-Value=2;Peri-urban
-Value=3;Rural
+Value=2;Rural
+Value=3;Peri-Urban
 
 [Item]
 Label=Interview date
@@ -202,7 +202,7 @@ DataType=Alpha
 Label=Metadata Record
 Name=METADATA_RECORD
 RecordTypeValue='X'
-RecordLen=169
+RecordLen=170
 
 [Item]
 Label=Region
@@ -289,9 +289,6 @@ ZeroFill=Yes
 Label=Interview Conclusion (Households)
 Name=HH_REGULAR_CONCLUSION_VS
 Value=1;Conclude interview
-Value=2;Review population section
-Value=3;Review dwelling characteristics section
-Value=4;Review emigration section
 
 [Item]
 Label=GPS Reading
@@ -386,5 +383,13 @@ Label=Team code
 Name=TEAM_CODE
 Start=168
 Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Zone Id
+Name=ZONE_ID
+Start=170
+Len=1
 DataType=Numeric
 ZeroFill=Yes

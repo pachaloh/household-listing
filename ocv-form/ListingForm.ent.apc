@@ -20,8 +20,17 @@ preproc
 	
 	if sysparm("EA_CODE") <> ""  then
 		$ = sysparm("EA_CODE");
+		REGION   = tonumber($[1:1]);
+		DISTRICT = tonumber($[2:2]);
 		
-		//setproperty($,"Protected", "Yes");
+		TEAM_CODE = tonumber(sysparm("TEAM_NO"));
+		
+		if loadcase(EA_DATABASE_DICT,$) then
+			ZONE_ID = HEALTH_ZONE_CODE;
+			GHAREA  = RESIDENCE_CODE;
+		endif;
+		
+		setproperty($,"Protected", "Yes");
 	endif;
 PROC GHINTID
 
@@ -37,7 +46,7 @@ preproc
 	if sysparm("GHINTID") <> ""  then
 		$ = sysparm("GHINTID");
 		
-		//setproperty($,"Protected", "Yes");
+		setproperty($,"Protected", "Yes");
 	endif;
 	
 PROC GHHHNO
@@ -48,23 +57,78 @@ preproc
 	if sysparm("GHHHNO") <> ""  then
 		$ = tonumber(sysparm("GHHHNO"));
 		
-		//setproperty($,"Protected", "Yes");
+		setproperty($,"Protected", "Yes");
 	endif;
+PROC HH_SUPERVISOR_CODE
+
+preproc
+	
+	if sysparm("HH_SUPERVISOR_CODE") <> ""  then
+		$ = sysparm("HH_SUPERVISOR_CODE");
+		
+		setproperty($,"Protected", "Yes");
+	endif;
+PROC HH_START_INTERVIEW_TIME
+
+preproc
+
+	if HH_START_INTERVIEW_TIME = notappl then
+		HH_START_INTERVIEW_TIME = timestamp();
+	endif;
+
+	setproperty($, "Protected", "Yes");
+PROC HH_INTRODUCTION
+
+if GHVFDT = notappl then
+	sysdate("YYYYMMDD");
+endif;
 PROC SN_STRUCT
 
 preproc
 	
-	ask if MULT_HHS = 1;
+	if MULT_HHS = 1 then
+		$ = 1;
+	else
+		$ = 2;
+	endif;
+	
+	noinput;
+PROC DESC_STRUCT
+
+if $ = "" then
+	errmsg("You cannot leave the field blank");
+	reenter;
+	
+elseif length(strip($)) < 5 then
+	errmsg("This doesn't seem like enough for a description! ")
+		select("Reenter",reenter,"This is ok", continue);
+	
+endif;
 PROC HH_HEAD
 
 preproc
 	
 	ask if RES_STRUCT = 1;
+
+
+postproc
+	
+	
+	if $ = "" then
+		errmsg("You cannot leave the field blank");
+		reenter;
+		
+	elseif length(strip($)) < 5 then
+		errmsg("This doesn't seem enough for a name!")
+			select("Reenter",reenter,"This is ok", continue);
+		
+	endif;
 PROC POPULAR_NAME
 
 preproc
 	
 	ask if RES_STRUCT = 1;
+
 PROC UNDER_FIVE
 
 preproc
@@ -72,6 +136,11 @@ preproc
 	ask if RES_STRUCT = 1;
 PROC DU_STATUS
 
+
+if RES_STRUCT = 1 and $ = 2 then
+	errmsg("Confirm that structure belonging to %s is vacant",HH_HEAD)
+		select("Reenter",reenter,"This is correct",continue);
+endif;
 PROC HH_GPS_READING
 
 
@@ -150,18 +219,24 @@ PROC HH_LABEL
 
 preproc
 
-
-	
-	household_label = maketext("OVC/%v/%v",edit("999",GHHHNO),staff_segment(GHINTID));
+	household_label = maketext("OCV/%v/%v",edit("999",GHHHNO),staff_segment(GHINTID));
 	
 	$ = household_label;
-	
 
 	
 	savepartial();
+	
+	
 PROC HH_CONCLUSION
 
 preproc
 
 	savepartial();
-	warning("Just make sure you have labelled the household as %s!",maketext("LFS/%v/%v",edit("999",GHHHNO),staff_segment(GHINTID)));
+	warning("Just make sure you have labelled the household as %s!",maketext("OCV/%v/%v",edit("999",GHHHNO),staff_segment(GHINTID)));
+
+
+postproc
+
+	if HH_END_INTERVIEW_TIME = notappl then
+		HH_END_INTERVIEW_TIME = timestamp();
+	endif;

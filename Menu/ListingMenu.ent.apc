@@ -9,13 +9,19 @@ numeric staff_creation_number;
 
 string CapiPublishDate;
 
-//file tempFile;
+file tempFile;
 
 string CapiStaffName;
 
 string CapiManageStaffName;				// various names of interviewers used throughout the system
 
-{
+
+function string code_of_supervisor()
+	loadcase(STAFF_DICT,TEAM_NO,LOGIN);
+	code_of_supervisor = SUPERVISOR_STAFF_CODE;
+end;
+
+
 
 function EA_completionreport()
 	string reportFilename = maketext("%sreport.txt", pathname(Application));
@@ -49,7 +55,7 @@ function EA_completionreport()
 		filewrite(tempFile, "");
 		filewrite(tempFile, "EA Number: %s",ta_eas(ctr));
 		filewrite(tempFile, "-----------------------------------");
-		filewrite(tempFile, "Interviwer      	No.HHs   Members Children Status");
+		filewrite(tempFile, "Interviwer       No.HHs  HHwChild Status");
 		
 		//Loop through team members whose supervisor is same
 		forcase STAFF_DICT where LOGIN = SUPERVISOR_STAFF_CODE do
@@ -63,27 +69,13 @@ function EA_completionreport()
 			//Case ID for household listed
 			string caseIDlisting = maketext("%v%v%v",strip(ASSIGNMENT_SELECTION),ta_eas(ctr),STAFF_ID);
 
-			//Load case
-			if loadcase(LABOURF_FORCE_LISTING_DICT,caseIDlisting) then
-				hh_cases   = max(STRUCTURE_NUMBER where INTERVIEWER_ID_CODE = STAFF_ID);
-				hh_members = sum(HH_MEMBERS_TOTAL where INTERVIEWER_ID_CODE = STAFF_ID);
-				hh_child   = sum(HH_MEMBERS_AGE_5_17 where INTERVIEWER_ID_CODE = STAFF_ID);
-				
-				if hh_cases > 0 then
-				
-					if CLOSE_EA(hh_cases) = 1 then
-						closed_response = "Closed";
-					else
-						closed_response = "Open";
-					endif;
-				else
-					closed_response = "Open";
-				endif;
-				
-			endif;
 
-			//filewrite(tempFile, "No.HHs  No.Members No.Child EA Closed");
-			filewrite(tempFile, "%-0.15s: %7d %9d %7d %6s",STAFF_NAME,hh_cases,hh_members,hh_child,closed_response);
+				//hh_cases   = countcases(LISTINGFORM_DICT(startswith,strip(ASSIGNMENT_SELECTION)) where GHINTID = STAFF_ID);
+				hh_cases   = countcases(LISTINGFORM_DICT(startswith,caseIDlisting));
+				hh_child   = countcases(LISTINGFORM_DICT(startswith,caseIDlisting) where UNDER_FIVE = 1);
+				//hh_child   = countcases(LISTINGFORM_DICT(startswith,strip(ASSIGNMENT_SELECTION)) where GHINTID = STAFF_ID and UNDER_FIVE = 1);
+				
+			filewrite(tempFile, "%-0.15s: %7d %7d %6s",STAFF_NAME,hh_cases,hh_child,closed_response);
 
 		endfor;
 		
@@ -100,7 +92,7 @@ function EA_completionreport()
 	endif;
 end;
 
-}
+
 
 function HH_completionreport()
 
@@ -114,11 +106,11 @@ function syncWithSupervisor() //Funtion to transfer from interviewer to supervis
 	if syncconnect(bluetooth) then
 		
 		// Sync main data file.
-		if syncdata(BOTH, DISTRICTS_DICT) = 0 then 		//Household Cases
+		if syncdata(BOTH, DISTRICTS_DICT) = 0 then 					//District Cases
 			errmsg("Failed to transfer district data");
 		endif;
 		
-		if syncdata(BOTH, TRADITIONAL_AUTHORITIES_DICT) = 0 then 	//Individual child Cases
+		if syncdata(BOTH, TRADITIONAL_AUTHORITIES_DICT) = 0 then 	//TA cases Cases
 			errmsg("Failed to transfer TA data");
 		endif;
 		
@@ -127,14 +119,14 @@ function syncWithSupervisor() //Funtion to transfer from interviewer to supervis
 			errmsg("Failed to transfer staff data");
 		endif;
 		
-		if syncdata(BOTH, EA_ASSIGNMENTS_DICT) = 0 then				//Clusters Cases
+		if syncdata(BOTH, EA_ASSIGNMENTS_DICT) = 0 then				//EA Assignments
 			errmsg("Failed to transfer assignemnts data");
 		endif;
-{		
-		if syncdata(BOTH, LABOURF_FORCE_LISTING_DICT) = 0 then		//Work (Household) Assignment Cases
+		
+		if syncdata(BOTH, LISTINGFORM_DICT) = 0 then				//Households listed
 			errmsg("Failed to transfer Assignments data");
 		endif;
-}		
+		
 		
 		syncdisconnect();
 	endif;
@@ -147,18 +139,30 @@ function syncWithCentralOffice()		//Function for data transfer betwen supervisor
 	if syncconnect(Dropbox) then
 	
 		// Sync cases file with server
-		//syncdata(PUT, LABOURF_FORCE_LISTING_DICT);			//Household listed cases
-		syncdata(PUT, STAFF_DICT);							//Household listed cases
+		syncdata(PUT, LISTINGFORM_DICT);					//Household listed cases
+		syncdata(PUT, STAFF_DICT);							//Team members cases
 		syncdata(GET, DISTRICTS_DICT);						//District Cases
 		syncdata(GET, TRADITIONAL_AUTHORITIES_DICT);		//TA Cases
-		syncdata(GET, EA_DATABASE_DICT);								//EA Cases
-		syncdata(PUT, SELECTED_EAS_DICT);			//Area of work cases
+		syncdata(GET, EA_DATABASE_DICT);					//EA Cases
+		syncdata(PUT, SELECTED_EAS_DICT);					//Area of work cases
 		syncdata(PUT, EA_ASSIGNMENTS_DICT);					//EA assignments
 
-	syncdisconnect();
-endif;
+		syncdisconnect();
+	
+	endif;
 end;
 
+function syncAssignmentsWithCentralOffice()		//Function for data transfer betwen supervisor and Central Office
+// Connect to the webserver
+	if syncconnect(Dropbox) then
+	
+		// Sync cases file with server
+		syncdata(PUT, SELECTED_EAS_DICT);					//Area of work cases
+		syncdata(PUT, EA_ASSIGNMENTS_DICT);					//EA assignments
+		syncdisconnect();
+	
+	endif;
+end;
 
 function syncWithInterviewer()
 	// Run the Bluetooth server to receive data from interviewer.
@@ -254,13 +258,15 @@ function launch_listing_form()
 
     filewrite(dynamic_pff, "[ExternalFiles]"); 
     filewrite(dynamic_pff, "CLUSTERS_DICT=%v", "../Lookups/clusters.csdb"); 
+	filewrite(dynamic_pff, "STAFF_DICT=%v", "../Data/staff.csdb");
 	
     filewrite(dynamic_pff, "[Parameters]");
-	filewrite(dynamic_pff, "EA_CODE=%s", INTERVIEW_MENU[1:8]);			//EA code
-	filewrite(dynamic_pff, "GHHHNO=%s", INTERVIEW_MENU[45:3]); 			//Household number
-	filewrite(dynamic_pff, "GHINTID=%s", LOGIN); 						//Interviewer ID
-	filewrite(dynamic_pff, "GHINTNAME=%s", getlabel(LOGIN,LOGIN)); 		//Interviewer name
-//	filewrite(dynamic_pff, "HH_SUPERVISOR_CODE=%s", supervisor_name()); //Supervisor code
+	filewrite(dynamic_pff, "EA_CODE=%s", INTERVIEW_MENU[1:8]);				//EA code
+	filewrite(dynamic_pff, "GHHHNO=%s", INTERVIEW_MENU[45:3]); 				//Household number
+	filewrite(dynamic_pff, "GHINTID=%s", LOGIN); 							//Interviewer ID
+	filewrite(dynamic_pff, "GHINTNAME=%s", getlabel(LOGIN,LOGIN)); 			//Interviewer name
+	filewrite(dynamic_pff, "HH_SUPERVISOR_CODE=%s", code_of_supervisor()); 	//Supervisor code
+	filewrite(dynamic_pff, "TEAM_CODE=%d", TEAM_NO); 						//Interviewer ID	
     filewrite(dynamic_pff, "OnExit=%v", "../Menu/ListingMenu.pff"); 
 
     close(dynamic_pff); 
@@ -669,7 +675,7 @@ onfocus
 
 		//staff_id = maketext();
 
-		forcase EA_ASSIGNMENTS_DICT where EA_STAFF_ID = LOGIN do
+		forcase EA_ASSIGNMENTS_DICT where   EA_STAFF_ID = LOGIN do
 			//errmsg("My id: %s,%s",STAFF_ID,LOGIN);
 			string AssignSelcode = maketext("%v%v%v%v", edit("9",REGION_CODE_EA_ASSIGNMENTS), edit("99",DISTRICT_CODE_EA_ASSIGNMENTS), edit("99",TA_CODE_EA_ASSIGNMENTS), edit("999",EA_NUMBER_ASSIGNMENTS));
 			string AssignSelName = maketext("Interview: %v / %v / %v/ %v", strip(REGION_EA_ASSIGNMENTS), strip(DISTRICT_NAME_EA_ASSIGNMENTS), strip(TA_NAME_EA_ASSIGNMENTS),maketext("EA%v",edit("999",EA_NUMBER_ASSIGNMENTS)));
@@ -695,8 +701,12 @@ onfocus
 postproc
 
 	if $ = "1" or $ = "2" or $ = "3" then
-	
+		
+		//Sync assignments to make suke EA is not yet assigned 
+		syncAssignmentsWithCentralOffice();
+		
 	elseif ROLE = 2 then
+		
 		skip to INTERVIEW_MENU;
 	else
 		skip to SUPERVISOR_MENU;
@@ -730,6 +740,8 @@ onfocus
 	
 	
 postproc
+
+	//if loadcase(EA_ASSIGNMENTS_DICT(startswith,maketext("%v%v%v",XREGION,XDISTRICT,XTRADITIONAL_AUTHORITY)))
 	
 	REGION_CODE_ASSIGNMENT   = XREGION;
 	DISTRICT_CODE_ASSIGNMENT = XDISTRICT;
@@ -768,7 +780,7 @@ PROC SUPERVISOR_MENU
 		skip to REVIEW_MENU;}
 
 	elseif SUPERVISOR_MENU = 6 then
-//		EA_completionreport();
+		EA_completionreport();
 		reenter;
 
 	{elseif SUPERVISOR_MENU = 7 then
@@ -793,13 +805,15 @@ onfocus
 	
 
 	valueset string hh_id;
-	numeric number_of_cases = countcases(LISTINGFORM_DICT) + 1;	
+	numeric number_of_cases = countcases(LISTINGFORM_DICT where EA_CODE = ASSIGNMENT_SELECTION and GHINTID = LOGIN) + 1;	
 	
-	hh_id.add("Add household",maketext("%v%v%v",ASSIGNMENT_SELECTION,LOGIN,edit("999",number_of_cases)));
+	hh_id.add("Add new structure",maketext("%v%v%v",ASSIGNMENT_SELECTION,LOGIN,edit("999",number_of_cases)));
 	
-	forcase LISTINGFORM_DICT do
-		hh_id.add(DESC_STRUCT,maketext("%v%v%v",ASSIGNMENT_SELECTION,GHINTID,GHHHNO));
+	forcase LISTINGFORM_DICT where EA_CODE = ASSIGNMENT_SELECTION and GHINTID = LOGIN do
+		hh_id.add(maketext("%v-%v",GHHHNO,toupper(HH_HEAD)),maketext("%v%v%v",ASSIGNMENT_SELECTION,GHINTID,GHHHNO));
 	endfor;
+	
+	hh_id.sort(descending);
 	
 	setvalueset($,hh_id);
 
@@ -811,6 +825,7 @@ postproc
 		endif;
 
 		launch_listing_form();
+		reenter;
 
 PROC MANAGE_STAFF
 
@@ -976,7 +991,7 @@ onfocus
 			
 		endfor;
 		
-		assignment_staff_details = maketext("",assignment_staff_details);
+		//assignment_staff_details = maketext("",assignment_staff_details);
 		//errmsg("%s",assignment_staff_details);
 		
 		interviwer_ea_vs.add(maketext("EA%v%v",edit("999",EA_NUMBER),maketext("(%v)",assignment_staff_details)),EA_NUMBER);		

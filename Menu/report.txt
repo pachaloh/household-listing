@@ -1,25 +1,60 @@
 ﻿Progress Report
 -----------------
 
-TA code: 10204   
+TA code: 21031   
 
 
-EA Number: 015
+EA Number: 914
 -----------------------------------
-Interviwer      	No.HHs   Members Children Status
-PACHALO        :       0         0       0   Open
-CHIZALA        :       0         0       0   Open
+Interviwer      No.HHs  HHwChild Status
+GRACIAN MSOSA  :       2       1   Open
+CHISOMO SINGANO:       0       0   Open
+PACHALO CHIZALA:       0       0   Open
 
 
-EA Number: 035
+EA Number: 915
 -----------------------------------
-Interviwer      	No.HHs   Members Children Status
-PACHALO        :       0         0       0   Open
-CHIZALA        :       0         0       0   Open
+Interviwer      No.HHs  HHwChild Status
+GRACIAN MSOSA  :       1       0   Open
+CHISOMO SINGANO:       0       0   Open
+PACHALO CHIZALA:       0       0   Open
 
 
-EA Number: 055
+EA Number: 916
 -----------------------------------
-Interviwer      	No.HHs   Members Children Status
-PACHALO        :       0         0       0   Open
-CHIZALA        :       0         0       0   Open
+Interviwer      No.HHs  HHwChild Status
+GRACIAN MSOSA  :       0       0   Open
+CHISOMO SINGANO:       0       0   Open
+PACHALO CHIZALA:       0       0   Open
+
+
+EA Number: 917
+-----------------------------------
+Interviwer      No.HHs  HHwChild Status
+GRACIAN MSOSA  :       0       0   Open
+CHISOMO SINGANO:       0       0   Open
+PACHALO CHIZALA:       0       0   Open
+
+
+EA Number: 918
+-----------------------------------
+Interviwer      No.HHs  HHwChild Status
+GRACIAN MSOSA  :       0       0   Open
+CHISOMO SINGANO:       0       0   Open
+PACHALO CHIZALA:       0       0   Open
+
+
+EA Number: 919
+-----------------------------------
+Interviwer      No.HHs  HHwChild Status
+GRACIAN MSOSA  :       0       0   Open
+CHISOMO SINGANO:       0       0   Open
+PACHALO CHIZALA:       0       0   Open
+
+
+EA Number: 920
+-----------------------------------
+Interviwer      No.HHs  HHwChild Status
+GRACIAN MSOSA  :       0       0   Open
+CHISOMO SINGANO:       0       0   Open
+PACHALO CHIZALA:       0       0   Open

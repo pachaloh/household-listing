@@ -1,17 +1,17 @@
 ﻿[Dictionary]
 Version=CSPro 7.7
-Label=EA Database Dictionary
+Label=Ea Database Dictionary
 Name=EA_DATABASE_DICT
 RecordTypeStart=0
 RecordTypeLen=0
 Positions=Relative
 ZeroFill=Yes
 DecimalChar=Yes
-SecurityOptions=46A72A3C246578C287089461BD59714C56E3D1A5C63607A167BA027AC57E3C66
+SecurityOptions=950F530BA8FB97E5A5D18845102896D218BE062ED83CC0B8B686A1EAFD5F7E47
 
 [Level]
-Label=Ea Level
-Name=EA_LEVEL
+Label=Ea Database Level
+Name=EA_DATABASE_LEVEL
 
 [IdItems]
 
@@ -48,28 +48,82 @@ DataType=Numeric
 ZeroFill=Yes
 
 [Record]
-Label=Ea Record
-Name=EA_REC
+Label=Ea Database Record
+Name=EA_DATABASE_REC
 RecordTypeValue=''
-RecordLen=59
+RecordLen=91
 
 [Item]
 Label=Region Ea
 Name=REGION_EA
 Start=9
-Len=7
+Len=10
 DataType=Alpha
 
 [Item]
 Label=District Name Ea
 Name=DISTRICT_NAME_EA
-Start=16
-Len=14
+Start=19
+Len=13
 DataType=Alpha
 
 [Item]
 Label=Ta Name Ea
 Name=TA_NAME_EA
-Start=30
-Len=30
+Start=32
+Len=25
 DataType=Alpha
+
+[Item]
+Label=Health Zone
+Name=HEALTH_ZONE
+Start=57
+Len=12
+DataType=Alpha
+
+[Item]
+Label=Health Zone Code
+Name=HEALTH_ZONE_CODE
+Start=69
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Residence
+Name=RESIDENCE
+Start=70
+Len=5
+DataType=Alpha
+
+[Item]
+Label=Residence Code
+Name=RESIDENCE_CODE
+Start=75
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Eacode
+Name=EACODE
+Start=76
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Total Pop
+Name=TOTAL_POP
+Start=84
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Total Hh
+Name=TOTAL_HH
+Start=88
+Len=4
+DataType=Numeric
+ZeroFill=Yes

@@ -1,7 +1,7 @@
 ﻿[Run Information]
 Version=CSPro 7.7
 AppType=Entry
-Description=Malawi LFS Listing Form-Phase 2, 29Aug2023
+Description=OVC-Listing-App 2023v6
 
 [DataEntryInit]
 StartMode=Add

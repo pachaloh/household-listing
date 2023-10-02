@@ -1,0 +1,26 @@
+{
+  "fileType": "Application Deployment Specification",
+  "version": "7.7",
+  "name": "deleteListingData",
+  "description": "",
+  "files": [
+    {
+      "path": ".\\Apps\\deleteData.ent"
+    },
+    {
+      "path": ".\\Apps\\deleteData.pff"
+    }
+  ],
+  "dictionaries": [
+    {
+      "path": ".\\Dicts\\deleteData.dcf",
+      "uploadForSync": true
+    }
+  ],
+  "deployment": {
+    "type": "Dropbox",
+    "cswebUrl": "http:\/\/",
+    "ftpUrl": "ftp:\/\/",
+    "localFolderPath": "..\\deleteListingDeployed"
+  }
+}

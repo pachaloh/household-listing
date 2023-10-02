@@ -1,0 +1,27 @@
+﻿[Run Information]
+Version=CSPro 7.7
+AppType=Entry
+Description=Malawi-OVC-Listing-Form
+
+[DataEntryInit]
+StartMode=Add
+
+[Files]
+Application=.\ListingMenu.ent
+InputData=|type=None
+Paradata=.\ListingMenu.cslog
+
+[ExternalFiles]
+ASSIGNMENTS_SELECTION_DICT=..\Data\selected_eas.csdb
+DISTRICTS_DICT=..\Lookups\districts.csdb
+EA_ASSIGNMENTS_DICT=..\Data\ea_ssignments.csdb
+EA_DATABASE_DICT=..\Lookups\ea_database.csdb
+EA_DICT=..\Lookups\ea_database.csdb
+LABOURF_FORCE_LISTING_DICT=..\Data\ListingData.csdb
+LISTINGFORM_DICT=..\Data\ocv_listing_data.csdb
+SELECTED_EAS_DICT=..\Data\selected_eas.csdb
+STAFF_DICT=..\Data\staff.csdb
+TRADITIONAL_AUTHORITIES_DICT=..\Lookups\ta_database.csdb
+
+[UserFiles]
+tempFile=

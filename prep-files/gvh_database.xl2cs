@@ -1,0 +1,16 @@
+﻿Excel=..\LookupFIles\lookupfiles.xlsx
+InputDict=..\Dictionary\GVH.dcf
+OutputData=..\LookupFIles\GVH.csdb
+StartingRow=2
+CaseManagement=CreateNewFile
+RunOnlyIfNewer=No
+
+Mapping=GVH_REC;@4;GVH
+Mapping=GVH_REC.REGION_CODE;@2
+Mapping=GVH_REC.DISTRICT_CODE;@4
+Mapping=GVH_REC.TA_CODE;@6
+Mapping=GVH_REC.GVH_CODE;@8
+Mapping=REGION;@1
+Mapping=DISTRICT_NAME;@3
+Mapping=TA_NAME;@5
+Mapping=GVH_NAME;@7

@@ -1,0 +1,101 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Staff
+Name=STAFF_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=F7440D503C385288508B68B099A9A22F9D60CBBA7545E14475CB0A258A7EE639
+
+[Level]
+Label=Staff Level
+Name=STAFF_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Team number
+Name=TEAM_ID
+Start=2
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Staff Identification
+Name=STAFF_ID
+Start=4
+Len=36
+DataType=Alpha
+
+[Record]
+Label=Staff Record
+Name=STAFF_REC
+RecordTypeValue='1'
+RecordLen=149
+
+[Item]
+Label=Staff Name
+Name=STAFF_NAME
+Start=40
+Len=36
+DataType=Alpha
+
+[Item]
+Label=Password
+Name=PASSWORD
+Start=76
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Staff Segment
+Name=STAFF_SEG
+Start=80
+Len=1
+DataType=Alpha
+
+[Item]
+Label=Device ID
+Name=DEVICE_ID
+Start=81
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Sex
+Name=SEX
+Start=101
+Len=1
+DataType=Numeric
+
+[Item]
+Label=Supervisor Staff Code
+Name=SUPERVISOR_STAFF_CODE
+Start=102
+Len=36
+DataType=Alpha
+
+[Item]
+Label=Time Created Account
+Name=TIME_CREATED_ACCOUNT
+Start=138
+Len=10
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Role
+Name=ROLE
+Start=148
+Len=1
+DataType=Numeric
+
+[Item]
+Label=Add more staff
+Name=ADD_MORE_STAFF
+Start=149
+Len=1
+DataType=Numeric

@@ -1,0 +1,119 @@
+{
+  "fileType": "Application Deployment Specification",
+  "version": "7.7",
+  "name": "OVC-Listing-App",
+  "description": "OVC-Listing-App",
+  "files": [
+    {
+      "path": "..\\Dicts\\districts.dcf"
+    },
+    {
+      "path": "..\\Dicts\\ea_database.dcf"
+    },
+    {
+      "path": "..\\Dicts\\ea_ssignments.dcf"
+    },
+    {
+      "path": "..\\Dicts\\gvh_database.dcf"
+    },
+    {
+      "path": "..\\Dicts\\ListingFormLFS.dcf"
+    },
+    {
+      "path": "..\\Dicts\\ListingMenu.dcf"
+    },
+    {
+      "path": "..\\Dicts\\selected_eas.dcf"
+    },
+    {
+      "path": "..\\Dicts\\staff.dcf"
+    },
+    {
+      "path": "..\\Dicts\\ta_database.dcf"
+    },
+    {
+      "path": "..\\Dicts\\vh_database.dcf"
+    },
+    {
+      "path": "..\\Lookups\\districts.csdb"
+    },
+    {
+      "path": "..\\Lookups\\ea_database.csdb"
+    },
+    {
+      "path": "..\\Lookups\\gvh_database.csdb"
+    },
+    {
+      "path": "..\\Lookups\\ta_database.csdb"
+    },
+    {
+      "path": "..\\Lookups\\vh_database.csdb"
+    },
+    {
+      "path": "..\\Menu\\ListingMenu.ent"
+    },
+    {
+      "path": "..\\Menu\\ListingMenu.pff"
+    },
+    {
+      "path": "..\\ocv-form\\ListingForm.ent"
+    },
+    {
+      "path": "..\\ocv-form\\ListingForm.pff"
+    },
+    {
+      "path": "..\\Shared Logic\\GPS.apc"
+    },
+    {
+      "path": "..\\Shared Logic\\ocv_form.apc"
+    }
+  ],
+  "dictionaries": [
+    {
+      "path": "..\\Dicts\\districts.dcf"
+    },
+    {
+      "path": "..\\Dicts\\Districts.dcf"
+    },
+    {
+      "path": "..\\Dicts\\ea_database.dcf"
+    },
+    {
+      "path": "..\\Dicts\\ea_ssignments.dcf"
+    },
+    {
+      "path": "..\\Dicts\\gvh_database.dcf"
+    },
+    {
+      "path": "..\\Dicts\\ListingFormLFS.dcf"
+    },
+    {
+      "path": "..\\Dicts\\ListingMenu.dcf",
+      "uploadForSync": true
+    },
+    {
+      "path": "..\\Dicts\\selected_eas.dcf"
+    },
+    {
+      "path": "..\\Dicts\\staff.dcf"
+    },
+    {
+      "path": "..\\Dicts\\Staff.dcf"
+    },
+    {
+      "path": "..\\Dicts\\ta_database.dcf"
+    },
+    {
+      "path": "..\\Dicts\\vh_database.dcf"
+    },
+    {
+      "path": "..\\ocv-form\\ListingForm.dcf"
+    }
+  ],
+  "deployment": {
+    "type": "LocalFolder",
+    "cswebUrl": "http:\/\/",
+    "ftpUrl": "ftp:\/\/",
+    "localFolderPath": "..\\ocv-listing-form"
+  }
+}

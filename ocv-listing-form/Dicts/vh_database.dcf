@@ -1,0 +1,69 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Vh Dictionary
+Name=VH_DICT
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=4A21010C6CF4017556A3A7AB26C367E5A3FA10EAB85032477988A968CEB9907C
+
+[Level]
+Label=Vh Level
+Name=VH_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Reg Code Vlg
+Name=REG_CODE_VLG
+Start=1
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Dist Code Vlg
+Name=DIST_CODE_VLG
+Start=2
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Ta Code Vlg
+Name=TA_CODE_VLG
+Start=4
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Gvh Code Vlg
+Name=GVH_CODE_VLG
+Start=6
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Vlg Code
+Name=VLG_CODE
+Start=9
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=Vh Record
+Name=VH_REC
+RecordTypeValue=''
+RecordLen=61
+
+[Item]
+Label=Vlg Name
+Name=VLG_NAME
+Start=12
+Len=50
+DataType=Alpha

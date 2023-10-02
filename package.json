@@ -1,0 +1,141 @@
+{
+  "fileType": "Application Deployment Specification",
+  "version": "7.7",
+  "name": "2023OVCListingForm",
+  "description": "VaccinaltionMalawi, 2023",
+  "buildTime": "2023-09-26T12:22:58Z",
+  "files": [
+    {
+      "path": ".\\Dicts\\districts.dcf",
+      "signature": "8101A0E27B08D4EE3B8D5776DECDC08E"
+    },
+    {
+      "path": ".\\Dicts\\ea_database.dcf",
+      "signature": "025AA01C62FECF4638C05C57413C540B"
+    },
+    {
+      "path": ".\\Dicts\\ea_ssignments.dcf",
+      "signature": "52961923CFAEA93C1266CFE773438770"
+    },
+    {
+      "path": ".\\Dicts\\gvh_database.dcf",
+      "signature": "A2A1206D7B7B77121D2D3088F7327563"
+    },
+    {
+      "path": ".\\Dicts\\ListingFormLFS.dcf",
+      "signature": "0231E01F6EB5ABB91A2F3BA3AC89E3E0"
+    },
+    {
+      "path": ".\\Dicts\\ListingMenu.dcf",
+      "signature": "DD933863C6DED4DD67FE693FEF9771DC"
+    },
+    {
+      "path": ".\\Dicts\\selected_eas.dcf",
+      "signature": "13C54649C2EEF9C04E701732CC4A3873"
+    },
+    {
+      "path": ".\\Dicts\\staff.dcf",
+      "signature": "35C7C949C3179D0F665E2C45BCA46378"
+    },
+    {
+      "path": ".\\Dicts\\ta_database.dcf",
+      "signature": "73C273AFBADBD3F69C7208479906B739"
+    },
+    {
+      "path": ".\\Dicts\\vh_database.dcf",
+      "signature": "7CDD7A3CC96DBA9E101BF168CA61170E"
+    },
+    {
+      "path": ".\\Lookups\\districts.csdb",
+      "signature": "3F818B6AB9B97E48879512C265082D34"
+    },
+    {
+      "path": ".\\Lookups\\ea_database.csdb",
+      "signature": "144998C1151D97C4FE8E55EF7D6A0B2E"
+    },
+    {
+      "path": ".\\Lookups\\gvh_database.csdb",
+      "signature": "A2B6DDC89A59D70D52F93F1C2D2B2509"
+    },
+    {
+      "path": ".\\Lookups\\ta_database.csdb",
+      "signature": "118BA19A47DB60E810313149EEA9E202"
+    },
+    {
+      "path": ".\\Lookups\\vh_database.csdb",
+      "signature": "81CBCBBD92DEFBF769597ED179217A22"
+    },
+    {
+      "path": ".\\Menu\\ListingMenu.pen",
+      "signature": "C56533AA1EC379DE9304D1B395D0F1B7"
+    },
+    {
+      "path": ".\\Menu\\ListingMenu.pff",
+      "signature": "71C5F78BFC0B134ACC57D9030651E5E8"
+    },
+    {
+      "path": ".\\ocv-form\\ListingForm.pen",
+      "signature": "2CB8313AFFDB735EE96D9CC50FFD8411"
+    },
+    {
+      "path": ".\\ocv-form\\ListingForm.pff",
+      "signature": "C5E11F6E8B262C57BDFECB0C28ED0744"
+    },
+    {
+      "path": ".\\Shared Logic\\GPS.apc",
+      "signature": "14D3260D23F4E89A6FA01E4CB7183C91"
+    },
+    {
+      "path": ".\\Shared Logic\\ocv_form.apc",
+      "signature": "2CACF842D658C04E071155DAC613BF12"
+    }
+  ],
+  "dictionaries": [
+    {
+      "path": ".\\Dicts\\districts.dcf"
+    },
+    {
+      "path": ".\\Dicts\\Districts.dcf"
+    },
+    {
+      "path": ".\\Dicts\\ea_database.dcf"
+    },
+    {
+      "path": ".\\Dicts\\ea_ssignments.dcf"
+    },
+    {
+      "path": ".\\Dicts\\gvh_database.dcf"
+    },
+    {
+      "path": ".\\Dicts\\ListingFormLFS.dcf"
+    },
+    {
+      "path": ".\\Dicts\\ListingMenu.dcf",
+      "uploadForSync": true
+    },
+    {
+      "path": ".\\Dicts\\selected_eas.dcf"
+    },
+    {
+      "path": ".\\Dicts\\staff.dcf"
+    },
+    {
+      "path": ".\\Dicts\\Staff.dcf"
+    },
+    {
+      "path": ".\\Dicts\\ta_database.dcf"
+    },
+    {
+      "path": ".\\Dicts\\vh_database.dcf"
+    },
+    {
+      "path": ".\\ocv-form\\ListingForm.dcf"
+    }
+  ],
+  "deployment": {
+    "type": "LocalFolder",
+    "cswebUrl": "http:\/\/",
+    "ftpUrl": "ftp:\/\/",
+    "localFolderPath": "..\\household-listing"
+  }
+}

@@ -1,19 +1,26 @@
 ﻿[Run Information]
 Version=CSPro 7.7
 AppType=Entry
-[DataEntryInit]
-Key=3050401551ca751b-60dc-479c-b865-8946cd6d333c003
-StartMode=Add
-Lock=CaseListing
 ShowInApplicationListing=Never
+
+[DataEntryInit]
+Key=2103191451ca751b-60dc-479c-b865-8946cd6d333c002
+Lock=CaseListing
+
 [Files]
-Application=./ListingForm.ent
-InputData=../Data/ocv_listing_data.csdb
+Application=.\ListingForm.ent
+InputData=..\Data\ocv_listing_data.csdb
+
 [ExternalFiles]
-CLUSTERS_DICT=../Lookups/clusters.csdb
+CLUSTERS_DICT=..\Lookups\clusters.csdb
+EA_DATABASE_DICT=..\Lookups\ea_database.csdb
+STAFF_DICT=..\Data\staff.csdb
+
 [Parameters]
-EA_CODE=30504015
-GHHHNO=003
+OnExit=..\Menu\ListingMenu.pff
+EA_CODE=21031914
+GHHHNO=002
 GHINTID=51ca751b-60dc-479c-b865-8946cd6d333c
 GHINTNAME=CHISOMO SINGANO
-OnExit=../Menu/ListingMenu.pff
+HH_SUPERVISOR_CODE=938a1cfb-db99-4dab-bd0d-ea9ee0144ed6
+TEAM_CODE=1
