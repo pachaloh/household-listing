@@ -1,0 +1,26 @@
+﻿Application     C:\Users\User\AppData\Local\Temp\CSExpRun25628.bch
+Type            BATCH
+Input Data      <<CSPro DB>> C:\Users\User\Documents\GitHub\household-listing\analysis\incoming_data\ocv_listing_data_04102023.csdb
+<File>          cspro_export_file_var_f=
+
+Date            Oct 04, 2023
+Start Time      15:55:21
+End Time        15:55:23
+
+CSPro Process Summary
+
+      ╔══════════════════════════════════════════════════════╗
+      ║     29343 Records Read   100% of input file          ║
+      ║         0 Ignored:       0 Unknown         0 Erased  ║
+      ║         0 Messages:      0 E      0 W      0 User    ║
+      ╠═════════╦══════════════╦══════════════╦══════════════╣
+      ║  Level  ║  Input Case  ║  Bad Struct  ║  Level Post  ║
+      ╠═════════╬══════════════╬══════════════╬══════════════╣
+      ║      1  ║        9781  ║           0  ║        9781  ║
+      ╚═════════╩══════════════╩══════════════╩══════════════╝
+
+Process Messages
+
+
+CSPro Executor Normal End
+------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,37 @@
+infix dictionary using "C:\Users\User\Documents\GitHub\household-listing\analysis\incoming_data\Exported.dat" {
+1 lines
+    str      ea_code     1:   1-8   
+    str      ghintid     1:   9-44  
+    int      ghhhno      1:  45-47  
+    byte     gharea      1:  48-48  
+    long     ghvfdt      1:  49-56  
+    str      ghintname    1:  57-106 
+    byte     dem_str     1: 107-107 
+    byte     mult_hhs    1: 108-108 
+    byte     sn_struct    1: 109-110 
+    str      desc_struct    1: 111-160 
+    byte     res_struct    1: 161-161 
+    str      hh_head     1: 162-211 
+    str      popular_name    1: 212-261 
+    byte     under_five    1: 262-262 
+    byte     du_status    1: 263-263 
+    str      hh_observations    1: 264-313 
+    str      hh_label    1: 314-323 
+    byte     region      1: 324-324 
+    byte     district    1: 325-326 
+    str      hh_supervisor_code    1: 327-362 
+    double   hh_start_interview_time    1: 363-372 
+    double   hh_end_interview_time    1: 373-382 
+    double   hh_program_publish_date    1: 383-396 
+    byte     hh_introduction    1: 397-397 
+    byte     hh_conclusion    1: 398-398 
+    byte     hh_gps_reading    1: 399-399 
+    double   hh_latitude    1: 400-409 
+    double   hh_longitude    1: 410-420 
+    float    hh_altitude    1: 421-427 
+    float    hh_gps_accuracy    1: 428-433 
+    int      hh_gps_sat    1: 434-436 
+    long     hh_gps_readtime    1: 437-442 
+    byte     team_code    1: 443-444 
+    byte     zone_id     1: 445-445 
+}
