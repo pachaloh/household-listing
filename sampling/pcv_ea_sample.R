@@ -43,7 +43,7 @@ samplePCV = function (nsize = 4, threshold = 5, data){
 framePCV   <- read_excel("sampling_frame.xlsx", sheet = "EAsWithinHFCA")
 ea_samples <- read_excel("sampling_frame.xlsx", sheet = "EA per District")
 
-ea_samples$eas_selected <- round(ea_samples$eas_per_district)
+aea_samples$eas_selected <- round(ea_samples$eas_per_district)
 
 View(merge(framePCV,ea_samples, by.x = "dist_code", by.y = "dist_code"))
 

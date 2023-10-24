@@ -1,7 +1,7 @@
 ﻿[Run Information]
 Version=CSPro 7.7
 AppType=Entry
-Description=OVC-Listing-App 2023v6
+Description=OVC-Listing-App 2023v7
 
 [DataEntryInit]
 StartMode=Add
