@@ -1,26 +1,22 @@
 ﻿[Run Information]
 Version=CSPro 7.7
 AppType=Entry
-ShowInApplicationListing=Never
-
 [DataEntryInit]
-Key=2103191451ca751b-60dc-479c-b865-8946cd6d333c002
+Key=101010186f993b2e-23b5-44b8-827d-27c099496a57001
+StartMode=Add
 Lock=CaseListing
-
+ShowInApplicationListing=Never
 [Files]
-Application=.\ListingForm.ent
-InputData=..\Data\ocv_listing_data.csdb
-
+Application=./ListingForm.ent
+InputData=../Data/ocv_listing_data.csdb
 [ExternalFiles]
-CLUSTERS_DICT=..\Lookups\clusters.csdb
-EA_DATABASE_DICT=..\Lookups\ea_database.csdb
-STAFF_DICT=..\Data\staff.csdb
-
+CLUSTERS_DICT=../Lookups/clusters.csdb
+TEAMS_DICT=../Data/teams.csdb
 [Parameters]
-OnExit=..\Menu\ListingMenu.pff
-EA_CODE=21031914
-GHHHNO=002
-GHINTID=51ca751b-60dc-479c-b865-8946cd6d333c
-GHINTNAME=CHISOMO SINGANO
-HH_SUPERVISOR_CODE=938a1cfb-db99-4dab-bd0d-ea9ee0144ed6
-TEAM_CODE=1
+EA_CODE=10101018
+GHHHNO=001
+GHINTID=6f993b2e-23b5-44b8-827d-27c099496a57
+GHINTNAME=PATRICIA JOMO
+HH_SUPERVISOR_CODE=6fc2aab5-60d9-4d54-bf24-ab178c9e6e5a
+TEAM_CODE=6
+OnExit=../Menu/ListingMenu.pff

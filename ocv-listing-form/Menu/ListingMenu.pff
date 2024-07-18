@@ -1,7 +1,7 @@
 ﻿[Run Information]
 Version=CSPro 7.7
 AppType=Entry
-Description=Malawi-OVC-Listing-Form
+Description=OVC-Listing-App 2023v7
 
 [DataEntryInit]
 StartMode=Add
@@ -21,6 +21,7 @@ LABOURF_FORCE_LISTING_DICT=..\Data\ListingData.csdb
 LISTINGFORM_DICT=..\Data\ocv_listing_data.csdb
 SELECTED_EAS_DICT=..\Data\selected_eas.csdb
 STAFF_DICT=..\Data\staff.csdb
+TEAMS_DICT=..\Data\teams.csdb
 TRADITIONAL_AUTHORITIES_DICT=..\Lookups\ta_database.csdb
 
 [UserFiles]

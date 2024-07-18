@@ -1,6 +1,0 @@
-﻿[Run Information]
-Version=CSPro 7.7
-AppType=Deploy
-
-[Files]
-Application=.\ListingApp.csds

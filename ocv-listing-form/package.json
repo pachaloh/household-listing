@@ -1,9 +1,9 @@
 {
   "fileType": "Application Deployment Specification",
   "version": "7.7",
-  "name": "2023OVCListingForm",
-  "description": "VaccinaltionMalawi, 2023",
-  "buildTime": "2023-09-26T12:28:52Z",
+  "name": "Household_Listing",
+  "description": "LFS Household Listing",
+  "buildTime": "2024-07-16T05:15:21Z",
   "files": [
     {
       "path": ".\\Dicts\\districts.dcf",
@@ -11,11 +11,11 @@
     },
     {
       "path": ".\\Dicts\\ea_database.dcf",
-      "signature": "025AA01C62FECF4638C05C57413C540B"
+      "signature": "01A54C3253ED02597B99E65AFD499253"
     },
     {
       "path": ".\\Dicts\\ea_ssignments.dcf",
-      "signature": "52961923CFAEA93C1266CFE773438770"
+      "signature": "9FCB689AEB4C97279E8BBA2FE7986607"
     },
     {
       "path": ".\\Dicts\\gvh_database.dcf",
@@ -42,16 +42,20 @@
       "signature": "73C273AFBADBD3F69C7208479906B739"
     },
     {
+      "path": ".\\Dicts\\teams.dcf",
+      "signature": "CDE4532923EAA461C5EAEC255ABEB50A"
+    },
+    {
       "path": ".\\Dicts\\vh_database.dcf",
       "signature": "7CDD7A3CC96DBA9E101BF168CA61170E"
     },
     {
       "path": ".\\Lookups\\districts.csdb",
-      "signature": "3F818B6AB9B97E48879512C265082D34"
+      "signature": "C8BF734FCFFB38AD79FBD8F8ABE2CA34"
     },
     {
       "path": ".\\Lookups\\ea_database.csdb",
-      "signature": "144998C1151D97C4FE8E55EF7D6A0B2E"
+      "signature": "323E336C38DD1ADF37DFEC780F0B48EA"
     },
     {
       "path": ".\\Lookups\\gvh_database.csdb",
@@ -59,7 +63,7 @@
     },
     {
       "path": ".\\Lookups\\ta_database.csdb",
-      "signature": "118BA19A47DB60E810313149EEA9E202"
+      "signature": "D609F543CC716B8CD9A41F7E9225BB1A"
     },
     {
       "path": ".\\Lookups\\vh_database.csdb",
@@ -67,19 +71,19 @@
     },
     {
       "path": ".\\Menu\\ListingMenu.pen",
-      "signature": "C01F7F15ABEFE5DA67152C55770DFA6B"
+      "signature": "03F2CF85AD98ACF56DDB832CE440F201"
     },
     {
       "path": ".\\Menu\\ListingMenu.pff",
-      "signature": "2D8C7F021990E22D0F5700D5962C2384"
+      "signature": "ADE3558C983BB97AB3026E0BD218E675"
     },
     {
       "path": ".\\ocv-form\\ListingForm.pen",
-      "signature": "2CB8313AFFDB735EE96D9CC50FFD8411"
+      "signature": "9254C6747044212D9627BD7D015DEA01"
     },
     {
       "path": ".\\ocv-form\\ListingForm.pff",
-      "signature": "C5E11F6E8B262C57BDFECB0C28ED0744"
+      "signature": "F4E848DF8EEBC0F55FB3B95118209A7C"
     },
     {
       "path": ".\\Shared Logic\\GPS.apc",
@@ -92,44 +96,56 @@
   ],
   "dictionaries": [
     {
-      "path": ".\\Dicts\\districts.dcf"
+      "path": ".\\Dicts\\districts.dcf",
+      "uploadForSync": true
     },
     {
-      "path": ".\\Dicts\\Districts.dcf"
+      "path": ".\\Dicts\\Districts.dcf",
+      "uploadForSync": true
     },
     {
-      "path": ".\\Dicts\\ea_database.dcf"
+      "path": ".\\Dicts\\ea_database.dcf",
+      "uploadForSync": true
     },
     {
-      "path": ".\\Dicts\\ea_ssignments.dcf"
+      "path": ".\\Dicts\\ea_ssignments.dcf",
+      "uploadForSync": true
     },
     {
-      "path": ".\\Dicts\\gvh_database.dcf"
+      "path": ".\\Dicts\\gvh_database.dcf",
+      "uploadForSync": true
     },
     {
-      "path": ".\\Dicts\\ListingFormLFS.dcf"
+      "path": ".\\Dicts\\ListingFormLFS.dcf",
+      "uploadForSync": true
     },
     {
       "path": ".\\Dicts\\ListingMenu.dcf",
       "uploadForSync": true
     },
     {
-      "path": ".\\Dicts\\selected_eas.dcf"
+      "path": ".\\Dicts\\selected_eas.dcf",
+      "uploadForSync": true
     },
     {
-      "path": ".\\Dicts\\staff.dcf"
+      "path": ".\\Dicts\\staff.dcf",
+      "uploadForSync": true
     },
     {
-      "path": ".\\Dicts\\Staff.dcf"
+      "path": ".\\Dicts\\ta_database.dcf",
+      "uploadForSync": true
     },
     {
-      "path": ".\\Dicts\\ta_database.dcf"
+      "path": ".\\Dicts\\teams.dcf",
+      "uploadForSync": true
     },
     {
-      "path": ".\\Dicts\\vh_database.dcf"
+      "path": ".\\Dicts\\vh_database.dcf",
+      "uploadForSync": true
     },
     {
-      "path": ".\\ocv-form\\ListingForm.dcf"
+      "path": ".\\ocv-form\\ListingForm.dcf",
+      "uploadForSync": true
     }
   ],
   "deployment": {

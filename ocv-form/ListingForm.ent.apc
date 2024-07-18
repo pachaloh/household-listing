@@ -2,8 +2,17 @@
 PROC GLOBAL
 
 function string staff_segment(string staff_id_code)
-	forcase STAFF_DICT where STAFF_ID = staff_id_code do
-		staff_segment = STAFF_SEG;
+	
+	string SegmentAlphabet = "ABCDEFGHIJKLMN";
+	numeric seg_ctr = 1;
+	errmsg("Team number: %d",tonumber(sysparm("TEAM_CODE")));
+	forcase TEAMS_DICT where TEAM_ID = tonumber(sysparm("TEAM_CODE")) do
+		errmsg("%s vs %s",USER_CODE,staff_id_code);
+		if USER_CODE = staff_id_code then
+			staff_segment = SegmentAlphabet[seg_ctr:1];
+			break;
+		endif;
+		seg_ctr = seg_ctr + 1;
 	endfor;
 end;
 
@@ -219,7 +228,7 @@ PROC HH_LABEL
 
 preproc
 
-	household_label = maketext("OCV/%v/%v",edit("999",GHHHNO),staff_segment(GHINTID));
+	household_label = maketext("LFS/%v/%v",edit("999",GHHHNO),staff_segment(GHINTID));
 	
 	$ = household_label;
 
@@ -232,7 +241,7 @@ PROC HH_CONCLUSION
 preproc
 
 	savepartial();
-	warning("Just make sure you have labelled the household as %s!",maketext("OCV/%v/%v",edit("999",GHHHNO),staff_segment(GHINTID)));
+	warning("Just make sure you have labelled the household as %s!",maketext("LFS/%v/%v",edit("999",GHHHNO),staff_segment(GHINTID)));
 
 
 postproc

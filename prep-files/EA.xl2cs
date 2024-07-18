@@ -1,0 +1,15 @@
+﻿Excel=..\LookupFIles\lookupfiles.xlsx
+InputDict=..\Dicts\EA.dcf
+OutputData=..\LookupFIles\EA.csdb
+StartingRow=2
+CaseManagement=CreateNewFile
+RunOnlyIfNewer=No
+
+Mapping=EA_REC;@1;EA
+Mapping=EA_REC.REGION_CODE_EA;@2
+Mapping=EA_REC.DISTRICT_CODE_EA;@4
+Mapping=EA_REC.TA_CODE_EA;@6
+Mapping=EA_REC.EA_NUMBER;@7
+Mapping=REGION_EA;@1
+Mapping=DISTRICT_NAME_EA;@3
+Mapping=TA_NAME_EA;@5

@@ -1,0 +1,75 @@
+{
+  "fileType": "Application Deployment Specification",
+  "version": "7.7",
+  "name": "ListingMenu",
+  "description": "",
+  "files": [
+    {
+      "path": "..\\Apps\\Listing.ent"
+    },
+    {
+      "path": "..\\Apps\\Listing.pff"
+    },
+    {
+      "path": "..\\LookupFIles\\Districts.csdb"
+    },
+    {
+      "path": "..\\LookupFIles\\EA.csdb"
+    },
+    {
+      "path": "..\\LookupFIles\\GVH.csdb"
+    },
+    {
+      "path": "..\\LookupFIles\\TA.csdb"
+    },
+    {
+      "path": "..\\LookupFIles\\VH.csdb"
+    },
+    {
+      "path": "..\\Menu\\ListingMenu.ent"
+    },
+    {
+      "path": "..\\Menu\\ListingMenu.pff"
+    }
+  ],
+  "dictionaries": [
+    {
+      "path": "..\\Apps\\Labourf force Listing.dcf",
+      "uploadForSync": true
+    },
+    {
+      "path": "..\\Dicts\\ASSIGNMENT_SELECTION.dcf"
+    },
+    {
+      "path": "..\\Dicts\\Districts.dcf"
+    },
+    {
+      "path": "..\\Dicts\\EA.dcf"
+    },
+    {
+      "path": "..\\Dicts\\EA_Assignments.dcf"
+    },
+    {
+      "path": "..\\Dicts\\GVH.dcf"
+    },
+    {
+      "path": "..\\Dicts\\ListingFormLFS.dcf"
+    },
+    {
+      "path": "..\\Dicts\\ListingMenu.dcf",
+      "uploadForSync": true
+    },
+    {
+      "path": "..\\Dicts\\Staff.dcf"
+    },
+    {
+      "path": "..\\Dicts\\TA.dcf"
+    }
+  ],
+  "deployment": {
+    "type": "LocalFolder",
+    "cswebUrl": "http:\/\/",
+    "ftpUrl": "ftp:\/\/",
+    "localFolderPath": "..\\Labour Force Published"
+  }
+}

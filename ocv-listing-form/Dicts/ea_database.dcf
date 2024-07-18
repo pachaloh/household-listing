@@ -7,7 +7,7 @@ RecordTypeLen=0
 Positions=Relative
 ZeroFill=Yes
 DecimalChar=Yes
-SecurityOptions=950F530BA8FB97E5A5D18845102896D295AC8BD2306CB97AA2445C7C910579D9
+SecurityOptions=950F530BA8FB97E5A5D18845102896D218BE062ED83CC0B8B686A1EAFD5F7E47
 
 [Level]
 Label=Ea Database Level
@@ -23,13 +23,6 @@ Len=1
 DataType=Numeric
 ZeroFill=Yes
 
-[ValueSet]
-Label=Region Code Ea
-Name=REGION_CODE_EA_VS1
-Value=1;Value 1
-Value=2;Value 2
-Value=3;Value 3
-
 [Item]
 Label=District Code Ea
 Name=DISTRICT_CODE_EA
@@ -37,25 +30,6 @@ Start=2
 Len=2
 DataType=Numeric
 ZeroFill=Yes
-
-[ValueSet]
-Label=District Code Ea
-Name=DISTRICT_CODE_EA_VS1
-Value=1;Value 1
-Value=2;Value 2
-Value=3;Value 3
-Value=4;Value 4
-Value=5;Value 5
-Value=6;Value 6
-Value=7;Value 7
-Value=8;Value 8
-Value=9;Value 9
-Value=10;Value 10
-Value=11;Value 11
-Value=12;Value 12
-Value=13;Value 13
-Value=14;Value 14
-Value=15;Value 15
 
 [Item]
 Label=Ta Code Ea
@@ -69,7 +43,7 @@ ZeroFill=Yes
 Label=Ea Number
 Name=EA_NUMBER
 Start=6
-Len=2
+Len=3
 DataType=Numeric
 ZeroFill=Yes
 
@@ -77,34 +51,34 @@ ZeroFill=Yes
 Label=Ea Database Record
 Name=EA_DATABASE_REC
 RecordTypeValue=''
-RecordLen=90
+RecordLen=91
 
 [Item]
 Label=Region Ea
 Name=REGION_EA
-Start=8
-Len=8
+Start=9
+Len=10
 DataType=Alpha
 
 [Item]
 Label=District Name Ea
 Name=DISTRICT_NAME_EA
-Start=16
+Start=19
 Len=13
 DataType=Alpha
 
 [Item]
 Label=Ta Name Ea
 Name=TA_NAME_EA
-Start=29
+Start=32
 Len=25
 DataType=Alpha
 
 [Item]
 Label=Health Zone
 Name=HEALTH_ZONE
-Start=54
-Len=15
+Start=57
+Len=12
 DataType=Alpha
 
 [Item]
@@ -150,6 +124,6 @@ ZeroFill=Yes
 Label=Total Hh
 Name=TOTAL_HH
 Start=88
-Len=3
+Len=4
 DataType=Numeric
 ZeroFill=Yes

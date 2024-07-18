@@ -1,0 +1,82 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=LFS Teams
+Name=TEAMS_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=142F7A48E4B4A420085CC19E108EFD3C1182FFC49786D17B543B58590769C965
+
+[Level]
+Label=teams Level
+Name=TEAMS_LEVEL
+
+[IdItems]
+
+[Item]
+Label=TEAM_ID
+Name=TEAM_ID
+Start=2
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=User Code
+Name=USER_CODE
+Start=4
+Len=36
+DataType=Alpha
+
+[Record]
+Label=teams Record
+Name=TEAMS_REC
+RecordTypeValue='1'
+RecordLen=144
+
+[Item]
+Label=Interviewer name
+Name=INTRV_NAME
+Start=40
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Passcode
+Name=PASS_CODE
+Start=90
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Role
+Name=MEMBER_ROLE
+Start=94
+Len=1
+DataType=Numeric
+
+[Item]
+Label=Supervisor ID
+Name=SUPVR_ID
+Start=95
+Len=36
+DataType=Alpha
+
+[Item]
+Label=Date created
+Name=DATE_CREATED
+Start=131
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Time created
+Name=TIME_CREATED
+Start=139
+Len=6
+DataType=Numeric
+ZeroFill=Yes

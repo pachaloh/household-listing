@@ -17,8 +17,8 @@ string CapiManageStaffName;				// various names of interviewers used throughout 
 
 
 function string code_of_supervisor()
-	loadcase(STAFF_DICT,TEAM_NO,LOGIN);
-	code_of_supervisor = SUPERVISOR_STAFF_CODE;
+	loadcase(TEAMS_DICT,TEAM_NO,LOGIN);
+	code_of_supervisor = SUPVR_ID;
 end;
 
 
@@ -58,7 +58,7 @@ function EA_completionreport()
 		filewrite(tempFile, "Interviwer       No.HHs  HHwChild Status");
 		
 		//Loop through team members whose supervisor is same
-		forcase STAFF_DICT where LOGIN = SUPERVISOR_STAFF_CODE do
+		forcase TEAMS_DICT where LOGIN = SUPVR_ID do
 				
 				//Reset values for interviewer
 				hh_cases   = 0;  
@@ -67,15 +67,15 @@ function EA_completionreport()
 				closed_response = "Open";
 				
 			//Case ID for household listed
-			string caseIDlisting = maketext("%v%v%v",strip(ASSIGNMENT_SELECTION),ta_eas(ctr),STAFF_ID);
+			string caseIDlisting = maketext("%v%v%v",strip(ASSIGNMENT_SELECTION),ta_eas(ctr),USER_CODE);
 
 
-				//hh_cases   = countcases(LISTINGFORM_DICT(startswith,strip(ASSIGNMENT_SELECTION)) where GHINTID = STAFF_ID);
+				//hh_cases   = countcases(LISTINGFORM_DICT(startswith,strip(ASSIGNMENT_SELECTION)) where GHINTID = USER_CODE);
 				hh_cases   = countcases(LISTINGFORM_DICT(startswith,caseIDlisting));
 				hh_child   = countcases(LISTINGFORM_DICT(startswith,caseIDlisting) where UNDER_FIVE = 1);
-				//hh_child   = countcases(LISTINGFORM_DICT(startswith,strip(ASSIGNMENT_SELECTION)) where GHINTID = STAFF_ID and UNDER_FIVE = 1);
+				//hh_child   = countcases(LISTINGFORM_DICT(startswith,strip(ASSIGNMENT_SELECTION)) where GHINTID = USER_CODE and UNDER_FIVE = 1);
 				
-			filewrite(tempFile, "%-0.15s: %7d %7d %6s",STAFF_NAME,hh_cases,hh_child,closed_response);
+			filewrite(tempFile, "%-0.15s: %7d %7d %6s",INTRV_NAME,hh_cases,hh_child,closed_response);
 
 		endfor;
 		
@@ -115,7 +115,7 @@ function syncWithSupervisor() //Funtion to transfer from interviewer to supervis
 		endif;
 		
 		
-		if syncdata(BOTH, STAFF_DICT) = 0 then						//Teams Cases
+		if syncdata(BOTH, TEAMS_DICT) = 0 then						//Teams Cases
 			errmsg("Failed to transfer staff data");
 		endif;
 		
@@ -140,10 +140,10 @@ function syncWithCentralOffice()		//Function for data transfer betwen supervisor
 	
 		// Sync cases file with server
 		syncdata(PUT, LISTINGFORM_DICT);					//Household listed cases
-		syncdata(PUT, STAFF_DICT);							//Team members cases
-		syncdata(GET, DISTRICTS_DICT);						//District Cases
-		syncdata(GET, TRADITIONAL_AUTHORITIES_DICT);		//TA Cases
-		syncdata(GET, EA_DATABASE_DICT);					//EA Cases
+		syncdata(PUT, TEAMS_DICT);							//Team members cases
+		//syncdata(GET, DISTRICTS_DICT);						//District Cases
+		//syncdata(GET, TRADITIONAL_AUTHORITIES_DICT);		//TA Cases
+		//syncdata(GET, EA_DATABASE_DICT);					//EA Cases
 		syncdata(PUT, SELECTED_EAS_DICT);					//Area of work cases
 		syncdata(PUT, EA_ASSIGNMENTS_DICT);					//EA assignments
 
@@ -202,8 +202,8 @@ function string LookupStaffName(string code)
 
 	// if this staff member's information is already loaded, don't need
 	// to loadcase again
-	if STAFF_ID = code or loadcase(STAFF_DICT,code) then
-		LookupStaffName = strip(STAFF_NAME);
+	if USER_CODE = code or loadcase(TEAMS_DICT,code) then
+		LookupStaffName = strip(INTRV_NAME);
 
 	else
 		LookupStaffName = "<Invalid Staff>";
@@ -216,10 +216,10 @@ function VerifyStaffNameIsUnique(string staffName,string ignoreStaffCode)
 
 	// check that no person, other than someone with code ignoreStaffCode, has
 	// the name in staffName
-	numeric nameIsUsed = countcases(STAFF_DICT where STAFF_ID <> ignoreStaffCode and STAFF_NAME = staffName);
+	numeric nameIsUsed = countcases(TEAMS_DICT where USER_CODE <> ignoreStaffCode and INTRV_NAME = staffName);
 
 	if ignoreStaffCode <> "" then // load the staff entry that was in memory
-		loadcase(STAFF_DICT,ignoreStaffCode);
+		loadcase(TEAMS_DICT,ignoreStaffCode);
 	endif;
 
 	if nameIsUsed then
@@ -258,7 +258,7 @@ function launch_listing_form()
 
     filewrite(dynamic_pff, "[ExternalFiles]"); 
     filewrite(dynamic_pff, "CLUSTERS_DICT=%v", "../Lookups/clusters.csdb"); 
-	filewrite(dynamic_pff, "STAFF_DICT=%v", "../Data/staff.csdb");
+	filewrite(dynamic_pff, "TEAMS_DICT=%v", "../Data/teams.csdb");
 	
     filewrite(dynamic_pff, "[Parameters]");
 	filewrite(dynamic_pff, "EA_CODE=%s", INTERVIEW_MENU[1:8]);				//EA code
@@ -297,12 +297,12 @@ function SyncDataWithInterviewer()
 	// to work and sync.
 	numeric success = 1;
 
-	forcase STAFF_DICT where STAFF_ID = LOGIN or SUPERVISOR_STAFF_CODE = LOGIN do
+	forcase TEAMS_DICT where USER_CODE = LOGIN or SUPVR_ID = LOGIN do
 		
 		// Synchronize staff code for supervisor and their interviewers. Supervisor's staff code is sent, so supervisor
 		// is able to log onto their account using interviewer's device.
 		// Sync BOTH is used, because the supervisor and interview write to the staff data.
-		if success and not syncdata(BOTH, STAFF_DICT) then
+		if success and not syncdata(BOTH, TEAMS_DICT) then
 			errmsg("Failed to transfer interviewer's staff data. Transfer aborted.");
 			success = 0;
 			break;
@@ -442,7 +442,25 @@ preproc
 	
 postproc
 	
+	//Copying files from an existing application
+	//string backup_folder_name = pathconcat(Application, maketext("Backup%d", timestamp()));
+	string apppath = path.concat(pathname(Application),"../");
+	string datapath = path.concat(apppath,"../LabourForceSurvey2023/Data");  //Specify folder for main data collection 
+	string listing_data_folder = path.concat(pathname(Application),"../Data");
+	//errmsg("%s",datapath);
+	//errmsg("%s",listing_data_folder);
+	//errmsg("%s",pathconcat(datapath, "teams.csdb"));
+	
+	if fileexist(maketext("%v/teams.csdb",datapath)) then
+		filecopy(pathconcat(datapath, "teams.csdb"), listing_data_folder);
+	endif;
+	
+//	if then
+//	endif;
 	savesetting("team_no", maketext("%v", TEAM_NO));
+	
+
+
 PROC LOGIN
 
 preproc
@@ -457,12 +475,12 @@ onfocus
 
 	valueset string AddStringVS;
 
-	forcase STAFF_DICT where ROLE = 1 do
-		AddStringVS.add(maketext("%v-Supervisor",strip(STAFF_NAME)), STAFF_ID);
+	forcase TEAMS_DICT where TEAM_ID = TEAM_NO and MEMBER_ROLE = 1 do
+		AddStringVS.add(maketext("%v-Supervisor",strip(INTRV_NAME)), USER_CODE);
 	endfor;
 
-	forcase STAFF_DICT where ROLE <> 1 do
-		AddStringVS.add(STAFF_NAME, STAFF_ID);
+	forcase TEAMS_DICT where TEAM_ID = TEAM_NO and MEMBER_ROLE <> 1 do
+		AddStringVS.add(INTRV_NAME, USER_CODE);
 	endfor;
 
 	AddStringVS.add("Sync data with head office", "1");
@@ -476,7 +494,7 @@ postproc
 
 	//No more than one supervisor should belong to the same team
 	//If an entered team number already exists in the system
-	if locate(STAFF_DICT,startswith,edit("99",TEAM_NO)) and $ = "3" then
+	if locate(TEAMS_DICT,startswith,edit("99",TEAM_NO)) and $ = "3" then
 		errmsg("No two supervisors can belong to the same team (%d)",TEAM_NO);
 		reenter;
 	endif;
@@ -521,15 +539,15 @@ preproc
 postproc
 
 	// creating a new PIN code
-	if PASSWORD = notappl then
+	if PASS_CODE = notappl then
 		ValidatePINCode(PIN_CODE_CONFIRMATION);
 
-		PASSWORD = PIN_CODE_CONFIRMATION;
+		PASS_CODE = PIN_CODE_CONFIRMATION;
 		DEVICE_ID = getdeviceid();
-		writecase(STAFF_DICT);
+		writecase(TEAMS_DICT);
 
 	// validating an existing PIN code
-	elseif PIN_CODE_CONFIRMATION <> PASSWORD then
+	elseif PIN_CODE_CONFIRMATION <> PASS_CODE then
 		errmsg("Invalid PIN code");
 		reenter;
 
@@ -537,7 +555,7 @@ postproc
 	
 	
 	savesetting("pin_code", PIN_CODE_CONFIRMATION);
-	savesetting(LoginSettingKey,STAFF_ID);
+	savesetting(LoginSettingKey,USER_CODE);
 
 	setproperty(PIN_CODE_CONFIRMATION,"Protected","Yes");
 }
@@ -562,19 +580,19 @@ postproc
 
 	
 	//If password field is blank, prompt for a password
-	if loadcase(STAFF_DICT,TEAM_NO,LOGIN) and PASSWORD = notappl or PASSWORD = default then
-		PASSWORD = tonumber(prompt("Set your password",password));
+	if loadcase(TEAMS_DICT,TEAM_NO,LOGIN) and PASS_CODE = notappl or PASS_CODE = default then
+		PASS_CODE = tonumber(prompt("Set your password",password));
 		
-		if not PASSWORD in 1000:9999 then
+		if not PASS_CODE in 1000:9999 then
 			errmsg("Password must be 4-digit and not start with zero(0)");
 			reenter;
 		endif;
 		
-		if writecase(STAFF_DICT) then
+		if writecase(TEAMS_DICT) then
 			errmsg("Password set! Keep it safe ");
 		endif;
 		
-	elseif loadcase(STAFF_DICT,TEAM_NO,LOGIN) and PIN_CODE_CONFIRMATION <> PASSWORD then
+	elseif loadcase(TEAMS_DICT,TEAM_NO,LOGIN) and PIN_CODE_CONFIRMATION <> PASS_CODE then
 		errmsg("Invalid password");
 		reenter;
 	endif;
@@ -614,7 +632,7 @@ PROC SUPERVISOR_NAME
 PROC SUPERVISOR_PIN_CODE
 
 
-	if countcases(STAFF_DICT where TEAM_ID = TEAM_NO and ROLE = 1) >= 1 then
+	if countcases(TEAMS_DICT where TEAM_ID = TEAM_NO and MEMBER_ROLE = 1) >= 1 then
 		errmsg("No two supervisors can exist in one team");
 		reenter LOGIN;
 	endif;
@@ -622,26 +640,26 @@ PROC SUPERVISOR_PIN_CODE
 
 ValidatePINCode(SUPERVISOR_PIN_CODE);
 
-	clear(STAFF_DICT);
+	clear(TEAMS_DICT);
 	
 	TEAM_ID  = TEAM_NO;
-	STAFF_ID = uuid();
-	STAFF_NAME = SUPERVISOR_NAME;
-	PASSWORD = SUPERVISOR_PIN_CODE;
-	ROLE = 1;
-	SUPERVISOR_STAFF_CODE = STAFF_ID;
-	SEX = notappl;
+	USER_CODE = uuid();
+	INTRV_NAME = SUPERVISOR_NAME;
+	PASS_CODE = SUPERVISOR_PIN_CODE;
+	MEMBER_ROLE = 1;
+	SUPVR_ID = USER_CODE;
+	//SEX = notappl;
 
-	//SUPERVISOR_STAFF_CODE = "";
-	TIME_CREATED_ACCOUNT = timestamp();
-	setcaselabel(STAFF_DICT,strip(STAFF_NAME));
+	DATE_CREATED = sysdate("YYYYMMDD");
+	TIME_CREATED = timestamp();
+	setcaselabel(TEAMS_DICT,strip(INTRV_NAME));
 	
-	STAFF_SEG = "Z";
-	DEVICE_ID = getdeviceid();
-	writecase(STAFF_DICT);
+	//STAFF_SEG = "Z";
+	//DEVICE_ID = getdeviceid();
+	writecase(TEAMS_DICT);
 
 	// set the login to the supervisor
-	LOGIN = SUPERVISOR_STAFF_CODE;
+	LOGIN = SUPVR_ID;
 	savesetting(LoginSettingKey,LOGIN);
 
 	CapiStaffName = LookupStaffName(LOGIN);
@@ -654,9 +672,9 @@ onfocus
 
 	valueset string AssignmentSel;
 
-	loadcase (STAFF_DICT, TEAM_NO, LOGIN);
+	loadcase (TEAMS_DICT, TEAM_NO, LOGIN);
 
-	if ROLE = 1  then
+	if MEMBER_ROLE = 1  then
 		forcase SELECTED_EAS_DICT do
 			string AssignSelcode = maketext("%v%v%v", edit("9",REGION_CODE_ASSIGNMENT), edit("99",DISTRICT_CODE_ASSIGNMENT), edit("99",TA_CODE_ASSIGNMENT));
 			string AssignSelName = maketext("Supervise: %v/%v/%v", REGION_TA_ASSIGNMENT, DISTRICT_NAME_ASSIGNMENT, TA_NAME_ASSIGNMENT);
@@ -670,13 +688,13 @@ onfocus
 		//AssignmentSel.add("Update programs from head office", "2");
 		//AssignmentSel.add("Switch users", "2");
 
-	elseif ROLE = 2 then
+	elseif MEMBER_ROLE = 2 then
 		//errmsg("My id: %s",LOGIN);
 
 		//staff_id = maketext();
 
 		forcase EA_ASSIGNMENTS_DICT where   EA_STAFF_ID = LOGIN do
-			//errmsg("My id: %s,%s",STAFF_ID,LOGIN);
+			//errmsg("My id: %s,%s",USER_CODE,LOGIN);
 			string AssignSelcode = maketext("%v%v%v%v", edit("9",REGION_CODE_EA_ASSIGNMENTS), edit("99",DISTRICT_CODE_EA_ASSIGNMENTS), edit("99",TA_CODE_EA_ASSIGNMENTS), edit("999",EA_NUMBER_ASSIGNMENTS));
 			string AssignSelName = maketext("Interview: %v / %v / %v/ %v", strip(REGION_EA_ASSIGNMENTS), strip(DISTRICT_NAME_EA_ASSIGNMENTS), strip(TA_NAME_EA_ASSIGNMENTS),maketext("EA%v",edit("999",EA_NUMBER_ASSIGNMENTS)));
 
@@ -705,7 +723,7 @@ postproc
 		//Sync assignments to make suke EA is not yet assigned 
 		//syncAssignmentsWithCentralOffice();
 		
-	elseif ROLE = 2 then
+	elseif MEMBER_ROLE = 2 then
 		
 		skip to INTERVIEW_MENU;
 	else
@@ -820,8 +838,8 @@ onfocus
 
 postproc
 
-		if loadcase(STAFF_DICT, TEAM_NO, LOGIN) then
-		CapiStaffName =  STAFF_NAME;
+		if loadcase(TEAMS_DICT, TEAM_NO, LOGIN) then
+		CapiStaffName =  INTRV_NAME;
 		endif;
 
 		launch_listing_form();
@@ -833,8 +851,8 @@ onfocus
 
 	valueset string MANAGE_STAFF_vs;
 
-	forcase STAFF_DICT where ROLE = 2 do
-		MANAGE_STAFF_vs.add(STAFF_NAME, STAFF_ID);
+	forcase TEAMS_DICT where TEAM_NO = TEAM_ID and MEMBER_ROLE = 2 do
+		MANAGE_STAFF_vs.add(INTRV_NAME, USER_CODE);
 	endfor;
 
 	MANAGE_STAFF_vs.add("Add interviewer","1");
@@ -854,15 +872,15 @@ PROC MANAGE_STAFF_MEMBER
 	//Assign the selected staff (code) for deletition
 	if MANAGE_STAFF_MEMBER = 4 then
 		numeric delete_case = accept("Do you really want to delete %d", "Yes", "No");
-		if delete_case = 1 and delcase(STAFF_DICT) then
+		if delete_case = 1 and delcase(TEAMS_DICT) then
 			errmsg("Successfully deleted");
 		else
 			reenter;
 		endif;
 		
-		STAFF_ID = MANAGE_STAFF; 
-		delcase(STAFF_DICT);
-		{if delcase(STAFF_DICT) =1 then
+		USER_CODE = MANAGE_STAFF; 
+		delcase(TEAMS_DICT);
+		{if delcase(TEAMS_DICT) =1 then
 		errmsg ("Do you really want to delete %d");}
 		reenter MANAGE_STAFF;
 		
@@ -890,31 +908,32 @@ postproc
 		VerifyStaffNameIsUnique(MANAGE_STAFF_NAME,"");
 
 		
-		staff_creation_number = countcases(STAFF_DICT where LOGIN = SUPERVISOR_STAFF_CODE);
+		staff_creation_number = countcases(TEAMS_DICT where LOGIN = SUPVR_ID);
 
 		
 		// add a new interviewer
-		clear(STAFF_DICT);
+		clear(TEAMS_DICT);
 		
 		TEAM_ID  = TEAM_NO;
-		STAFF_ID = uuid();
-		STAFF_NAME = MANAGE_STAFF_NAME;
-		SUPERVISOR_STAFF_CODE = LOGIN;
-		TIME_CREATED_ACCOUNT = timestamp();
-		setcaselabel(STAFF_DICT,strip(STAFF_NAME));
-		ROLE = 2;
+		USER_CODE = uuid();
+		INTRV_NAME = MANAGE_STAFF_NAME;
+		SUPVR_ID = LOGIN;
+		DATE_CREATED = sysdate("YYYYMMDD");
+		TIME_CREATED = timestamp();
+		setcaselabel(TEAMS_DICT,strip(INTRV_NAME));
+		MEMBER_ROLE = 2;
 		
-		STAFF_SEG = SegmentAlphabet[staff_creation_number:1];
+		//STAFF_SEG = SegmentAlphabet[staff_creation_number:1];
 
-		writecase(STAFF_DICT);
+		writecase(TEAMS_DICT);
 
-		errmsg("%s successfully added as an interviewer",LookupStaffName(STAFF_ID));
+		errmsg("%s successfully added as an interviewer",LookupStaffName(USER_CODE));
 
 		reenter MANAGE_STAFF;
 
 	else
 		// modify the name
-		string oldName = LookupStaffName(STAFF_ID);
+		string oldName = LookupStaffName(USER_CODE);
 
 		if MANAGE_STAFF_NAME = oldName then
 			errmsg("The name is the same as before and has not been changed");
@@ -922,11 +941,11 @@ postproc
 		else
 			VerifyStaffNameIsUnique(MANAGE_STAFF_NAME,MANAGE_STAFF);
 
-			STAFF_NAME = MANAGE_STAFF_NAME;
-			setcaselabel(STAFF_DICT,strip(STAFF_NAME));
-			writecase(STAFF_DICT);
+			INTRV_NAME = MANAGE_STAFF_NAME;
+			setcaselabel(TEAMS_DICT,strip(INTRV_NAME));
+			writecase(TEAMS_DICT);
 
-			errmsg("%s successfully renamed to %s",oldName,LookupStaffName(STAFF_ID));
+			errmsg("%s successfully renamed to %s",oldName,LookupStaffName(USER_CODE));
 
 		endif;
 
@@ -941,8 +960,8 @@ onfocus
 	//Valueset to hold staff's name 
 	valueset string interviewer_vs;
 	
-	forcase STAFF_DICT where ROLE <> 1 do
-		interviewer_vs.add(STAFF_NAME,STAFF_ID);
+	forcase TEAMS_DICT where TEAM_ID = TEAM_NO and MEMBER_ROLE <> 1 do
+		interviewer_vs.add(INTRV_NAME,USER_CODE);
 	endfor;
 	
 	//If no interviewer is added to the team
@@ -955,13 +974,13 @@ onfocus
 
 postproc
 
-	loadcase(STAFF_DICT,TEAM_NO, INTERVIEWER_CODE);
+	loadcase(TEAMS_DICT,TEAM_NO, INTERVIEWER_CODE);
 
 	CapiManageStaffName = LookupStaffName(INTERVIEWER_CODE);
 
 	// check if the interviewer already has an assignment
-	numeric numberAssignmentsForInterviewer = countcases(STAFF_DICT
-		where STAFF_ID = INTERVIEWER_CODE and ROLE = 1);
+	numeric numberAssignmentsForInterviewer = countcases(TEAMS_DICT
+		where USER_CODE = INTERVIEWER_CODE and MEMBER_ROLE = 1);
 
 	if numberAssignmentsForInterviewer > 0 then
 		errmsg("%s already has %d assignment. Are you sure you want to add another?",
@@ -1012,8 +1031,8 @@ postproc
 		EA_NUMBER_ASSIGNMENTS 		 = INTERVIEWER_EA;
 		EA_STAFF_ID 				 = INTERVIEWER_CODE;
 
-	if loadcase (STAFF_DICT, TEAM_NO, EA_STAFF_ID) then
-		ASSIGNMENT_STAFF_NAME = STAFF_NAME;
+	if loadcase (TEAMS_DICT, TEAM_NO, EA_STAFF_ID) then
+		ASSIGNMENT_STAFF_NAME = INTRV_NAME;
 	endif;
 
 

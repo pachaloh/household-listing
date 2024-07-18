@@ -13,7 +13,7 @@ ShowFieldLabels=No
 ShowErrorMessageNumbers=No
 [External Dictionaries]
 File=..\Dicts\ea_database.dcf
-File=..\Dicts\staff.dcf
+File=..\Dicts\teams.dcf
 [AppCode]
 File=.\ListingForm.ent.apc
 Include=..\Shared Logic\GPS.apc
@@ -26,7 +26,7 @@ File=.\ListingForm.fmf
 [Dictionary Types]
 Dict-Type=.\ListingForm.dcf,Input,.\ListingForm.fmf
 Dict-Type=..\Dicts\ea_database.dcf,External
-Dict-Type=..\Dicts\staff.dcf,External
+Dict-Type=..\Dicts\teams.dcf,External
 [Sync]
 Server=https://csprodata.ilo.org/api
 Direction=Put
